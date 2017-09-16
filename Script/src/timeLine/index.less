@@ -1,0 +1,170 @@
+// 变量
+@height:15vh;
+@width:7vw;
+@lineColor:#79A9F6;
+@distance:45px;//离中心线的位置
+.timelineWrap{
+        left: 40%;
+        position: relative;
+        margin-top: 3vh;
+        //被选中的项
+        .timeItem.itemSelected{
+           .dot{
+               background:@lineColor;
+           }
+        }
+        //当前项
+        .timeItem.currentStatus{
+            .label{
+                color:@lineColor;
+            }
+           .dot{
+              .anticon{
+                  display: none;
+              }
+              &::before{
+                content: '';
+                display:inline-block;
+                width: 0;
+                height: 0;
+                border-top: 7px solid transparent;
+                border-left: 30px solid #79A9F6;
+                border-bottom: 7px solid transparent;
+                position: absolute; top:50%;
+                transform: translate(0,-50%);
+                -o-transform: translate(0,-50%);
+                -moz-transform: translate(0,-50%);
+              }
+           }
+           button{
+               background:@lineColor;
+               color:#fff;
+           } 
+        }
+        .timeItem{
+          position: relative;
+          height: @height;
+          .dot{
+            display: inline-block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px solid @lineColor;
+            background: #fff;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            text-align: center;
+            line-height: 20px;
+            transition: all 0.3s ease-in-out;
+            color: #fff;
+            cursor: pointer;
+          }
+          // 链接样式
+          .linksWrap{
+            //图标样式
+              .iconfont{
+                 font-weight:bold;
+                 margin-right: 5px;
+              }
+              &>a{
+              color:@lineColor;
+              display: inline-block;
+              margin-right:15px;
+            }
+             &>span{
+              display: inline-block;
+              margin-right:15px;
+              cursor: pointer;
+              color:#B1BCC9;
+            }
+          }
+          //默认button样式  
+          button{
+              padding:3px 25px;
+              background:#F0EFF4;
+              color:#5F6C7D;
+          }
+          //第一个button
+          button:first-child{
+              margin-right:10px;
+          }
+          &::after{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: @lineColor;
+            border-radius: 50%;
+            top: 10px;
+            left: 10px;
+            z-index: 0;
+          }  
+        }
+        .content{
+            position: relative;
+            left:@distance;
+            width:fit-content;
+            .btnsWrap{
+                margin: 5px 0;
+            }
+            .label{
+              font-weight: bold;
+            }
+        }
+        
+        .timeItem:last-child::after{
+            display:none;
+        }
+        //第四项为当前项
+        .currentStatus.timeItem:nth-child(5){
+            .dot{
+              &::before{
+                content: '';
+                display:inline-block;
+                width: 0;
+                height: 0;
+                border-top: 7px solid transparent;
+                border-left-color:transparent;
+                border-right: 30px solid #79A9F6;
+                border-bottom: 7px solid transparent;
+                position: absolute; top:50%;
+                transform: translate(-100%,-50%);
+                -o-transform: translate(-100%,-50%);
+                -moz-transform: translate(-100%,-50%);
+              }
+           } 
+        }
+        .timeItem:nth-child(5){
+            position: absolute;
+            height:@height*2;
+            top: @height;
+            transform: translate(-100%,0);
+            width: @width;
+            .content{
+                position: absolute;
+                left:0;
+                margin-left:0-@distance;
+                transform: translate(-100%,0);
+                -o-transform: translate(-100%,0);
+                -moz-transform: translate(-100%,0);
+                -webkit-transform: translate(-100%,0);
+                text-align: right;
+                button:first-child{
+                    margin:0;
+                }
+            }
+            .hLines{
+                position: absolute;
+                width: 100%;
+                height:100%;
+                border-top:2px solid @lineColor;
+                border-bottom: 2px solid @lineColor;
+                border-left:2px solid @lineColor;
+                left:10px;top:10px;
+            }
+            
+        }
+    }
