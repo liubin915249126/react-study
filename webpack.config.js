@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('webpack-html-plugin');
 const APP_PATH = path.resolve(__dirname,"Script") 
 module.exports = {
     entry: {
-        main: './Script/main.jsx',
+        main: ['whatwg-fetch','babel-polyfill','./Script/main.jsx'],
         vandor:['jquery','react']
     },
     output:{

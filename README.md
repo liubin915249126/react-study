@@ -167,8 +167,37 @@ npm install less-loader css-loader style-loader less --save -dev
         </div>)
 ```
 效果图![效果图](https://github.com/liubin915249126/react-study/blob/master/images/antd1.png)
-## 使用nodejs+koa2提供后台接口
+#### 9.使用新的ajax模型--fetch
+>
+参照官方文档[github/fetch](https://github.com/github/fetch)
+可以自己封装一个request函数：
+>
+```
+  function request(url,options){
+    return fetch(url,{
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        ...options
+    })
+        .then(checkStatus)
+        .then(parseJSON)
+        .catch(e=>{
+            console.log(e)
+        })
+  }
+```
+>
+在使用async await关键字时报错，安装 babel-polyfill 并引入
+参考[babel-polyfill](http://babeljs.io/docs/usage/polyfill/)
+```
+    npm install babel-polyfill --save 
+``` 
 
+>
+## 10.使用nodejs+koa2提供后台接口
 npm install koa koa-router --save-dev
 >
 在根目录下下新建server/index.js文件index.js:
@@ -185,11 +214,34 @@ npm install koa koa-router --save-dev
         .use(router.routes())
         .use(router.allowedMethods());
 
-    app.listen(3000);
-    console.log('server is start')
+    app.listen(3000,()=>{
+       console.log('server is start at port 3000')
+    });
+    
 ```
 >
 浏览器里面访问localhost/3000可看到返回值
+>
+#### 11.设置koa允许前端跨域访问
+>
+使用[koa2-cors](https://github.com/zadzbw/koa2-cors)设置跨域
+```
+   ...
+    app.use(cors({
+        origin: function (ctx) {
+            if (ctx.url === '/test') {
+                return false;
+            }
+            return '*';
+        },
+        exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+        maxAge: 5,
+        credentials: true,
+        allowMethods: ['GET', 'POST', 'DELETE'],
+        allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    }));
+    ...
+```
 >
 #### 6.分离公共代码
 webpack配置
