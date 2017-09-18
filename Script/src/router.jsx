@@ -11,9 +11,7 @@ class Root extends React.Component{
     }
     render(){
         return(
-            <BrowserRouter>
                 <Parent />
-            </BrowserRouter>
         )
     }
 }

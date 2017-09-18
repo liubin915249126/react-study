@@ -6,7 +6,7 @@ class LoginView extends React.Component{
         super(props)
     }
     loginIn(){
-        
+
     }
     render(){
         return(<div>
@@ -17,3 +17,4 @@ class LoginView extends React.Component{
         </div>)
     }
 }
+export default LoginView
