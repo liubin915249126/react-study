@@ -27,15 +27,15 @@ class MainView extends React.Component {
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                         <Menu.Item key="1">
                             <Icon type="user" />
-                            <Link to="/">首页</Link>
+                            <Link to="/main/home">首页</Link>
                         </Menu.Item>
                         <Menu.Item key="2">
                             <Icon type="video-camera" />
-                            <Link to="/about">关于</Link>
+                            <Link to="/main/about">关于</Link>
                         </Menu.Item>
                         <Menu.Item key="3">
                             <Icon type="upload" />
-                            <Link to="/timeline/:1">时间轴</Link>
+                            <Link to="/main/timeline/:1">时间轴</Link>
                         </Menu.Item>
                     </Menu>
                 </Sider>

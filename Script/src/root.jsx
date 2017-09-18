@@ -10,15 +10,20 @@ import LoginView from './login/index'
 const routes =[
     { path: '/login', component: LoginView},
     { path: '/main', component: Main ,routes:[
+        { path: '/main/home', component: Home},
         { path: '/main/about', component: About},
-        { path: '/main/timeline', component: TimeLine}
+        { path: '/main/timeline/:status', component: TimeLine}
     ]}
 ]
 
 const RouteWithSubRoutes = (route) => (
     <Route path={route.path} render={props => (
         // pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} />
+        <route.component {...props} routes={route.routes}>
+            {route.routes&&route.routes.map((route,i)=>{
+                return <RouteWithSubRoutes key={i} {...route} />
+            })}
+        </route.component>    
     )} />
 )
 
