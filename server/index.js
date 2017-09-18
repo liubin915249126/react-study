@@ -4,7 +4,8 @@ var cors = require('koa2-cors');
 const app = new koa();
 
 router.get('/', async (ctx, next)=>{
-    ctx.response.body = '111';
+    var data = [1,2,3,4,5,6,7,8,9]
+    ctx.response.body = data;
     await next();
 });
 
