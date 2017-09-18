@@ -177,7 +177,7 @@ npm install koa koa-router --save-dev
     const Koa = require('koa');
     const router = require('koa-router')();
     const app = new Koa();
-    router.get('/', function (ctx, next) {
+    router.get('/', (ctx, next)=> {
         ctx.response.body = '111'
     });
 
