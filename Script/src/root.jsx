@@ -9,8 +9,9 @@ import LoginView from './login/index'
 
 const routes =[
     { path: '/', component: LoginView, exact:true},
+    { path: '/login', component: LoginView},
     { path: '/main', component: Main ,routes:[
-        { path: '/main', component: Home},
+        { path: '/main', component: Home, exact:true},
         { path: '/main/about', component: About},
         { path: '/main/timeline/:status', component: TimeLine}
     ]}
