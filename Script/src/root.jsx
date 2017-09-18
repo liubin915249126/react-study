@@ -8,7 +8,7 @@ import Home from './home/HomeView'
 import LoginView from './login/index'
 
 const routes =[
-    { path: '/', component: LoginView},
+    { path: '/', component: LoginView, exact:true},
     { path: '/main', component: Main ,routes:[
         { path: '/main', component: Home},
         { path: '/main/about', component: About},
@@ -17,7 +17,14 @@ const routes =[
 ]
 
 const RouteWithSubRoutes = (route) => (
-    <Route path={route.path} render={props => (
+    route.exact?<Route path={route.path} exact render={props => (
+        // pass the sub-routes down to keep nesting
+        <route.component {...props} routes={route.routes}>
+            {route.routes&&route.routes.map((route,i)=>{
+                return <RouteWithSubRoutes key={i} {...route} />
+            })}
+        </route.component>    
+    )} />:<Route path={route.path} render={props => (
         // pass the sub-routes down to keep nesting
         <route.component {...props} routes={route.routes}>
             {route.routes&&route.routes.map((route,i)=>{
