@@ -6,7 +6,7 @@ class LoginView extends React.Component{
         super(props)
     }
     loginIn(){
-
+        this.props.history.push('/main')
     }
     render(){
         return(<div>
