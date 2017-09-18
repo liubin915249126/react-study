@@ -9,7 +9,7 @@
 #### 2.配置webpack.config.js文件
 ```
      const path = require('path');
-     
+
      module.exports = {
          entry: './Script/main.js', //项目入口文件
          output:{                    //输出编译后文件地址及文件名
@@ -20,7 +20,7 @@
 ```          
 执行 webpack 命令即可看到编译后的文件
 #### 3安装webpack-html-plugin
-$ npm install html-webpack-plugin --save-dev 
+$ npm install html-webpack-plugin --save-dev
 ```
     plugins:[
         ...
@@ -31,7 +31,7 @@ $ npm install html-webpack-plugin --save-dev
             template:path.resolve(__dirname, "index.html")
         }),
         ...
-    ] 
+    ]
 ```          
 自动根据模板生成HTML文件并自动引入打包生成的js文件
 
@@ -114,12 +114,12 @@ npm install webpack-dev-server --save-dev
 执行 npm start 浏览器自动打开页面，更改文件后即可看到页面实时更新
 ![index2](https://github.com/liubin915249126/react-study/blob/master/images/index2.png)
 
-## 使用路由 
-#### react-router4.2.0
+## 使用路由
+#### 6.react-router4.2.0
      npm install --save react-router
      npm install --save react-router-dom
 react-router4.0相对于之前版本变化比较大
-``` 
+```
      ...
      import { Route, Link, Switch, BrowserRouter, HashRouter } from 'react-router-dom';
      ...
@@ -130,12 +130,12 @@ react-router4.0相对于之前版本变化比较大
             </BrowserRouter>
         )
     }
-    
+
 ```     
 参考文献[react4.0初探](http://blog.csdn.net/sinat_17775997/article/details/69218382)
 [github](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/migrating.md)地址
 
-## 安装 antd 
+## 7.安装 antd
 npm install antd --save
 按需加载组件 npm install babel-plugin-import --save-dev
 配置 .babelrc
@@ -146,7 +146,7 @@ npm install antd --save
     "style": true
   }]]
 ```
-#### 配置webpack.config.js加载less/css文件
+#### 8.配置webpack.config.js加载less/css文件
 npm install less-loader css-loader style-loader less --save -dev
 (坑3忘了安装less)
 参考文献[less-loader](https://github.com/webpack-contrib/less-loader)
@@ -167,8 +167,30 @@ npm install less-loader css-loader style-loader less --save -dev
         </div>)
 ```
 效果图![效果图](https://github.com/liubin915249126/react-study/blob/master/images/antd1.png)
+## 使用nodejs+koa2提供后台接口
 
+npm install koa koa-router --save-dev
+>
+在根目录下下新建server/index.js文件index.js:
+>
+```
+    const Koa = require('koa');
+    const router = require('koa-router')();
+    const app = new Koa();
+    router.get('/', function (ctx, next) {
+        ctx.response.body = '111'
+    });
 
+    app
+        .use(router.routes())
+        .use(router.allowedMethods());
+
+    app.listen(3000);
+    console.log('server is start')
+```
+>
+浏览器里面访问localhost/3000可看到返回值
+>
 #### 6.分离公共代码
 webpack配置
 ```

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --hot --inline --progress --colors --watch --open"
+    "start": "webpack-dev-server --hot --inline --progress --colors --watch --open",
+    "server": "node server/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,8 @@
     "antd": "^2.13.1",
     "css-loader": "^0.28.7",
     "jquery": "^3.2.1",
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "react": "^15.6.1",
