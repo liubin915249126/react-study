@@ -131,10 +131,11 @@ react-router4.0相对于之前版本变化比较大
         )
     }
 
-```     
-参考文献[react4.0初探](http://blog.csdn.net/sinat_17775997/article/details/69218382)
+``` 
+>    
+参考文献[react.config](https://reacttraining.com/react-router/web/example/route-config)
 [github](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/migrating.md)地址
-
+>
 ## 7.安装 antd
 npm install antd --save
 按需加载组件 npm install babel-plugin-import --save-dev
