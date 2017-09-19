@@ -46,10 +46,12 @@
          }
      };
 ```          
-执行 webpack 命令即可看到编译后的文件
+命令行里面执行 webpack 命令即可看到编译后的文件
 #### 3安装webpack-html-plugin
-$ npm install html-webpack-plugin --save-dev
+npm install html-webpack-plugin --save-dev
 ```
+    const HtmlWebpackPlugin = require('html-webpack-plugin');
+    ...
     plugins:[
         ...
         new HtmlWebpackPlugin({
@@ -61,7 +63,11 @@ $ npm install html-webpack-plugin --save-dev
         ...
     ]
 ```          
-自动根据模板生成HTML文件并自动引入打包生成的js文件
+>
+再次执行webpack命令可看到多了一个index.html文件
+这个文件是根据模板生成的并自动引入打包生成的js文件
+运行打包后的index.html即可看到效果。
+>
 
 ## 安装react
 #### 4.安装 react react-dom babel
