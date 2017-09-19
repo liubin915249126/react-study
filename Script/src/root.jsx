@@ -11,7 +11,8 @@ const routes =[
     { path: '/', component: LoginView, exact:true},
     { path: '/login', component: LoginView},
     { path: '/main', component: Main ,routes:[
-        { path: '/main/home', component: Home, exact:true},
+        { path: '/main', component: Home, exact:true},
+        // { path: '/main/home', component: Home},
         { path: '/main/about', component: About},
         { path: '/main/timeline/:status', component: TimeLine}
     ]}
@@ -19,18 +20,20 @@ const routes =[
 
 const RouteWithSubRoutes = (route) => (
     route.exact?<Route path={route.path} exact render={props => (
-        // pass the sub-routes down to keep nesting
         <route.component {...props} routes={route.routes}>
+            <Switch>
             {route.routes&&route.routes.map((route,i)=>{
                 return <RouteWithSubRoutes key={i} {...route} />
             })}
+            </Switch>
         </route.component>    
     )} />:<Route path={route.path} render={props => (
-        // pass the sub-routes down to keep nesting
         <route.component {...props} routes={route.routes}>
+           <Switch>
             {route.routes&&route.routes.map((route,i)=>{
                 return <RouteWithSubRoutes key={i} {...route} />
             })}
+          </Switch> 
         </route.component>    
     )} />
 )
@@ -47,13 +50,18 @@ class Parent extends React.Component{
                     return <RouteWithSubRoutes key={i} {...route} />
                 })}
                 </Switch>
+                {/* <div>
+                    <Route path="/" component={LoginView} exact></Route>
+                    <Route path="/main" component={Main}>
+                        <Switch>
+                        <Route path="/main/home" component={Home}></Route>
+                        <Route path="/main/about" component={About}></Route>
+                        <Route path="/main/timeline/:status" component={TimeLine}></Route>
+                        </Switch>
+                    </Route>
+                </div> */}
             </Router>
         )
     }
 }
-// const Parent = () => (
-//     routes.map((route,i)=>{
-//        return  <RouteWithSubRoutes key={i} {...route} />
-//     })
-// )
 export default Parent 
