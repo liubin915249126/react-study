@@ -118,20 +118,70 @@ npm install webpack-dev-server --save-dev
 #### 6.react-router4.2.0
      npm install --save react-router
      npm install --save react-router-dom
-react-router4.0相对于之前版本变化比较大
+react-router4.0相对于之前版本变化比较大:
+>
+路由配置文件：
+>
+```
+const routes =[
+    { path: '/', component: LoginView, exact:true},
+    { path: '/login', component: LoginView},
+    { path: '/main', component: Main ,routes:[
+        { path: '/main', component: Home, exact:true},
+        // { path: '/main/home', component: Home},
+        { path: '/main/about', component: About},
+        { path: '/main/timeline/:status', component: TimeLine}
+    ]}
+]
+```
+>
+递归生成路由
+```
+const RouteWithSubRoutes = (route) => (
+    route.exact?<Route path={route.path} exact render={props => (
+        <route.component {...props} routes={route.routes}>
+            <Switch>
+            {route.routes&&route.routes.map((route,i)=>{
+                return <RouteWithSubRoutes key={i} {...route} />
+            })}
+            </Switch>
+        </route.component>    
+    )} />:<Route path={route.path} render={props => (
+        <route.component {...props} routes={route.routes}>
+           <Switch>
+            {route.routes&&route.routes.map((route,i)=>{
+                return <RouteWithSubRoutes key={i} {...route} />
+            })}
+          </Switch> 
+        </route.component>    
+    )} />
+)
+```
+>
+>
+加载路由：
+>
 ```
      ...
      import { Route, Link, Switch, BrowserRouter, HashRouter } from 'react-router-dom';
      ...
      render(){
         return(
-            <BrowserRouter>
-                <Route path="/" component={Main} />
-            </BrowserRouter>
+             <HashRouter>
+                <Switch>
+                {routes.map((route,i)=>{
+                    return <RouteWithSubRoutes key={i} {...route} />
+                })}
+                </Switch>
+            </HashRouter>
         )
     }
 
 ``` 
+>
+ BrowserRouter和HashRouter 这里遇到两个坑(坑4),使用BrowserRouter的话，子路由页面刷新的时候，
+ 会加载不到打包的资源文件(加载路径变化),打包后的页面打开后是空白的。
+>
 >    
 参考文献[react.config](https://reacttraining.com/react-router/web/example/route-config)
 [github](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/migrating.md)地址
