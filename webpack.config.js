@@ -9,8 +9,9 @@ module.exports = {
         vandor:['jquery','react']
     },
     output:{
+        publicPath:'',
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[hash].bundle.js'
+        filename: 'js/[name].[hash].bundle.js'
     },
     resolve: {
         // alias: {
@@ -36,7 +37,7 @@ module.exports = {
     },
     devServer: {
         contentBase: "./Script",//本地服务器所加载的页面所在的目录
-        historyApiFallback: true,
+        historyApiFallback: true
     },
     plugins:[
         new HtmlWebpackPlugin({

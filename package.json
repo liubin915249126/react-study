@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --hot --inline --progress --colors --watch --open",
-    "server": "node server/index.js"
+    "start": "set NODE_ENV=development && webpack-dev-server --hot --inline --progress --colors --watch --open",
+    "server": "node server/index.js",
+    "build":"set NODE_ENV=production && webpack"
   },
   "author": "",
   "license": "ISC",

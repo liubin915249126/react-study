@@ -44,7 +44,7 @@ class Parent extends React.Component{
     }
     render(){
         return (
-            <Router>
+            <HashRouter>
                 <Switch>
                 {routes.map((route,i)=>{
                     return <RouteWithSubRoutes key={i} {...route} />
@@ -60,7 +60,7 @@ class Parent extends React.Component{
                         </Switch>
                     </Route>
                 </div> */}
-            </Router>
+            </HashRouter>
         )
     }
 }
