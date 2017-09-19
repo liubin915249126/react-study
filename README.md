@@ -1,12 +1,27 @@
  ## 目录说明：
+ >
  [webpack配置](https://github.com/liubin915249126/react-study#webpack配置)
+ >
+ >
  [安装react](https://github.com/liubin915249126/react-study#安装react)
+ >
+ >
  [使用路由](https://github.com/liubin915249126/react-study#使用路由)
+ >
+ >
  [安装-antd](https://github.com/liubin915249126/react-study#7安装-antd)
+ >
+ >
  [nodejskoa2提供后台接口](https://github.com/liubin915249126/react-study#10使用nodejskoa2提供后台接口)
+ >
+ >
  [使用fetch](https://github.com/liubin915249126/react-study#9使用新的ajax模型--fetch)
+ >
+
 >
-技术栈：webpack+react+react-router-dom4.0+fetch+koa2
+技术栈：webpack3.5.6+react+react-router-dom4.0+fetch+koa2
+
+
 >
 
 
