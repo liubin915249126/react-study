@@ -306,11 +306,14 @@ npm install koa koa-router --save-dev
     
 ```
 >
+package.json里面设置命令:"server":"node server index.js"
+启动服务:npm run server
 浏览器里面访问localhost/3000可看到返回值
 >
 #### 11.设置koa允许前端跨域访问
 >
 使用[koa2-cors](https://github.com/zadzbw/koa2-cors)设置跨域
+安装npm install koa2-cors --save-dev
 ```
    ...
     app.use(cors({
