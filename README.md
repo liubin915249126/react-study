@@ -32,8 +32,10 @@
 #### 0.初始化项目
      cd 'your/path/' npm init;  
 #### 1.安装webpack
+     安装cnpm镜像
+     npm install -g cnpm --registry=https://registry.npm.taobao.org
      全局安装：cnpm install webpack -g;
-     项目内安装：cnpm install webpack --only=dev --save
+     项目内安装：cnpm install webpack --only=dev --save;
 #### 2.配置webpack.config.js文件
 ```
      const path = require('path');
