@@ -14,5 +14,6 @@
 ```
    withRouter(Login) //包裹组件
 ```
-参考网址：http://reacttraining.cn/web/guides/quick-start
+参考网址(中文网)：http://reacttraining.cn/web/guides/quick-start
+antd：https://design.alipay.com/
 >
