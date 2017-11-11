@@ -334,8 +334,6 @@ package.json里面设置命令:"server":"node server index.js"
     ...
 ```
 >
-
-
 #### 6.分离公共代码
 webpack配置
 ```
