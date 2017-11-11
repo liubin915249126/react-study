@@ -1,6 +1,7 @@
 import React from  "react";
 import {Row,Col,Icon} from 'antd';
 import "../commonComponent/slide.less"
+import { isObjectValueEqual} from '../commonFun/utils'
 class LenSlider extends React.Component{
     constructor(props){
         super(props)
@@ -13,6 +14,11 @@ class LenSlider extends React.Component{
     componentDidMount(){
         let {slideData} = this.props 
         this.setState({ right: slideData.length})
+    }
+    componentWillReceiveProps(nextProps){
+        if (!isObjectValueEqual(nextProps.slideData, this.props.slideData)){
+            this.setState({ right: nextProps.slideData.length,left:0})
+        }
     }
     //点击滑动
     slide(dire) {
