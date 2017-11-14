@@ -1,0 +1,22 @@
+.progress-wrap{
+    width:100px;
+    height:100px;
+    position: relative;
+    .ant-progress-circle-trail{
+        stroke-dasharray: 295.31px, 295.31px;
+        stroke-dashoffset: 0px; 
+        transition: stroke-dashoffset 0.3s ease 0s, stroke-dasharray 0.3s ease 0s, stroke 0.3s;
+    }
+    .ant-progress-circle-path{
+        stroke-dasharray:0, 295.31;
+        stroke-dashoffset: 0px;
+        transition: stroke-dashoffset 0.3s ease 0s, stroke-dasharray 0.3s ease 0s, stroke 0.3s, stroke-width 0.06s ease 0.3s;
+    }
+    .progress-text{
+        position: absolute;
+        width:100%;
+        text-align: center;
+        left:50%;top:50%;
+        transform:translate(-50%,-50%);
+    }
+}
