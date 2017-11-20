@@ -354,3 +354,20 @@ webpack配置
         ]
     }
 ```
+### 路由级别的按需加载
+webpack配置
+```
+   output:{
+        publicPath:'',
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/[name].[hash].bundle.js',
+        chunkFilename: 'js/[name][chunkhash].js',
+    },
+```
+>
+安装 react-loadable 
+```
+   npm install react-loadable --save-dev
+```
+>
+

@@ -1,20 +1,51 @@
 import React from 'react';
 import { Route, Link, Switch, BrowserRouter as Router, HashRouter } from 'react-router-dom';
+import Loadable from 'react-loadable';
 // 引入组件
-import { MainView as Main } from './index/index'; 
+import MainView  from './index/index'; 
 import About from './about/AboutView'
 import TimeLine from './timeLine/TimeLineView'
 import Home from './home/HomeView'
 import LoginView from './login/index'
 
+
+const MainComponent = Loadable({
+    loader: () => import('./index/index'),
+    loading: LoadingPage
+})
+
+const LoginComponent = Loadable({
+    loader: () => import('./login/index'),
+    loading: LoadingPage
+})
+
+const AboutComponent = Loadable({
+    loader: () => import('./about/AboutView'),
+    loading: LoadingPage
+})
+
+const TimeLineComponent = Loadable({
+    loader: () => import('./timeLine/TimeLineView'),
+    loading: LoadingPage
+})
+const HomeComponent = Loadable({
+    loader: () => import('./home/HomeView'),
+    loading: LoadingPage
+})
+
+function LoadingPage(){
+    return <div>loading...</div>
+}
+
 const routes =[
-    { path: '/', component: LoginView, exact:true},
-    { path: '/login', component: LoginView},
-    { path: '/main', component: Main ,routes:[
-        { path: '/main', component: Home, exact:true},
+    { path: '/', component: LoginComponent, exact:true},
+    { path: '/login', component: LoginComponent},
+    {
+        path: '/main', component: MainComponent ,routes:[
+        { path: '/main', component: HomeComponent, exact:true},
         // { path: '/main/home', component: Home},
-        { path: '/main/about', component: About},
-        { path: '/main/timeline/:status', component: TimeLine}
+        { path: '/main/about', component: AboutComponent},
+        { path: '/main/timeline/:status', component: TimeLineComponent}
     ]}
 ]
 
@@ -51,12 +82,12 @@ class Parent extends React.Component{
                 })}
                 </Switch>
                 {/* <div>
-                    <Route path="/" component={LoginView} exact></Route>
-                    <Route path="/main" component={Main}>
+                    <Route path="/" component={LoginComponent} exact></Route>
+                    <Route path="/main" component={MainComponent}>
                         <Switch>
-                        <Route path="/main/home" component={Home}></Route>
-                        <Route path="/main/about" component={About}></Route>
-                        <Route path="/main/timeline/:status" component={TimeLine}></Route>
+                            <Route path="/main/home" component={HomeComponent}></Route>
+                            <Route path="/main/about" component={AboutComponent}></Route>
+                            <Route path="/main/timeline/:status" component={TimeLineComponent}></Route>
                         </Switch>
                     </Route>
                 </div> */}

@@ -21,3 +21,20 @@ antd：https://design.alipay.com/
 ```
     NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 ```
+#### 3.按需加载
+```
+import Loadable from 'react-loadable';
+
+const LoadableBar = Loadable({
+  loader: () => import('./components/Bar'),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+
+class MyComponent extends React.Component {
+  render() {
+    return <LoadableBar/>;
+  }
+}
+```
