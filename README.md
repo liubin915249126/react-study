@@ -381,5 +381,6 @@ webpack配置
 ```
 参考文献[github](https://github.com/thejameskyle/react-loadable)
 [github](https://github.com/thejameskyle/react-loadable-example.git)
+[react-router](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/guides/code-splitting.md)
 >
 
