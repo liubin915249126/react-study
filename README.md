@@ -369,5 +369,17 @@ webpack配置
 ```
    npm install react-loadable --save-dev
 ```
+使用：
+```
+   const HomeComponent = Loadable({
+    loader: () => import('./home/HomeView'),
+    loading: LoadingPage
+    })
+    function LoadingPage(){
+        return <div>loading...</div>
+    }
+```
+参考文献[github](https://github.com/thejameskyle/react-loadable)
+[github](https://github.com/thejameskyle/react-loadable-example.git)
 >
 

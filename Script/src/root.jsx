@@ -81,16 +81,16 @@ class Parent extends React.Component{
                     return <RouteWithSubRoutes key={i} {...route} />
                 })}
                 </Switch>
-                {/* <div>
+                {/* <Switch>
                     <Route path="/" component={LoginComponent} exact></Route>
+                    <Route path="/login" component={LoginComponent}></Route>
                     <Route path="/main" component={MainComponent}>
-                        <Switch>
-                            <Route path="/main/home" component={HomeComponent}></Route>
-                            <Route path="/main/about" component={AboutComponent}></Route>
-                            <Route path="/main/timeline/:status" component={TimeLineComponent}></Route>
-                        </Switch>
+                         <Route path="/main/home" component={HomeComponent}></Route>
+                        <Route path="/main/home" component={HomeComponent}></Route>
+                        <Route path="/main/about" component={AboutComponent}></Route>
+                        <Route path="/main/timeline/:status" component={TimeLineComponent}></Route>
                     </Route>
-                </div> */}
+                </Switch> */}
             </HashRouter>
         )
     }

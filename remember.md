@@ -38,3 +38,4 @@ class MyComponent extends React.Component {
   }
 }
 ```
+参考文献[github](https://github.com/thejameskyle/react-loadable-example.git)
