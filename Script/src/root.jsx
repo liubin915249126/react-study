@@ -2,11 +2,11 @@ import React from 'react';
 import { Route, Link, Switch, BrowserRouter as Router, HashRouter } from 'react-router-dom';
 import Loadable from 'react-loadable';
 // 引入组件
-import MainView  from './index/index'; 
-import About from './about/AboutView'
-import TimeLine from './timeLine/TimeLineView'
-import Home from './home/HomeView'
-import LoginView from './login/index'
+// import MainView  from './index/index'; 
+// import About from './about/AboutView'
+// import TimeLine from './timeLine/TimeLineView'
+// import Home from './home/HomeView'
+// import LoginView from './login/index'
 
 
 const MainComponent = Loadable({

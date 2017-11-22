@@ -17,8 +17,15 @@ class Home extends React.Component{
     toogleSlide(flag){
         this.setState({toogleSlide:!flag})
     }
+    
     toggleModal(flag){
         this.setState({ Modalshow:!flag})
+    }
+    /**
+     * @method onCancle 关闭弹窗
+     */
+    onCancle(){
+        this.setState({ Modalshow: false })
     }
     render(){
         let { toogleSlide,Modalshow} =this.state;
@@ -42,7 +49,10 @@ class Home extends React.Component{
                             type="primary"
                             onClick={() => { this.toggleModal(Modalshow)}} 
                     >{Modalshow?'隐藏':'显示'}</Button>
-                    <Modal open={Modalshow}>
+                    <Modal 
+                          open={Modalshow}
+                          onCancle={()=>{this.onCancle()}}
+                    >
                         <div>Modal组件</div>
                     </Modal>
                 </Col>

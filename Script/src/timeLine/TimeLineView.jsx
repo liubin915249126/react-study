@@ -94,7 +94,9 @@ class TimeLine extends React.Component{
                                 /**
                                 * @description 渲染links
                                 */
-                                  return this.state.statusArr[index] ? <Link to={item3.target}><i className={`iconfont ${item3.icon}`}></i>{item3.text}</Link> : <span><i className={`iconfont ${item3.icon}`}></i>{item3.text}</span>
+                                  return this.state.statusArr[index] ? <Link to={item3.target} key={index3}>
+                                               <i className={`iconfont ${item3.icon}`}></i>{item3.text}
+                                            </Link> : <span key={index3}><i className={`iconfont ${item3.icon}`}></i>{item3.text}</span>
                             })}
                         </div>
                     </div>

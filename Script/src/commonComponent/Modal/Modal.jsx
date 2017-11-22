@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Button,Icon} from 'antd';
 import ReactDOM from 'react-dom';
 
 class Modal extends React.Component{
@@ -9,20 +9,47 @@ class Modal extends React.Component{
            open:false
        }
     }
+    /**
+     * @method closeModal 点击mask关闭弹窗
+     */
+    closeModal(){
+        this.props.onCancle && this.props.onCancle()
+    }
     componentWillReceiveProps(nextProps){
-      //debugger;
       if(nextProps.open&&!this.props.open){
-          debugger;
           this.node = document.createElement('div'); // 创建 DOM
           this.node.className = 'ReactModal'; // 给上 ClassName
           document.getElementsByTagName('body')[0].appendChild(this.node) // 给 body 加上刚才的 带有 className 的 div
           // 这个时候创建了 render的目的地。
           const style = require('./modal.less'); // css 样式
           const { children, ...rest} = nextProps;
+          let leMmodalStyle = {
+              width: nextProps.width ? nextProps.width:'520px'
+          }
           let modal = (
-              <div className={style.container}>
-                  <div className={style.mask} {...rest}></div>
-                  {nextProps.children}
+              <div className={"len-modal-container"}>
+                  <div className={"mask"} 
+                    //    {...rest}
+                       onClick={()=>{this.closeModal()}}                     
+                 >
+                  </div>
+                  <div className="modal-wrap">
+                    <div className="len-modal" style={leMmodalStyle}>
+                          <div className="modal-title">
+                            {nextProps.title ? nextProps.title:'新增'}
+                            <Icon type='close' onClick={() => { this.closeModal() }}/>
+                          </div>
+                          <div className="modal-body">
+                              {nextProps.children}
+                          </div>
+                          <div className="modal-footer">
+                              <Button onClick={() => { this.closeModal() }}>取消</Button>
+                              <Button type="primary">确定</Button>
+                          </div>
+                    </div>
+                      
+                  </div>
+                  
               </div>
           );
           // 这个时候创建了 Modal 的虚拟 Dom
