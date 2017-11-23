@@ -14,6 +14,9 @@ class Home extends React.Component{
              Modalshow:false,//控制modal显示与隐藏
         }
     }
+    componentDidMount(){
+        
+    }
     toogleSlide(flag){
         this.setState({toogleSlide:!flag})
     }
@@ -61,5 +64,5 @@ class Home extends React.Component{
             
         </div>)
     }
-} 
+}
 export default Home

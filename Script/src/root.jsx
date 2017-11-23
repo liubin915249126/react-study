@@ -36,12 +36,10 @@ const HomeComponent = Loadable({
 function LoadingPage(){
     return <div>loading...</div>
 }
-
 const routes =[
     { path: '/', component: LoginComponent, exact:true},
     { path: '/login', component: LoginComponent},
-    {
-        path: '/main', component: MainComponent ,routes:[
+    { path: '/main', component: MainComponent,routes:[
         { path: '/main', component: HomeComponent, exact:true},
         // { path: '/main/home', component: Home},
         { path: '/main/about', component: AboutComponent},

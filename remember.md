@@ -1,19 +1,6 @@
 #### 1.路由钩子
 >
-```
-   componentDidMount(){
-        this.props.router.setRouteLeaveHook(
-            this.props.route,
-            this.routerWillLeave
-        )
-    }
-    routerWillLeave=(nextLocation)=>{
-                return '确认要离开？';
-        }
-```
-```
-   withRouter(Login) //包裹组件
-```
+你将会使用生命周期方法 通过 <Route> 渲染的组件，你可以使用 componentDidMount 或 componentWillMount 代替 onEnter，你可以使用 componentDidUpdate 或者 componentWillUpdate (更或者 componentWillReceiveProps) 代替 onUpdate，你可以使用 componentWillUnmount代替 onLeave。
 参考网址(中文网)：http://reacttraining.cn/web/guides/quick-start
 antd：https://design.alipay.com/
 >

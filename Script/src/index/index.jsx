@@ -6,11 +6,14 @@ import {Link} from 'react-router-dom'
 class MainView extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            collapsed: false,
+        }
     }
-    state = {
-        collapsed: false,
-    };
-    toggle = () => {
+    componentWillReceiveProps(nextProps){
+        console.log(this.props)
+    }
+    toggle(){
         this.setState({
             collapsed: !this.state.collapsed,
         });
@@ -44,7 +47,7 @@ class MainView extends React.Component {
                         <Icon
                             className="trigger"
                             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                            onClick={this.toggle}
+                            onClick={()=>{this.toggle()}}
                         />
                     </Header>
                     <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
