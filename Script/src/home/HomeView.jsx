@@ -2,8 +2,9 @@ import React from 'react';
 //引入组件
 import { Button,Row,Col} from 'antd';
 import {LenSlider} from '../commonComponent/SlideComponent';
-import { Progress} from '../commonComponent/Progress'
-import Modal from '../commonComponent/Modal/Modal'
+import { Progress} from '../commonComponent/Progress';
+import Modal from '../commonComponent/Modal/Modal';
+import Tooltip from '../commonComponent/Tooltip/Tooltip';
 //引入模拟数据
 import {slideData1,slideData2} from '../home/slideData';
 class Home extends React.Component{
@@ -58,6 +59,11 @@ class Home extends React.Component{
                     >
                         <div>Modal组件</div>
                     </Modal>
+                </Col>
+                <Col span={6}>
+                    <Tooltip trigger='click'>
+                        <span>tooltip</span>
+                    </Tooltip>
                 </Col>
             </Row>
             
