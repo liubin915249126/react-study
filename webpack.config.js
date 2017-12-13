@@ -27,7 +27,8 @@ module.exports = {
             {
                 test: /\.(jsx|js)$/,
                 exclude: /^node_modules$/,
-                use: [{loader:'babel-loader'}],
+                // use: [{loader:'babel-loader'}],
+                use: ['babel-loader'],
                 include: [APP_PATH]
             },{
                 test:/\.less$/,

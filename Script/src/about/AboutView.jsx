@@ -26,7 +26,7 @@ class About extends React.Component{
             <Button 
             type="primary"
             onClick={()=>{this.queryData()}}
-            >fetch测试</Button>
+            >fetch测试111</Button>
             <div className="wrap">
                 {requestData && requestData.map((item,index,arr)=>{
                    return <Card>{item}</Card>
