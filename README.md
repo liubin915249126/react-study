@@ -384,3 +384,9 @@ webpack配置
 [react-router](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/guides/code-splitting.md)
 >
 
+#### 使用mobx
+>
+安装：cnpm install mobx mobx-react --save;
+>
+plugins:['transform-decorators-legacy']
+npm install babel-plugin-transform-decorators-legacy --save-dev

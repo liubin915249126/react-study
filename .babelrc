@@ -12,6 +12,7 @@
                 "style": true
             },
             "syntax-dynamic-import"
-        ]
+        ],
+        "transform-decorators-legacy"
     ]
 }
