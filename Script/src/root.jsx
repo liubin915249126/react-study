@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Link, Switch, BrowserRouter as Router, HashRouter } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import { Provider } from 'mobx-react';
+import stores from './store/index'
 // 引入组件
 // import MainView  from './index/index'; 
 // import About from './about/AboutView'
@@ -32,6 +34,10 @@ const HomeComponent = Loadable({
     loader: () => import('./home/HomeView'),
     loading: LoadingPage
 })
+const MobxComponent = Loadable({
+    loader: () => import('./mobx/mobxindex'),
+    loading: LoadingPage
+})
 
 function LoadingPage(){
     return <div>loading...</div>
@@ -43,7 +49,8 @@ const routes =[
         { path: '/main', component: HomeComponent, exact:true},
         // { path: '/main/home', component: Home},
         { path: '/main/about', component: AboutComponent},
-        { path: '/main/timeline/:status', component: TimeLineComponent}
+        { path: '/main/timeline/:status', component: TimeLineComponent},
+        { path: '/main/mobx', component: MobxComponent},
     ]}
 ]
 
@@ -73,6 +80,7 @@ class Parent extends React.Component{
     }
     render(){
         return (
+        <Provider {...stores}>    
             <HashRouter>
                 <Switch>
                 {routes.map((route,i)=>{
@@ -90,6 +98,7 @@ class Parent extends React.Component{
                     </Route>
                 </Switch> */}
             </HashRouter>
+        </Provider>    
         )
     }
 }
