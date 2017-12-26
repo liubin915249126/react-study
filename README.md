@@ -93,18 +93,18 @@ module:{
 ```
 ```
     npm install babel-preset-react --save-dev
-    npm install babel-loader babel-core babel-preset-es2015 --save-dev
+    npm install babel-loader babel-core babel-preset-env --save-dev
     npm install babel-preset-stage-0 babel-preset-stage-1 babel-preset-stage-3 --save-dev
 ```
 >
 配置 .babelrc
-创建一个文件.babelrc。Babel是一个工具你可以转换ES6到现在的Javascript。React需要配置es2015和stage-0：
+创建一个文件.babelrc。Babel是一个工具你可以转换ES6到现在的Javascript。React需要配置env和stage-0：
 >
 ```
    {
     "presets": [
         "react",
-        "es2015",
+        "env",
         "stage-0",
     ]
     ...
@@ -132,6 +132,8 @@ module:{
     )
 ```
 打开打包生成的页面即可看到
+打包时出错
+(npm install --save bluebird)
 ![index1](https://github.com/liubin915249126/react-study/blob/master/images/index1.png)
 
 #### 5.使用webpack-dev-server
