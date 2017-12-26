@@ -2,6 +2,7 @@ import React from 'react';
 import {Button,Icon} from 'antd';
 import ReactDOM from 'react-dom';
 
+
 class Modal extends React.Component{
     constructor(props){
        super(props)
@@ -34,7 +35,7 @@ class Modal extends React.Component{
                  >
                   </div>
                   <div className="modal-wrap">
-                    <div className="len-modal" style={leMmodalStyle}>
+                    <div className="len-modal animated slideInDown" style={leMmodalStyle}>
                           <div className="modal-title">
                             {nextProps.title ? nextProps.title:'新增'}
                             <Icon type='close' onClick={() => { this.closeModal() }}/>

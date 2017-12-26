@@ -26,3 +26,11 @@ class MyComponent extends React.Component {
 }
 ```
 参考文献[github](https://github.com/thejameskyle/react-loadable-example.git)
+
+#### 将本地文件与远程github仓库关联
+>
+```
+  $ git init 
+  $ git remote add origin https://github.com/superRaytin/alipay-app-ui.git 
+```
+>
