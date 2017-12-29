@@ -2,8 +2,10 @@ const webpack = require('webpack')
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var proxy = require('http-proxy-middleware')
+
 const APP_PATH = path.resolve(__dirname,"Script") 
-module.exports = {
+const config = {
     entry: {
         main: ['whatwg-fetch','babel-polyfill','./Script/main.jsx'],
         vandor:['jquery','react']
@@ -14,6 +16,7 @@ module.exports = {
         filename: 'js/[name].[hash].bundle.js',
         chunkFilename: 'js/[name][chunkhash].js',
     },
+    // devtool: 'source-map',
     resolve: {
         // alias: {
         //     rootPath: path.resolve(__dirname),
@@ -43,7 +46,10 @@ module.exports = {
     },
     devServer: {
         contentBase: "./Script",//本地服务器所加载的页面所在的目录
-        historyApiFallback: true
+        historyApiFallback: true,
+        // proxy:{
+        //     '/api': { target: 'http://localhost:3000', secure: false }
+        // }
     },
     plugins:[
         new HtmlWebpackPlugin({
@@ -57,3 +63,29 @@ module.exports = {
         })
     ]
 };
+if (process.env.NODE_ENV === 'production') {
+    config.plugins = (config.plugins || []).concat([
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production'),
+            },
+            IS_PRODUCTION:true
+        }),
+        /*new webpack.optimize.UglifyJsPlugin({
+            compress: {warnings: false},
+            sourceMap: false
+        }),*/
+    ]);
+}
+else {
+    config.plugins = (config.plugins || []).concat([
+        new webpack.DefinePlugin({
+            'process.env':
+            {
+                'NODE_ENV': JSON.stringify('development'),
+            },
+            IS_PRODUCTION:false
+        }),
+    ]);
+}
+module.exports = config;
