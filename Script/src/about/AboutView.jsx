@@ -1,8 +1,8 @@
 import React from 'react';
 import {Button,Card} from 'antd'
 import request from '../commonFun/request'
-const url = 'http://localhost:3000/'
-// const url = '/api'
+// const url = 'http://localhost:3000/'
+const url = '/index'
 class About extends React.Component{
     constructor(props){
         super(props)
@@ -27,7 +27,7 @@ class About extends React.Component{
             <Button 
             type="primary"
             onClick={()=>{this.queryData()}}
-            >fetch测试111</Button>
+            >fetch测试</Button>
             <div className="wrap">
                 {requestData && requestData.map((item,index,arr)=>{
                    return <Card>{item}</Card>

@@ -47,9 +47,9 @@ const config = {
     devServer: {
         contentBase: "./Script",//本地服务器所加载的页面所在的目录
         historyApiFallback: true,
-        // proxy:{
-        //     '/api': { target: 'http://localhost:3000', secure: false }
-        // }
+        proxy:{
+            '/': { target: 'http://localhost:3000', secure: false }
+        }
     },
     plugins:[
         new HtmlWebpackPlugin({
