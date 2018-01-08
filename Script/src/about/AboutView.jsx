@@ -10,6 +10,7 @@ class About extends React.Component{
             requestData:null
         }
     }
+    
     async queryData(){
        try{
           let res = await request(url,{

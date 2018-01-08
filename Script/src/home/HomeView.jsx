@@ -16,7 +16,8 @@ class Home extends React.Component{
         }
     }
     componentDidMount(){
-        
+        // debugger;
+        console.log(this.props)
     }
     toogleSlide(flag){
         this.setState({toogleSlide:!flag})
