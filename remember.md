@@ -32,5 +32,6 @@ class MyComponent extends React.Component {
 ```
   $ git init 
   $ git remote add origin https://github.com/superRaytin/alipay-app-ui.git 
+  git branch --set-upstream-to=origin/master master
 ```
 >

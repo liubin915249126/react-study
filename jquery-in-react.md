@@ -21,7 +21,8 @@
         })
       ]
 ``` 
-      将$变量挂载到window下面，可以在项目中直接使用$,不用再引用
+将$变量挂载到window下面，可以在项目中直接使用$,不用再引用
+
 #### 使用jquery插件的姿势
      首先用require(/your/path/jquery.plugin)引用jquery插件
      webpack支持ES6的import,requirejs.commonjs语法，可以用CMD,
