@@ -47,7 +47,7 @@ const config = {
     devServer: {
         contentBase: "./Script",//本地服务器所加载的页面所在的目录
         historyApiFallback: true,
-        port:8082,
+        port:8083,
         proxy:{
             '/': { target: 'http://localhost:3000', secure: false }
         }
