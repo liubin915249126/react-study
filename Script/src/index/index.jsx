@@ -30,11 +30,11 @@ class MainView extends React.Component {
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                         <Menu.Item key="1">
                             <Icon type="user" />
-                            <Link to="/main">首页</Link>
+                            <Link to="/main">组件</Link>
                         </Menu.Item>
                         <Menu.Item key="2">
                             <Icon type="video-camera" />
-                            <Link to="/main/about">关于</Link>
+                            <Link to="/main/about">Fetch测试</Link>
                         </Menu.Item>
                         <Menu.Item key="3">
                             <Icon type="upload" />

@@ -1,0 +1,70 @@
+.flowrap{
+    .btnwrap{
+        text-align: right;
+        :global(.ant-btn){
+            margin-right: 10px;
+        }
+    }
+    .flowitemWrap{
+        width:600px;
+        margin: 0 auto;
+        .centerwrap{
+            position: relative;
+            padding:0 130px;
+            margin-top: 30px;
+            .centerleft{
+                &::after{
+                    content: '';
+                    height:100%;
+                    border: 1px solid #44B6DD;
+                    position: absolute;
+                    left: 50%;
+                    top: 31px;
+                    z-index: -1;
+                }
+            }
+            .textwrap:not(:first-child){
+              margin-top: 15px;
+              word-wrap: break-word;
+            }
+            [class^=center]{
+               
+            }
+            .centerleft{
+                position: absolute;
+                top:50%;
+                transform: translateY(-50%);
+                height:100%;
+                min-width: 55px;
+                text-align: center;
+                &::after{
+                }
+                :global(.anticon){
+                    cursor:pointer;
+                  }
+                left:20px;
+            }
+            .centerright{
+                position: absolute;
+                top:50%;
+                transform: translateY(-50%);
+                :global(.anticon){
+                    cursor:pointer;
+                    margin-right: 7px;
+                  }
+                right:20px;
+            }
+        }
+        &:last-of-type {
+            .centerleft:after{
+                content: '';
+                height:100%;
+                border: none;
+                position: absolute;
+                left: 50%;
+                top: 31px;
+                z-index: -1;
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import {LenSlider} from '../commonComponent/SlideComponent';
 import { Progress} from '../commonComponent/Progress';
 import Modal from '../commonComponent/Modal/Modal';
 import Tooltip from '../commonComponent/Tooltip/Tooltip';
+import FlowForm from '../Flow/FlowForm';
 //引入模拟数据
 import {slideData1,slideData2} from '../home/slideData';
 class Home extends React.Component{
@@ -67,8 +68,7 @@ class Home extends React.Component{
                     </Tooltip>
                 </Col>
             </Row>
-            
-            
+            <FlowForm />
         </div>)
     }
 }

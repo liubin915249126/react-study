@@ -1,0 +1,110 @@
+.len-table-wrap{
+    tr{
+      display: table-row;
+      td{
+        padding: 16px;
+        // word-break: break-all;
+        border-bottom:1px solid #e8e8e8e8;
+        text-align: center;
+        word-break: keep-all;
+      }
+    }  
+    .table-body{
+      overflow: hidden;
+      position: relative;
+      // &:hover{
+      //   overflow-x: scroll;
+      // }
+      table{
+        table-layout: fixed;
+        width:100%;
+        border-collapse: separate;
+        text-align: left;
+        thead {
+          display: table-header-group;
+          vertical-align: middle;
+          border-color: inherit;
+          color: rgba(0,0,0,.85);
+          font-weight: 500;
+          :global(.ant-checkbox-inner:after){
+            display:block;
+          }
+        }
+        tbody{
+          display: table-row-group;
+          vertical-align: middle;
+          border-color: inherit;
+        }
+        tr{
+            display: table-row;
+          td{
+              padding: 16px;
+              // word-break: break-all;
+              border-bottom:1px solid #e8e8e8e8;
+          }
+        }
+      }
+    }
+    .table-header{
+      table{
+        table-layout: fixed;
+        width:100%;
+        border-collapse: separate;
+        // display: table-header-group;
+          vertical-align: middle;
+          border-color: inherit;
+          color: rgba(0,0,0,.85);
+          font-weight: 500;
+          :global(.ant-checkbox-inner:after){
+            display:block;
+          }
+        tr{
+          td{
+            white-space: nowrap;
+          }
+        }
+        .sorterwrap{
+          .sortercolwrap{
+            display:inline-block;
+            vertical-align: middle;
+            margin:0 2px;
+            .sortericonwrap{
+              // height:6px;
+              line-height: 6px;
+              cursor: pointer;
+              :global(.anticon){
+                -webkit-transform: scale(.66666667) rotate(0deg);
+                -ms-transform: scale(.66666667) rotate(0deg);
+                transform: scale(.66666667) rotate(0deg);
+                position: relative;
+                color:rgba(0,0,0,.45);
+                &:hover{
+                  color:#1890ff;
+                }
+              }
+              :global(.anticon-caret-up){
+                top:1.5px;
+              }
+              :global(.anticon-caret-down){
+                top:-1.5px;
+              }
+            }
+          }
+        }
+      }  
+    }
+    .fixed-left{
+      position: absolute;
+      top:0;
+      left:0;
+      background: #fff;
+      z-index:10;
+    }
+    .fixed-right{
+      position: absolute;
+      top:0;
+      right:0;
+      background: #fff;
+      z-index:10;
+    }
+}
