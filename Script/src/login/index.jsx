@@ -7,11 +7,18 @@ require("./login.less");
 class LoginView extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            userinfo:{
+                name:"username",
+                password:"123456"
+            }
+        }
     }
     loginIn(){
         this.props.history.push('/main')
     }
     render(){
+        const {userinfo} = this.state;
         const { getFieldDecorator } = this.props.form;
         const formItemLayout = {
         labelCol: {
@@ -30,13 +37,13 @@ class LoginView extends React.Component{
           <Form>
             <h3>欢迎登陆系统</h3>  
             <FormItem {...formItemLayout} label="姓名">
-            {getFieldDecorator('name', { rules: [{ required: true, message: '请输入姓名' }]})(
+            {getFieldDecorator('name', { rules: [{ required: true, message: '请输入姓名' }],initialValue:userinfo.name})(
                 <Input />
             )}
             </FormItem>
             <FormItem {...formItemLayout} label="密码">
-              {getFieldDecorator('password', { rules: [{ required: true, message: '请输入密码' }]})(
-                <Input />
+              {getFieldDecorator('password', { rules: [{ required: true, message: '请输入密码' }],initialValue:userinfo.password})(
+                <Input type="password"/>
               )}
             </FormItem>
             <Row>
