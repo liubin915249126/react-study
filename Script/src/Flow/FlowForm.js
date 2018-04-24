@@ -4,6 +4,7 @@ import LoanFlowItem from './FlowItem';
 // import { getFlow, saveFlow, uploadimg, loadflowurl, getFlowTemplate } from '../../services/loan';
 import { deepClone } from '../utils/utils';
 import FlowTemplate from './FlowTemplate';
+import {templateData, flowData} from './flowData';
 import styles from './flow.less';
 
 class FlowForm extends React.Component {
@@ -28,7 +29,7 @@ class FlowForm extends React.Component {
     };
   }
   componentDidMount() {
-    // this.loadFlowData(this.loadFlowTemplate);
+    this.loadFlowData(this.loadFlowTemplate);
   }
   onSelectChange(selectedRowKeys, selectedRows, type) {
     const { flowLists, flowTemplate } = this.state;
@@ -101,25 +102,27 @@ class FlowForm extends React.Component {
     return selectedFlowIds;
     this.setState({});
   }
-  async loadFlowTemplate(that) {
+  loadFlowTemplate(that) {
     that.setState({ spinning: true });
-    try {
-      const res = await getFlowTemplate();
-      that.dealFlowData(res, 'flowTemplate', that.checkFlowData);
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   const res = await getFlowTemplate();
+    //   that.dealFlowData(res, 'flowTemplate', that.checkFlowData);
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    that.dealFlowData(templateData, 'flowTemplate', that.checkFlowData);
     that.setState({ spinning: false });
   }
-  async loadFlowData(callback) {
+  loadFlowData(callback) {
     const { loanId } = this.props;
     this.setState({ spinning: true });
-    try {
-      const res = await getFlow(loanId);
-      this.dealFlowData(res, 'flowLists', callback);
-    } catch (err) {
-      console.log(err);
-    }
+    // try {
+    //   const res = await getFlow(loanId);
+    //   this.dealFlowData(res, 'flowLists', callback);
+    // } catch (err) {
+    //   console.log(err);
+    // }
+    this.dealFlowData(flowData, 'flowLists', callback);
     this.setState({ spinning: false });
   }
   checkFlowData(that) {
@@ -143,9 +146,8 @@ class FlowForm extends React.Component {
     }
     that.setState({ flowLists });
   }
-  dealFlowData(res, type, callback) {
+  dealFlowData(data, type, callback) {
     const that = this;
-    const { data } = res;
     const flowLists = {
       APPLY: [],
       AUDIT: [],
@@ -294,42 +296,6 @@ class FlowForm extends React.Component {
       <div className={styles.flowrap}>
         <Spin spinning={spinning}>
           <Row style={{ marginBottom: '20px', borderBottom: '1px solid #d9d9d9', paddingBottom: '15px', textAlign: 'center' }}>
-            <h4>申请流程</h4>
-            <Col span={10}>
-              <FlowTemplate
-                select={true}
-                dataSource={flowTemplate.APPLY}
-                type="APPLY"
-                selectedRowKeys={deepClone(selectKeys['APPLY'])}
-                onSelectChange={(selectedRowKeys, selectedRows, type) => { this.onSelectChange(selectedRowKeys, selectedRows, type); }}
-              />
-            </Col>
-            <Col span={14}>
-              {Array.isArray(APPLY) && APPLY.length > 0 ? APPLY.map((data, index) => {
-            return (
-              <LoanFlowItem
-                data={data}
-                step={index}
-                total={APPLY.length}
-                flowType="APPLY"
-                textChange={(value, type, step) => { this.textChange(value, type, step, 'APPLY'); }}
-                confirmAdd={(step) => { this.confirmAdd(step, 'APPLY'); }}
-                cancleAdd={(step) => { this.cancleAdd(step, 'APPLY'); }}
-                openEdit={(step) => { this.openEdit(step, 'APPLY'); }}
-                beforeUpload={(file, step) => { this.beforeUpload(file, step, 'APPLY'); }}
-                sortData={(type, step, flowType) => { this.sortData(type, step, flowType); }}
-              />);
-          }) : <Icon type="frown" />}
-              <p className={styles.btnwrap}>
-                {/* <Button type="primary" onClick={() => { this.addItem('APPLY'); }}>新增</Button> */}
-                <Button type="primary" onClick={() => { this.saveItem('APPLY'); }}>保存</Button>
-                {applyFlag ? (
-                  <div>flow数据为模版数据，请点击保存</div>
-                ) : null}
-              </p>
-            </Col>
-          </Row>
-          <Row style={{ textAlign: 'center' }}>
             <h4>审核流程</h4>
             <Col span={10}>
               <FlowTemplate
@@ -360,6 +326,42 @@ class FlowForm extends React.Component {
                 {/* <Button type="primary" onClick={() => { this.addItem('AUDIT'); }}>新增</Button> */}
                 <Button type="primary" onClick={() => { this.saveItem('AUDIT'); }}>保存</Button>
                 {auditFlag ? (
+                  <div>flow数据为模版数据，请点击保存</div>
+                ) : null}
+              </p>
+            </Col>
+          </Row>
+          <Row style={{ textAlign: 'center' }}>
+            <h4>申请流程</h4>
+            <Col span={10}>
+              <FlowTemplate
+                select={true}
+                dataSource={flowTemplate.APPLY}
+                type="APPLY"
+                selectedRowKeys={deepClone(selectKeys['APPLY'])}
+                onSelectChange={(selectedRowKeys, selectedRows, type) => { this.onSelectChange(selectedRowKeys, selectedRows, type); }}
+              />
+            </Col>
+            <Col span={14}>
+              {Array.isArray(APPLY) && APPLY.length > 0 ? APPLY.map((data, index) => {
+            return (
+              <LoanFlowItem
+                data={data}
+                step={index}
+                total={APPLY.length}
+                flowType="APPLY"
+                textChange={(value, type, step) => { this.textChange(value, type, step, 'APPLY'); }}
+                confirmAdd={(step) => { this.confirmAdd(step, 'APPLY'); }}
+                cancleAdd={(step) => { this.cancleAdd(step, 'APPLY'); }}
+                openEdit={(step) => { this.openEdit(step, 'APPLY'); }}
+                beforeUpload={(file, step) => { this.beforeUpload(file, step, 'APPLY'); }}
+                sortData={(type, step, flowType) => { this.sortData(type, step, flowType); }}
+              />);
+          }) : <Icon type="frown" />}
+              <p className={styles.btnwrap}>
+                {/* <Button type="primary" onClick={() => { this.addItem('APPLY'); }}>新增</Button> */}
+                <Button type="primary" onClick={() => { this.saveItem('APPLY'); }}>保存</Button>
+                {applyFlag ? (
                   <div>flow数据为模版数据，请点击保存</div>
                 ) : null}
               </p>

@@ -8,6 +8,8 @@ import Tooltip from '../commonComponent/Tooltip/Tooltip';
 import FlowForm from '../Flow/FlowForm';
 //引入模拟数据
 import {slideData1,slideData2} from '../home/slideData';
+// 引入less
+require('./home.less') 
 class Home extends React.Component{
     constructor(props){
         super(props)
@@ -35,18 +37,21 @@ class Home extends React.Component{
     }
     render(){
         let { toogleSlide,Modalshow} =this.state;
-        return (<div>
-            <div>slider组件:</div>
-            <LenSlider slideData={toogleSlide ? slideData1 : slideData2} />
+        return (
+        <div className="homeWrap">
             <div>
+              <h3>slider组件:</h3>
+              <LenSlider slideData={toogleSlide ? slideData1 : slideData2} />
+              <div>
                 <Button 
                         type="primary"
                         onClick={()=>{this.toogleSlide(toogleSlide)}}
                     >{toogleSlide?'data1':"data2"}</Button>
-            </div>
+               </div>
+              </div>
             <Row>
                 <Col span={6}>
-                    <div>progress组件:</div>
+                    <h3>progress组件:</h3>
                     <Progress />
                 </Col>
                 <Col span={6}>
@@ -68,7 +73,11 @@ class Home extends React.Component{
                     </Tooltip>
                 </Col>
             </Row>
-            <FlowForm />
+            <div>
+              <h3>Table组件</h3>
+              <FlowForm />
+            </div>
+            
         </div>)
     }
 }
