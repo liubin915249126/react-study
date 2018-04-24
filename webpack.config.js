@@ -33,11 +33,20 @@ const config = {
                 // use: [{loader:'babel-loader'}],
                 use: ['babel-loader'],
                 include: [APP_PATH]
-            },{
+            },
+            {
                 test:/\.less$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
                 use: ['style-loader', 'css-loader','less-loader'],
-            },{
+                exclude: [APP_PATH+'/src/Flow',APP_PATH+'/src/commonComponent/Table'],
+            },
+            {
+                test:/\.less$/,
+                //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
+                use: ['style-loader', 'css-loader?modules','less-loader'],
+                include: [APP_PATH+'/src/Flow',APP_PATH+'/src/commonComponent/Table'],
+            },
+            {
                 test:/\.css$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
                 use: ['style-loader','css-loader'],
