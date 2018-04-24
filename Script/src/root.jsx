@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Link, Switch, BrowserRouter as Router, HashRouter } from 'react-router-dom';
+import {Spin} from 'antd';
 import Loadable from 'react-loadable';
 import { Provider } from 'mobx-react';
 import stores from './store/index'
@@ -40,7 +41,7 @@ const MobxComponent = Loadable({
 })
 
 function LoadingPage(){
-    return <div>loading...</div>
+    return <Spin style={{width:'100%',height:'100%'}}></Spin>
 }
 const routes =[
     { path: '/', component: LoginComponent, exact:true},
