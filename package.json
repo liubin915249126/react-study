@@ -1,11 +1,11 @@
 {
-  "name": "webpack",
+  "name": "webpack-v4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=development && webpack-dev-server --hot --inline --progress --colors --watch --open",
+    "start": "NODE_ENV=development PORT=9099 webpack-dev-server --hot --inline --progress --colors --watch --open",
     "server": "node server/index.js",
     "build": "set NODE_ENV=production && webpack"
   },
@@ -21,7 +21,8 @@
     "babel-preset-stage-1": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.7",
-    "html-webpack-plugin": "^2.30.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
     "jsx-loader": "^0.13.2",
     "koa": "^2.3.0",
     "koa-router": "^7.2.1",
@@ -30,8 +31,10 @@
     "less-loader": "^4.0.5",
     "react-loadable": "^5.3.1",
     "style-loader": "^0.18.2",
-    "webpack": "^3.5.6",
-    "webpack-dev-server": "^2.8.2",
+    "tapable": "^1.0.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
     "webpack-html-plugin": "^0.1.1"
   },
   "dependencies": {
@@ -42,6 +45,7 @@
     "jquery": "^3.2.1",
     "mobx": "^3.4.1",
     "mobx-react": "^4.3.5",
+    "npm": "^6.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router": "^4.2.0",

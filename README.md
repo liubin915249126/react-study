@@ -392,3 +392,18 @@ webpack配置
 >
 plugins:['transform-decorators-legacy']
 npm install babel-plugin-transform-decorators-legacy --save-dev
+
+#### 升级webpack-v4
+```js
+    Tapable.apply is deprecated. Call apply on the plugin directly instead
+    npm install extract-text-webpack-plugin@next --save-dev
+```
+```js
+   compilation.mainTemplate.applyPluginsWaterfall is not a function
+   npm install webpack-contrib/html-webpack-plugin -D --save
+   npm install tapable --save-dev
+```
+```js
+   Cannot find module 'html-webpack-plugin'
+   
+```

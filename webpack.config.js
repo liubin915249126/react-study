@@ -26,7 +26,7 @@ const config = {
         extensions: ['.js', '.json', '.jsx']
     },
     module:{
-        loaders:[
+        rules:[
             {
                 test: /\.(jsx|js)$/,
                 exclude: /^node_modules$/,
@@ -56,9 +56,40 @@ const config = {
     devServer: {
         contentBase: "./Script",//本地服务器所加载的页面所在的目录
         historyApiFallback: true,
-        port:8083,
+        port:9099,
         proxy:{
             '/': { target: 'http://localhost:3000', secure: false }
+        }
+    },
+    optimization: {
+        runtimeChunk: {
+          name: 'manifest'
+        },
+        // minimizer: true, // [new UglifyJsPlugin({...})]
+        splitChunks:{
+          chunks: 'async',
+          minSize: 30000,
+          minChunks: 1,
+          maxAsyncRequests: 5,
+          maxInitialRequests: 3,
+          name: false,
+          cacheGroups: {
+            vendor: {
+              name: 'vendor',
+              chunks: 'initial',
+              priority: -10,
+              reuseExistingChunk: false,
+              test: /node_modules\/(.*)\.js/
+            },
+            styles: {
+              name: 'styles',
+              test: /\.(scss|css)$/,
+              chunks: 'all',
+              minChunks: 1,
+              reuseExistingChunk: true,
+              enforce: true
+            }
+          }
         }
     },
     plugins:[
@@ -68,9 +99,9 @@ const config = {
             filename:'index.html',
             template:path.resolve(__dirname, "index.html")
         }),
-        new webpack.optimize.CommonsChunkPlugin({
-            names: ["vandor", "manifest"]
-        })
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     names: ["vandor", "manifest"]
+        // })
     ]
 };
 if (process.env.NODE_ENV === 'production') {
