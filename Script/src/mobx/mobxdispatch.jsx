@@ -11,7 +11,6 @@ import { observer,inject } from 'mobx-react'
     }
     handleClick(){
         let {num} = this.state;
-        debugger;
         this.props.clickTimes.click(parseInt(num));
     }
 
