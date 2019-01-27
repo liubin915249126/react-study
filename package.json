@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development PORT=9099 webpack-dev-server --hot --inline --progress --colors --watch --open",
     "server": "node server/index.js",
-    "build": "set NODE_ENV=production && webpack --progress --color --reason --watch"
+    "build": "set NODE_ENV=production && webpack --progress --color --reason"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +21,6 @@
     "babel-preset-stage-1": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "jsx-loader": "^0.13.2",
     "koa": "^2.3.0",
@@ -32,7 +31,7 @@
     "react-loadable": "^5.3.1",
     "style-loader": "^0.18.2",
     "tapable": "^1.0.0",
-    "webpack": "^4.16.5",
+    "webpack": "^4.29.0",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
     "webpack-html-plugin": "^0.1.1"
@@ -40,9 +39,11 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "antd": "^2.13.1",
+    "autoprefixer-loader": "^3.2.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "jquery": "^3.2.1",
+    "mini-css-extract-plugin": "^0.5.0",
     "mobx": "^3.4.1",
     "mobx-react": "^4.3.5",
     "npm": "^6.3.0",

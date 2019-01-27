@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 var proxy = require('http-proxy-middleware')
 const idProd = process.env.NODE_ENV === 'production'
@@ -39,19 +40,19 @@ const config = {
             {
                 test:/\.less$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
-                use: ['style-loader', 'css-loader','less-loader'],
+                use: [ MiniCssExtractPlugin.loader, 'css-loader','less-loader'],
                 exclude: [APP_PATH+'/src/Flow',APP_PATH+'/src/commonComponent/Table'],
             },
             {
                 test:/\.less$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
-                use: ['style-loader', 'css-loader?modules','less-loader'],
+                use: [ MiniCssExtractPlugin.loader, 'css-loader?modules','less-loader'],
                 include: [APP_PATH+'/src/Flow',APP_PATH+'/src/commonComponent/Table'],
             },
             {
                 test:/\.css$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
-                use: ['style-loader','css-loader'],
+                use: [ MiniCssExtractPlugin.loader,'css-loader'],
             }            
         ]
     },
@@ -101,6 +102,12 @@ const config = {
             filename:'index.html',
             template:path.resolve(__dirname, "index.html")
         }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+          })
         // new webpack.optimize.CommonsChunkPlugin({
         //     names: ["vandor", "manifest"]
         // })
