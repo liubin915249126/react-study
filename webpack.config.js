@@ -72,7 +72,7 @@ const config = {
             new UglifyJsPlugin({
               cache: true,
               parallel: true,
-              sourceMap: false // set to true if you want JS source maps
+              sourceMap: true // set to true if you want JS source maps
             }),
             new OptimizeCSSAssetsPlugin({})
         ],
@@ -121,29 +121,4 @@ const config = {
           })
     ]
 };
-// if (process.env.NODE_ENV === 'production') {
-//     config.plugins = (config.plugins || []).concat([
-//         new webpack.DefinePlugin({
-//             'process.env': {
-//                 'NODE_ENV': JSON.stringify('production'),
-//             },
-//             IS_PRODUCTION:true
-//         }),
-//         /*new webpack.optimize.UglifyJsPlugin({
-//             compress: {warnings: false},
-//             sourceMap: false
-//         }),*/
-//     ]);
-// }
-// else {
-//     config.plugins = (config.plugins || []).concat([
-//         new webpack.DefinePlugin({
-//             'process.env':
-//             {
-//                 'NODE_ENV': JSON.stringify('development'),
-//             },
-//             IS_PRODUCTION:false
-//         }),
-//     ]);
-// }
 module.exports = config;
