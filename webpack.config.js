@@ -2,9 +2,12 @@ const webpack = require('webpack')
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 var proxy = require('http-proxy-middleware')
-const idProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production'
+const cssLoader = isProd ? MiniCssExtractPlugin.loader:'style-loader'
 
 const APP_PATH = path.resolve(__dirname,"Script") 
 const config = {
@@ -18,7 +21,7 @@ const config = {
         filename: 'js/[name].[hash].bundle.js',
         chunkFilename: 'js/[name][chunkhash].js',
     },
-    mode: idProd ?'production':'development',
+    mode: isProd ?'production':'development',
     // devtool: 'source-map',
     resolve: {
         // alias: {
@@ -40,19 +43,19 @@ const config = {
             {
                 test:/\.less$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
-                use: [ MiniCssExtractPlugin.loader, 'css-loader','less-loader'],
+                use: [ cssLoader, 'css-loader','less-loader'],
                 exclude: [APP_PATH+'/src/Flow',APP_PATH+'/src/commonComponent/Table'],
             },
             {
                 test:/\.less$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
-                use: [ MiniCssExtractPlugin.loader, 'css-loader?modules','less-loader'],
+                use: [ cssLoader, 'css-loader?modules','less-loader'],
                 include: [APP_PATH+'/src/Flow',APP_PATH+'/src/commonComponent/Table'],
             },
             {
                 test:/\.css$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
-                use: [ MiniCssExtractPlugin.loader,'css-loader'],
+                use: [ cssLoader,'css-loader'],
             }            
         ]
     },
@@ -65,6 +68,14 @@ const config = {
         }
     },
     optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+              cache: true,
+              parallel: true,
+              sourceMap: false // set to true if you want JS source maps
+            }),
+            new OptimizeCSSAssetsPlugin({})
+        ],
         runtimeChunk: {
           name: 'manifest'
         },
@@ -108,34 +119,31 @@ const config = {
             filename: "[name].css",
             chunkFilename: "[id].css"
           })
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     names: ["vandor", "manifest"]
-        // })
     ]
 };
-if (process.env.NODE_ENV === 'production') {
-    config.plugins = (config.plugins || []).concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production'),
-            },
-            IS_PRODUCTION:true
-        }),
-        /*new webpack.optimize.UglifyJsPlugin({
-            compress: {warnings: false},
-            sourceMap: false
-        }),*/
-    ]);
-}
-else {
-    config.plugins = (config.plugins || []).concat([
-        new webpack.DefinePlugin({
-            'process.env':
-            {
-                'NODE_ENV': JSON.stringify('development'),
-            },
-            IS_PRODUCTION:false
-        }),
-    ]);
-}
+// if (process.env.NODE_ENV === 'production') {
+//     config.plugins = (config.plugins || []).concat([
+//         new webpack.DefinePlugin({
+//             'process.env': {
+//                 'NODE_ENV': JSON.stringify('production'),
+//             },
+//             IS_PRODUCTION:true
+//         }),
+//         /*new webpack.optimize.UglifyJsPlugin({
+//             compress: {warnings: false},
+//             sourceMap: false
+//         }),*/
+//     ]);
+// }
+// else {
+//     config.plugins = (config.plugins || []).concat([
+//         new webpack.DefinePlugin({
+//             'process.env':
+//             {
+//                 'NODE_ENV': JSON.stringify('development'),
+//             },
+//             IS_PRODUCTION:false
+//         }),
+//     ]);
+// }
 module.exports = config;
