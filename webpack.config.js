@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var proxy = require('http-proxy-middleware')
+const idProd = process.env.NODE_ENV === 'production'
 
 const APP_PATH = path.resolve(__dirname,"Script") 
 const config = {
@@ -16,6 +17,7 @@ const config = {
         filename: 'js/[name].[hash].bundle.js',
         chunkFilename: 'js/[name][chunkhash].js',
     },
+    mode: idProd ?'production':'development',
     // devtool: 'source-map',
     resolve: {
         // alias: {

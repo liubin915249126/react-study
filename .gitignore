@@ -9,4 +9,4 @@ bundle.js
 *.log
 .vscode
 /Scripts/dist
-
+dist

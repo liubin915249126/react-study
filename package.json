@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development PORT=9099 webpack-dev-server --hot --inline --progress --colors --watch --open",
     "server": "node server/index.js",
-    "build": "set NODE_ENV=production && webpack"
+    "build": "set NODE_ENV=production && webpack --progress --color --reason --watch"
   },
   "author": "",
   "license": "ISC",
