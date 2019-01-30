@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var proxy = require('http-proxy-middleware')
 const isProd = process.env.NODE_ENV === 'production'
@@ -13,7 +14,7 @@ const APP_PATH = path.resolve(__dirname,"Script")
 const config = {
     entry: {
         main: ['whatwg-fetch','babel-polyfill','./Script/main.jsx'],
-        vandor:['jquery','react']
+        // vandor:['jquery','react']
     },
     output:{
         publicPath:'',
@@ -95,6 +96,18 @@ const config = {
               reuseExistingChunk: false,
               test: /node_modules\/(.*)\.js/
             },
+            // 处理异步chunk
+            'async-vendors': {
+                test: /[\\/]node_modules[\\/]/,
+                minChunks: 2,
+                chunks: 'async',
+                name: 'async-vendors'
+            },
+            antd: {
+                name: "chunk-antd", // 单独将 antd 拆包
+                priority: 20, // 权重要大于 libs 和 app 不然会被打包进 libs 或者 app
+                test: /[\/]node_modules[\/]antd[\/]/
+              },
             styles: {
               name: 'styles',
               test: /\.(scss|css)$/,
@@ -111,14 +124,22 @@ const config = {
             title:'react 学习',
             inject:'body',
             filename:'index.html',
-            template:path.resolve(__dirname, "index.html")
+            template:path.resolve(__dirname, "index.html"),
+            // chunks: ['main','vandor']
         }),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-          })
+            filename: "[name][contenthash].css",
+            chunkFilename: "[id][contenthash].css"
+          }),
+          // production
+          new webpack.HashedModuleIdsPlugin({
+            hashFunction: 'sha256',
+            hashDigest: 'hex',
+            hashDigestLength: 20
+          }),
+          new CleanWebpackPlugin([path.join(__dirname, 'dist')])
     ]
 };
 module.exports = config;
