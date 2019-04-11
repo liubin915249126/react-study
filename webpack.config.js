@@ -6,7 +6,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-var proxy = require('http-proxy-middleware')
+// var proxy = require('http-proxy-middleware')
 const isProd = process.env.NODE_ENV === 'production'
 const cssLoader = isProd ? MiniCssExtractPlugin.loader:'style-loader'
 
