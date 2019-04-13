@@ -58,3 +58,5 @@
 ```
 compose函数返回一个所有函数组合后的函数，compose(f, g, h) 和 (...args) => f(g(h(...args)))是一样的。
 很多第三方库都提供了类似compose的函数，例如lodash.flowRight，Redux提供的combineReducers函数等。
+
++
