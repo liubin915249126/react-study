@@ -40,6 +40,10 @@ class MainView extends React.Component {
                             <Icon type="upload" />
                             <Link to="/main/timeline/:1">时间轴</Link>
                         </Menu.Item>
+                        <Menu.Item key="4">
+                            <Icon type="upload" />
+                            <Link to="/main/thanos">灭霸特效</Link>
+                        </Menu.Item>
                     </Menu>
                 </Sider>
                 <Layout>

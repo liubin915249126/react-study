@@ -40,6 +40,8 @@ const MobxComponent = Loadable({
     loading: LoadingPage
 })
 
+import Thanos from './Thanos/index' 
+
 function LoadingPage(){
     return <Spin style={{width:'100%',height:'100%'}}></Spin>
 }
@@ -52,6 +54,7 @@ const routes =[
         { path: '/main/about', component: AboutComponent},
         { path: '/main/timeline/:status', component: TimeLineComponent},
         { path: '/main/mobx', component: MobxComponent},
+        { path: '/main/thanos', component: Thanos},
     ]}
 ]
 
