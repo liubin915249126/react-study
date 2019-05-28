@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Spin, Icon, message, Row, Col } from 'antd';
 import LoanFlowItem from './FlowItem';
 // import { getFlow, saveFlow, uploadimg, loadflowurl, getFlowTemplate } from '../../services/loan';
-import { deepClone } from '../utils/utils';
+import { deepClone } from '../../utils/utils';
 import FlowTemplate from './FlowTemplate';
 import {templateData, flowData} from './flowData';
 import styles from './flow.less';

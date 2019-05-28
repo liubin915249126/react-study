@@ -1,7 +1,7 @@
 import React from  "react";
 import {Row,Col,Icon} from 'antd';
-import "../commonComponent/slide.less"
-import { isObjectValueEqual} from '../commonFun/utils'
+import "./slide.less"
+import { isObjectValueEqual} from '@utils/utils'
 class LenSlider extends React.Component{
     constructor(props){
         super(props)

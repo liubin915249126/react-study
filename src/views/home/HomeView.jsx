@@ -1,13 +1,13 @@
 import React from 'react';
 //引入组件
 import { Button,Row,Col} from 'antd';
-import {LenSlider} from '../commonComponent/SlideComponent';
-import { Progress} from '../commonComponent/Progress';
-import Modal from '../commonComponent/Modal/Modal';
-import Tooltip from '../commonComponent/Tooltip/Tooltip';
+import {LenSlider} from '@components/SlideComponent';
+import { Progress} from '@components/Progress';
+import Modal from '@components/Modal/Modal';
+import Tooltip from '@components/Tooltip/Tooltip';
 import FlowForm from '../Flow/FlowForm';
 //引入模拟数据
-import {slideData1,slideData2} from '../home/slideData';
+import {slideData1,slideData2} from './slideData';
 // 引入less
 require('./home.less') 
 class Home extends React.Component{

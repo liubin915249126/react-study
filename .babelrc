@@ -1,8 +1,8 @@
 {
     "presets": [
-        "env",
-        "react",
-        "stage-0"
+        "@babel/env",
+        "@babel/react",
+        // "stage-0"
     ],
     "plugins": [
         [
@@ -13,6 +13,13 @@
             },
             "syntax-dynamic-import"
         ],
-        "transform-decorators-legacy"
+        [
+          "@babel/plugin-proposal-decorators",
+          {
+            "legacy": true
+          }
+        ],
+        ["@babel/plugin-proposal-class-properties"],
+        ["@babel/plugin-syntax-dynamic-import"],
     ]
 }

@@ -10,10 +10,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production'
 const cssLoader = isProd ? MiniCssExtractPlugin.loader:'style-loader'
 
-const APP_PATH = path.resolve(__dirname,"Script") 
+const APP_PATH = path.resolve(__dirname,"src") 
 const config = {
     entry: {
-        main: ['whatwg-fetch','babel-polyfill','./Script/main.jsx'],
+        main: ['whatwg-fetch','babel-polyfill','./src/main.jsx'],
         // vandor:['jquery','react']
     },
     output:{
@@ -23,14 +23,17 @@ const config = {
         chunkFilename: 'js/[name][chunkhash].js',
     },
     mode: isProd ?'production':'development',
-    // devtool: 'source-map',
+    devtool: 'source-map',
     resolve: {
-        // alias: {
-        //     rootPath: path.resolve(__dirname),
-        //     srcPath: path.resolve(__dirname, 'Scripts/src')
-        // },
-        //集成省略扩展名
-        extensions: ['.js', '.json', '.jsx']
+        alias: {
+            '@':  `${__dirname}/src/`,
+            '@views':  `${__dirname}/src/views/`,
+            '@utils':  `${__dirname}/src/utils/`,
+            '@components':  `${__dirname}/src/components/`,
+            // srcPath: path.resolve(__dirname, 'Scripts/src')
+        },
+        // 集成省略扩展名
+        extensions: ['.js', '.json', '.jsx' , '.less']
     },
     module:{
         rules:[
@@ -45,13 +48,13 @@ const config = {
                 test:/\.less$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
                 use: [ cssLoader, 'css-loader','less-loader'],
-                exclude: [APP_PATH+'/src/Flow',APP_PATH+'/src/commonComponent/Table'],
+                exclude: [APP_PATH+'/views/Flow',APP_PATH+'/views/components/Table'],
             },
             {
                 test:/\.less$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
                 use: [ cssLoader, 'css-loader?modules','less-loader'],
-                include: [APP_PATH+'/src/Flow',APP_PATH+'/src/commonComponent/Table'],
+                include: [APP_PATH+'/views/Flow',APP_PATH+'/views/components/Table'],
             },
             {
                 test:/\.css$/,
@@ -61,7 +64,7 @@ const config = {
         ]
     },
     devServer: {
-        contentBase: "./Script",//本地服务器所加载的页面所在的目录
+        contentBase: "./src",//本地服务器所加载的页面所在的目录
         historyApiFallback: true,
         port:9099,
         proxy:{
@@ -110,7 +113,7 @@ const config = {
               },
             styles: {
               name: 'styles',
-              test: /\.(scss|css)$/,
+              test: /\.(less|css)$/,
               chunks: 'all',
               minChunks: 1,
               reuseExistingChunk: true,

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button,Card} from 'antd'
-import request from '../commonFun/request'
+import request from '@utils/request'
 // const url = 'http://localhost:3000/'
 const url = '/index'
 class About extends React.Component{

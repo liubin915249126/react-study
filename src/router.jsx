@@ -10,30 +10,30 @@ import Loadable from "react-loadable";
 // import LoginView from './login/index'
 
 const MainComponent = Loadable({
-  loader: () => import("./index/index"),
+  loader: () => import("@views/index/index"),
   loading: LoadingPage
 });
 
 const LoginComponent = Loadable({
-  loader: () => import("./login/index"),
+  loader: () => import("@views/login/index"),
   loading: LoadingPage
 });
 
 const AboutComponent = Loadable({
-  loader: () => import("./about/AboutView"),
+  loader: () => import("@views/about/AboutView"),
   loading: LoadingPage
 });
 
 const TimeLineComponent = Loadable({
-  loader: () => import("./timeLine/TimeLineView"),
+  loader: () => import("@views/timeLine/TimeLineView"),
   loading: LoadingPage
 });
 const HomeComponent = Loadable({
-  loader: () => import("./home/HomeView"),
+  loader: () => import("@views/home/HomeView"),
   loading: LoadingPage
 });
 
-import Thanos from "./Thanos/index";
+import Thanos from "@views/Thanos/index";
 
 function LoadingPage() {
   return <Spin style={{ width: "100%", height: "100%" }} />;

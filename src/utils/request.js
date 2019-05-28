@@ -1,7 +1,7 @@
 import fetch from 'dva/fetch';
 import { notification,message,description} from 'antd';
 import { routerRedux } from 'dva/router';
-import store from '../index'
+import store from '@/main'
 import {getQueryString} from './utils'
 
 function checkStatus(response) {

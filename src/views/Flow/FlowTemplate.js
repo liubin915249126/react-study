@@ -1,6 +1,6 @@
 import React from 'react';
 import { Spin } from 'antd';
-import { LenTable } from '../commonComponent/index';
+import { LenTable } from '@components/index';
 
 class FlowTemplate extends React.Component {
   constructor(props) {

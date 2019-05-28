@@ -12,7 +12,7 @@ import 'moment/locale/zh-cn';
 //import browserHistory from 'history/createBrowserHistory'
 
 // import { browserHistory } from 'dva/router';
-import './src/index.less';
+import './index.less';
 
 // 1. Initialize
 const app = dva({
@@ -29,7 +29,7 @@ const app = dva({
 // });
 
 // 4. Router
-app.router(require('./src/router').default);
+app.router(require('./router').default);
 
 // 5. Start
 app.start('#main');
