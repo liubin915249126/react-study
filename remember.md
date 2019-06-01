@@ -35,3 +35,4 @@ class MyComponent extends React.Component {
   git branch --set-upstream-to=origin/master master
 ```
 >
+DocumentContext.js:10 Uncaught TypeError: (0 , _react.createContext) is not a function

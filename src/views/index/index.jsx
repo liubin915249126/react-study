@@ -44,6 +44,10 @@ class MainView extends React.Component {
                             <Icon type="upload" />
                             <Link to="/main/thanos">灭霸特效</Link>
                         </Menu.Item>
+                        <Menu.Item key="5">
+                            <Icon type="download" />
+                            <Link to="/main/pdf">pdf</Link>
+                        </Menu.Item>
                     </Menu>
                 </Sider>
                 <Layout>

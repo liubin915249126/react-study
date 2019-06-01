@@ -34,6 +34,7 @@ const HomeComponent = Loadable({
 });
 
 import Thanos from "@views/Thanos/index";
+import pdf from "@views/pdf/index";
 
 function LoadingPage() {
   return <Spin style={{ width: "100%", height: "100%" }} />;
@@ -50,7 +51,8 @@ const routes = [
       { path: "/main/about", component: AboutComponent },
       { path: "/main/timeline/:status", component: TimeLineComponent },
       // { path: '/main/mobx', component: MobxComponent},
-      { path: "/main/thanos", component: Thanos }
+      { path: "/main/thanos", component: Thanos },
+      { path: "/main/pdf", component: pdf }
     ]
   }
 ];

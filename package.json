@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development PORT=9099 webpack-dev-server --hot --inline --progress --colors --watch --open",
+    "start": "NODE_ENV=development webpack-dev-server --hot --inline --progress --colors --watch --open",
     "server": "node server/index.js",
     "build": "set NODE_ENV=production && webpack --progress --color --reason"
   },
@@ -39,6 +39,7 @@
     "webpack-dev-server": "^3.1.5"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^1.6.1",
     "animate.css": "^3.5.2",
     "antd": "^3.19.1",
     "autoprefixer-loader": "^3.2.0",
@@ -47,8 +48,8 @@
     "dva": "^2.4.1",
     "html2canvas": "^1.0.0-rc.1",
     "mini-css-extract-plugin": "^0.5.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2"
   }
