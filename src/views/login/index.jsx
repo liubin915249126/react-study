@@ -44,7 +44,7 @@ class LoginView extends React.Component{
             else {
               console.log('failed'+this.getStatus());
               var myCity = new BMap.LocalCity();
-              myCity.get(()=>{
+              myCity.get((result)=>{
                 var cityName = result.name;
                 map.setCenter(cityName);
                 console.log("当前定位城市:"+cityName);
