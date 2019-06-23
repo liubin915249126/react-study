@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 移动端适配 -->
+    <script type="text/javascript">
+        var s = parseInt(window.screen.width) / 375;
+        var vp = '<meta name="viewport" content="width=375 minimum-scale = ' + s + ', maximum-scale = ' + s + ', target-densitydpi=device-dpi">';
+        document.write(vp);
+    </script>
+    <style type="text/css">
+       body{
+           overflow: hidden;
+       }
+       body,html,div,img{
+        margin:0;
+        padding: 0;
+       }
+      .content{
+        font-family: PingFang-SC-Semibold;
+        font-size: 16px;
+        color: #FFFFFF;
+        background-image:url('./img/bg.png');
+        background-size: 100% 100%; 
+        height: 100vh;
+        position: relative;
+      }
+      .content .logo{
+        text-align: center;
+        margin:0 0 26px 0;
+      }
+      .content .logo img{
+        width: 80px;
+        margin: 36px 0 8px 0;       
+      }
+      .content .apple{
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        color: #17393B;
+      }
+      .content .apple a {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        background: #FFFFFF;
+        border-radius: 34px;
+        padding: 13px 21px;
+        text-decoration: none;
+      }
+      .content .apple img{
+        margin-right: 7px;
+        width: 16px;
+      }
+      .content .phone{
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: -5px; 
+      }
+      .mask{
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2;
+        font-family: PingFangSC-Medium;
+        font-size: 16px;
+        color: #FFFFFF;
+        background: rgba(0,0,0,0.60);
+      }
+      .mask div:nth-child(1){
+        display: inline-block;
+        width:100%;
+      }
+      .mask div:nth-child(1) img{
+        float: right;
+        width: 36px;
+        margin: 10px 21px 0 0;
+      }
+      .mask div:nth-child(2){
+        margin: 5px 39px 0;
+      }
+      .mask.nomask{
+        display: none;
+      }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="logo">
+            <img src="http://localhost:3000/work/img/icon.png"/>
+            <div>iCOO电子烟</div> 
+        </div>
+        <div class="apple">
+           <div>
+               <a>
+                    <img src="./img/apple.png"/>
+                    iPhone下载
+               </a>
+           </div>
+           <div>
+                <a>
+                    <img src="./img/android.png"/>
+                    Android下载
+                </a>   
+        </div>
+        </div>
+        <div class="phone">
+            <img src="./img/iphone.png"/>
+        </div>
+    </div>
+    <div class="mask nomask">
+      <div>
+        <img src="./img/arrow.png" alt="">
+      </div>
+      <div>
+        点击右上角菜单，选择在浏览器中打开即可安装。
+      </div>
+    </div>
+</body>
+<script>
+    window.onload=function(){
+        var maskDom = document.querySelector('.mask')
+        if (isWeixin()) {
+            maskDom.classList.remove('nomask')
+        } else {
+            maskDom.classList.add('nomask')
+        }
+    }
+    //判断是否在微信中打开
+    function isWeixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+</html>

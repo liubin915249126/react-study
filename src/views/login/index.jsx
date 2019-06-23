@@ -58,6 +58,9 @@ class LoginView extends React.Component{
                 </Col>
             </Row>
           </Form>
+          <div>
+            
+          </div>
         </div>)
     }
 }
