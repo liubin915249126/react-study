@@ -76,7 +76,12 @@ const config = {
             new UglifyJsPlugin({
               cache: true,
               parallel: true,
-              sourceMap: true // set to true if you want JS source maps
+              sourceMap: true, // set to true if you want JS source maps
+              uglifyOptions:{
+                compress:{
+                  drop_console: true,
+                }
+              } 
             }),
             new OptimizeCSSAssetsPlugin({})
         ],
