@@ -76,7 +76,7 @@ class MainView extends React.Component {
     return keys;
   }
   getTitle() {
-    const asset = "权限管理";
+    const asset = "react";
     let title = "";
     const { location } = this.props;
     const { pathname } = location;
