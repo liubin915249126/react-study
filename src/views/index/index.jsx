@@ -106,27 +106,7 @@ class MainView extends React.Component {
       <Layout>
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-            {/* <Menu.Item key="1">
-              <Icon type="user" />
-              <Link to="/main">组件</Link>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <Link to="/main/about">Fetch测试</Link>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Icon type="upload" />
-              <Link to="/main/timeline/:1">时间轴</Link>
-            </Menu.Item>
-            <Menu.Item key="4">
-              <Icon type="upload" />
-              <Link to="/main/thanos">灭霸特效</Link>
-            </Menu.Item>
-            <Menu.Item key="5">
-              <Icon type="download" />
-              <Link to="/main/pdf">pdf</Link>
-            </Menu.Item> */}
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]} selectedKeys={this.getSelectedKeys()}>
             {this.renderMenu(routerConfig,'')}
           </Menu>
         </Sider>
