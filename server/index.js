@@ -29,11 +29,11 @@ router.get('/index', async (ctx, next) => {
 //   allowHeaders: ['Content-Type', 'Authorization', 'Accept']
 // }))
 
-router.get('*', function(ctx, next) {
-  fs.readdir(path.join('./', 'work','index.html'))
-  ctx.type = 'html';
-  ctx.body =fs.createReadStream(path.join('./', 'work','index.html'));
-});
+// router.get('*', function(ctx, next) {
+//   fs.readdir(path.join('./', 'work','index.html'))
+//   ctx.type = 'html';
+//   ctx.body =fs.createReadStream(path.join('./', 'work','index.html'));
+// });
 
 app
   .use(router.routes())
