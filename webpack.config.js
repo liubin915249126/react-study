@@ -23,7 +23,7 @@ const config = {
         chunkFilename: 'js/[name][chunkhash].js',
     },
     mode: isProd ?'production':'development',
-    devtool: 'source-map',
+    devtool: isProd?null:'source-map',
     resolve: {
         alias: {
             '@':  `${__dirname}/src/`,
