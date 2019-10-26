@@ -1,15 +1,18 @@
 import React from "react";
-import { Layout, Menu, Icon } from "antd";
+import { Layout, Menu, Icon, Breadcrumb } from "antd";
 const { Header, Sider, Content } = Layout;
 import "./index.less";
-import {Link,Route,Redirect} from 'react-router-dom'
-import routerConfig ,{componentLink} from '@/common/nav'
+import { Link, Route, Redirect } from "react-router-dom";
+import routerConfig, { componentLink } from "@/common/nav";
+
+const menuList = routerConfig.flatten(Infinity)
 
 class MainView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: false
+      collapsed: false,
+      openKeys:[],
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -91,23 +94,55 @@ class MainView extends React.Component {
     });
     return title;
   }
-  getOpenKeys(routerConfig, openKeys) {
+  getOpenKeys(routerConfig,loop,openKeys) {
     const { location } = this.props;
     const { pathname } = location;
-    const keys = pathname.split("/").slice(1);
-    for (let i = 0; i < routerConfig.length; i++) {}
+    const keys = pathname.split("/").filter(item=>item).slice(0,-1);
+    const {url,children} =  routerConfig.filter(item=>item.url == keys[loop-1])[0]||{}
+    if(url){
+      openKeys.push(url); 
+    }
+    if (Array.isArray(children) && children.length > 0) {
+      this.getOpenKeys(children,loop+1,openKeys)
+    }
+    return openKeys;
+  }
+  renderBread(routerConfig,parentPath){
+    const {location:{pathname}} = this.props;
+    const pathArr = pathname.split("/").filter(item=>item)
+    if(Array.isArray(routerConfig) && routerConfig.length > 0){
+      return pathArr.map((item,index)=>{
+        const currentIndex = routerConfig.findIndex(({url})=>item==url)
+        if(currentIndex>-1){
+          const {url,resourceNameCn} = routerConfig[currentIndex]
+          let itemPath = '#';
+          for(let i=0;i<index+1;i++){
+            itemPath+=`/${pathArr[i]}`
+          }
+          // itemPath = itemPath.slice(0,-1)
+          return <Breadcrumb.Item href={itemPath}>{resourceNameCn}</Breadcrumb.Item>
+        }
+      })
+    }
   }
   render() {
+    const {openKeys,collapsed} = this.state;
     const { location } = this.props;
     const { pathname } = location;
     const title = this.getTitle();
     document.title = title;
     return (
       <Layout>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+        <Sider trigger={null} collapsible collapsed={collapsed}>
           <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]} selectedKeys={this.getSelectedKeys()}>
-            {this.renderMenu(routerConfig,'')}
+          <Menu
+            theme="dark"
+            mode="inline"
+            selectedKeys={this.getSelectedKeys()}
+            openKeys={collapsed?[]:openKeys}
+            onOpenChange={(openKeys)=>this.setState({openKeys})}
+          >
+            {this.renderMenu(routerConfig, "")}
           </Menu>
         </Sider>
         <Layout>
@@ -119,6 +154,10 @@ class MainView extends React.Component {
                 this.toggle();
               }}
             />
+             <Breadcrumb className='breadcrumb'>
+                <Breadcrumb.Item href='/'>首页</Breadcrumb.Item>
+                {this.renderBread(menuList,'')}
+              </Breadcrumb>
           </Header>
           <Content
             style={{
@@ -128,8 +167,10 @@ class MainView extends React.Component {
               minHeight: 280
             }}
           >
-            {this.renderComponents(routerConfig,'')}
-            {pathname=='/'? <Redirect exact strict from="/" to="/appMananger"/>:null}
+            {this.renderComponents(routerConfig, "")}
+            {pathname == "/" ? (
+              <Redirect exact strict from="/" to="/appMananger" />
+            ) : null}
           </Content>
         </Layout>
       </Layout>
