@@ -1,7 +1,8 @@
 import React from 'react';
 
 import asap from '../../promise/browser-asap'
-
+// import asap  from 'asap/raw'
+import MyPromise from '../../promise/Promise'
 
 export default class Test extends React.Component{
     constructor(props){
@@ -11,7 +12,7 @@ export default class Test extends React.Component{
         this.testPromise()
     }
     testPromise(){
-        new Promise((resolve)=>{ 
+        new MyPromise((resolve)=>{ 
             resolve()
         }).then(()=>{ 
             console.log('Promise1')
@@ -19,7 +20,7 @@ export default class Test extends React.Component{
         asap(()=>{ 
             console.log('asap')
         })
-        new Promise((resolve)=>{ 
+        new MyPromise((resolve)=>{ 
             resolve()
         }).then(()=>{ 
             console.log('Promise2')
