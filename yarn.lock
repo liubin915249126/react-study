@@ -735,8 +735,9 @@
     yoga-layout-prebuilt "^1.9.3"
 
 "@react-pdf/textkit@^0.3.7":
-  version "0.3.6"
-  resolved "https://registry.npm.taobao.org/@react-pdf/textkit/download/@react-pdf/textkit-0.3.6.tgz#6619b960e8c5c61800c0e55bb5a0ccb85da2e5ed"
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/@react-pdf/textkit/-/textkit-0.3.7.tgz#67bcc4d952ad1cd738b3cb38c8396219450f536b"
+  integrity sha512-JyK06VofTG4/6Mxv9ugqGyKS/nnbg7MXXHmzeYLP+wwxZsgiatjybVBSXI+DW+++UeyUKLrCYQh2RaxliRm+NQ==
   dependencies:
     "@babel/runtime" "^7.4.3"
     "@react-pdf/unicode-properties" "^2.2.0"

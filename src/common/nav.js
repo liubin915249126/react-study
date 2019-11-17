@@ -4,13 +4,15 @@ import about from '@views/about/AboutView'
 import timeline from '@views/timeLine/TimeLineView'
 import thanos from '@views/Thanos/index.js'
 import punsub from '@views/punsub/index.js'
+import test from '@views/test'
 
 const componentLink = {
     main,
     about,
     timeline,
     thanos,
-    punsub
+    punsub,
+    test
 }
 
 
@@ -39,6 +41,12 @@ const routerConfig = [
         icon:'upload',
         name:'事件订阅',
         url:'punsub',
+    },
+    {
+        icon:'upload',
+        name:'测试',
+        url:'test',
+        hide:true,
     }
 ]
 

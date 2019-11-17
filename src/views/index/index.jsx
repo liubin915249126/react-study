@@ -25,7 +25,7 @@ class MainView extends React.Component {
   }
   renderMenu(menusData, parentPath) {
     const { collapsed } = this.state;
-    return menusData.map((item, index) => {
+    return menusData.filter(item=>!item.hide).map((item, index) => {
       const { icon = "user", url, name } = item;
       const itemPath = `${parentPath}/${url || ""}`.replace(/\/+/g, "/");
       if (Array.isArray(item.children) && item.children.length > 0) {
