@@ -5,6 +5,7 @@ import store from '@/main'
 import {getQueryString} from './utils'
 
 function checkStatus(response) {
+	debugger
 	if (response.status >= 200 && response.status < 300) {
 		return response;
   }

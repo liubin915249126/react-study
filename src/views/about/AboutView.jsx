@@ -15,7 +15,7 @@ class About extends React.Component{
        try{
           let res = await request(url,{
               method:'GET',
-              body:{}
+            //   body:{}
           })
           this.setState({requestData:res}) 
        }catch(err){
