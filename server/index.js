@@ -7,10 +7,10 @@ const app = new koa()
 
 
 router.get('/index', async (ctx, next) => {
-  // var data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  let data = {
-    films:'films'
-  }
+  var data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  // let data = {
+  //   films:'films'
+  // }
   ctx.response.body = data
   await next()
 })

@@ -23,6 +23,30 @@ const app = dva({
 // 2. Plugins
 // app.use({});
 
+
+
+const originFetch = fetch;
+Object.defineProperty(window, "fetch", {
+  configurable: true,
+  enumerable: true,
+  // writable: true,
+  get() {
+    return (url,options) => {
+      return originFetch(url,{...options,...{
+        headers: {
+          'Content-Type': 'application/json;charset=UTF-8',
+          Accept: 'application/json',
+          token:localStorage.getItem('token')
+        },...options.headers
+      }}).then(res=>{
+        return res
+      });
+    };
+    
+  }
+});
+
+
 // 3. Model move to router
 // models.forEach((m) => {
 //   app.model(m);
