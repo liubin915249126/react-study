@@ -3,12 +3,14 @@ import React from 'react';
 import asap from '../../promise/browser-asap'
 // import asap  from 'asap/raw'
 import MyPromise from '../../promise/Promise'
+import { Button } from 'antd';
 
 export default class Test extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            newArr:[]
+            newArr:[],
+            count:0
         }
     }
     componentDidMount(){
@@ -45,6 +47,16 @@ export default class Test extends React.Component{
             console.log('setTimeout')
         },0)
     }
+    testSetState(){
+        this.setState({count:1})
+        console.log(111,this.state.count)
+        new Promise(resolve =>{ resolve()}).then(()=>{
+            this.setState({count:1})
+            console.log(222,this.state.count)
+        })
+        this.setState(prevState => {count: prevState.count + 1});
+        console.log(333,this.state.count)
+    }
     render(){
         const {newArr} = this.state;
         return (
@@ -54,6 +66,7 @@ export default class Test extends React.Component{
                      item.map(item1=><span key={item1}>{item1}  </span>)
                     }</div>
                })}
+               <Button type="primary" onClick={() => this.testSetState()}>setState测试</Button>
             </div>
         )
     }
