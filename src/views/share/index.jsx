@@ -37,11 +37,12 @@ export default class Share extends React.Component {
                 <meta name="twitter:description" content="View the album on Flickr." />
                 <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
 
+                <meta property="og:image" content="http://image.made-in-china.com/2f0j00sJdQPUDMngkI/Ce-Approved-Superfine-Synthetic-Graphite-Spheroidization-Grinding-Mill.jpg"/>
                 <meta name='og:image' content='http://www.menvscode.com/upload/41464238946737386.png' />
                 {/* <meta name="twitter:image" content='http://www.menvscode.com/upload/41464238946737386.png' /> */}
             </Helmet>
             <Button type="primary" onClick={() => this.shareFB()}>facebook</Button>&nbsp;&nbsp;
-            <Button type="primary" onClick={() => this.twitter()}>twitter</Button>
+            <Button type="primary" onClick={() => this.twitter()}>twitter</Button>&nbsp;&nbsp;
             <a class="twitter-share-button"
                 href="https://twitter.com/intent/tweet?text=Hello%20world">
                 Tweet</a>
