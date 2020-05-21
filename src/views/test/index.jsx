@@ -28,6 +28,9 @@ export default class Test extends React.Component{
         }
         console.log(newArr)
         this.setState({newArr})
+        this.returnPromise().finally(()=>{ 
+            debugger
+        })
     }
     testPromise(){
         new MyPromise((resolve)=>{ 
@@ -56,6 +59,9 @@ export default class Test extends React.Component{
         })
         this.setState(prevState => {count: prevState.count + 1});
         console.log(333,this.state.count)
+    }
+    returnPromise(){
+        return Promise.resolve();
     }
     render(){
         const {newArr} = this.state;
