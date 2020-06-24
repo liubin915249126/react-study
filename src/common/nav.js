@@ -5,6 +5,7 @@ import timeline from '@views/timeLine/TimeLineView'
 import thanos from '@views/Thanos/index.js'
 import punsub from '@views/punsub/index.js'
 import share from '@views/share'
+import wallet from '@views/wallet'
 
 import test from '@views/test'
 
@@ -15,6 +16,7 @@ const componentLink = {
     thanos,
     punsub,
     share,
+    wallet,
     test
 }
 
@@ -49,6 +51,11 @@ const routerConfig = [
         icon:'upload',
         name:'分享社媒',
         url:'share',
+    },
+    {
+        icon:'upload',
+        name:'ws推送',
+        url:'wallet',
     },
     {
         icon:'upload',
