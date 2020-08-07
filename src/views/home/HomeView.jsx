@@ -64,7 +64,7 @@ class Home extends React.Component{
                           open={Modalshow}
                           onCancle={()=>{this.onCancle()}}
                     >
-                        <div>Modal组件</div>
+                        <div>Modal组件11</div>
                     </Modal>
                 </Col>
                 <Col span={6}>
