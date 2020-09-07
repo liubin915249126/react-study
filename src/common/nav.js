@@ -6,6 +6,7 @@ import thanos from '@views/Thanos/index.js'
 import punsub from '@views/punsub/index.js'
 import share from '@views/share'
 import wallet from '@views/wallet'
+import hook from '@views/hook';
 
 import test from '@views/test'
 
@@ -17,7 +18,8 @@ const componentLink = {
     punsub,
     share,
     wallet,
-    test
+    test,
+    hook
 }
 
 
@@ -56,6 +58,11 @@ const routerConfig = [
         icon:'upload',
         name:'ws推送',
         url:'wallet',
+    },
+    {
+        icon:'upload',
+        name:'hook',
+        url:'hook',
     },
     {
         icon:'upload',
