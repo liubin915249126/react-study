@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import ByModal, { RenderModalClass } from '../ByModal';
 import ConfirmDialog from './Confirm';
+import confirm from './confirm'
 import RenderContent from './renderContent';
 
 import './by-dialog.css';
@@ -93,5 +94,5 @@ ByDialog.propTypes = {
 
 const confirmDialog = new ConfirmDialog();
 
-ByDialog.confirm = confirmDialog.renderModal.bind(confirmDialog);
+ByDialog.confirm = confirm;
 export default ByDialog;

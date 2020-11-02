@@ -93,10 +93,12 @@ const ByModal = ({
       </Draggable>
     );
   }
-  if (wrapped) {
-    return modal;
-  }
-  return <RenderModalClass open={open}>{modal}</RenderModalClass>;
+  debugger;
+  // if (wrapped) {
+  //   return modal;
+  // }
+  // return <RenderModalClass open={open}>{modal}</RenderModalClass>;
+  return modal
 };
 
 ByModal.defaultProps = {

@@ -1,5 +1,5 @@
 // 引入css样式
-import 'antd/dist/antd.less';
+import 'antd/dist/antd.css';
 import 'animate.css/animate.css'
 //引入fetch
 import 'whatwg-fetch'

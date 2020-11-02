@@ -15,7 +15,7 @@ class LoginView extends React.Component{
         }
     }
     componentDidMount(){
-      this.initMap()
+      // this.initMap()
     }
     initMap(){
       var map = new BMap.Map("container"); 

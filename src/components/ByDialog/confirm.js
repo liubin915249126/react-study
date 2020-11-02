@@ -6,7 +6,39 @@ import RenderContent from './renderContent';
 import ByModal, { RenderModalClass } from '../ByModal';
 import { MODAL_ROOT } from '@/utils/constants';
 
-// const close = () => renderModal(<ConfirmComponent open={false} />, { open: false });
+
+const confirm = (props)=>{
+      const {innerClass, onOutsideClick,container, ...others} = props||{}
+      const confirmProps = { 
+        showConfirm: true,
+        showCancel: true,
+        showClose: true,
+        ...others,
+        onClose: () => this.openFun(others.onClose),
+        onConfirm: () => this.openFun(others.onConfirm),
+        onCancel: () => this.openFun(others.onCancel),
+      };
+      const containerClass = classNames('by-dialog', innerClass);
+      let parent = container;
+      if (!parent) {
+        parent = document.createElement('div');
+        parent.setAttribute('id', `${MODAL_ROOT}`);
+        document.body.appendChild(parent);
+      }
+      const modal = (
+        <ByModal
+          innerClass={containerClass}
+          wrapped
+          open={true}
+          onOutsideClick={() => { this.openFun(onOutsideClick); }}
+          {...others}
+        >
+          {RenderContent(confirmProps)}
+        </ByModal>
+      );
+      return modal
+      return ReactDom.createPortal(modal, parent)
+}
 
 class Confirm extends React.Component {
   constructor(props) {
@@ -85,7 +117,7 @@ class Confirm extends React.Component {
 }
 
 
-export default Confirm;
+export default confirm;
 
 
 Confirm.defaultProps = {
