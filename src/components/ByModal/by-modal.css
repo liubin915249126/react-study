@@ -1,0 +1,26 @@
+.by-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.by-modal,
+.by-modal:before {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+/* .by-modal:before {
+  background-color: rgba(0, 0, 0, 0.6);
+  content: '';
+  display: block;
+} */
+
+.by-modal__container {
+  background-color: white;
+  color: black;
+  z-index: 99;
+}

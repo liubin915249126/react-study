@@ -9,6 +9,7 @@ import wallet from '@views/wallet'
 import hook from '@views/hook';
 
 import test from '@views/test'
+import dialog from '@views/test/dialog/index.jsx'
 
 const componentLink = {
     main,
@@ -19,7 +20,8 @@ const componentLink = {
     share,
     wallet,
     test,
-    hook
+    hook,
+    dialog
 }
 
 
@@ -69,6 +71,12 @@ const routerConfig = [
         name:'测试',
         url:'test',
         hide:true,
+        children:[
+           {
+            name:'dialog',
+            url:'dialog',
+           }
+        ]
     }
 ]
 
