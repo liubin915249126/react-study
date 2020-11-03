@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
-import {Button,Modal} from 'antd';
+import {Button} from 'antd';
 import ByDialog from '@/components/ByDialog'
 import DialogContent from './content'
+import Modal from '@/antd/modal/index.tsx'
 
 const dialogView = ({})=>{
     const [open,setOpen] = useState(false)

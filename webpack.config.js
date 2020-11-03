@@ -33,7 +33,7 @@ const config = {
             // srcPath: path.resolve(__dirname, 'Scripts/src')
         },
         // 集成省略扩展名
-        extensions: ['.js', '.json', '.jsx' , '.less']
+        extensions: ['.js', '.json', '.jsx' , '.less', '.ts', '.tsx']
     },
     module:{
         rules:[
@@ -44,6 +44,12 @@ const config = {
                 use: ['babel-loader'],
                 include: [APP_PATH]
             },
+            {
+              test: /\.(tsx|ts)$/,
+              exclude: /^node_modules$/,
+              use: ['ts-loader'],
+              include: [APP_PATH]
+          },
             {
                 test:/\.less$/,
                 //use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
