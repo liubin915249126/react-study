@@ -1,5 +1,6 @@
 import React from "react";
-import { Layout, Menu, Icon, Breadcrumb } from "antd";
+import { Icon as LegacyIcon } from '@ant-design/compatible';
+import { Layout, Menu, Breadcrumb } from "antd";
 import { connect } from 'dva'
 const { Header, Sider, Content } = Layout;
 import "./index.less";
@@ -60,7 +61,7 @@ class MainView extends React.Component {
           <SubMenu
             title={
               <span>
-                <Icon type={icon} />
+                <LegacyIcon type={icon} />
                 {name}
               </span>
             }
@@ -71,7 +72,7 @@ class MainView extends React.Component {
       } else {
         return (
           <Menu.Item key={url || index}>
-            <Icon type={icon} />
+            <LegacyIcon type={icon} />
             {collapsed ? null : <Link to={`${itemPath}`}>{name}</Link>}
           </Menu.Item>
         );
@@ -174,7 +175,7 @@ class MainView extends React.Component {
         </Sider>
         <Layout>
           <Header style={{ background: "#fff", padding: 0 }}>
-            <Icon
+            <LegacyIcon
               className="trigger"
               type={this.state.collapsed ? "menu-unfold" : "menu-fold"}
               onClick={() => {

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Spin, Checkbox, Row, Col, Icon, Pagination } from 'antd';
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
+import { Spin, Checkbox, Row, Col, Pagination } from 'antd';
 
 import styles from './Table.less';
 import { isObjectValueEqual, deepClone, clone } from '../../utils/utils';
@@ -194,15 +195,17 @@ class LenTable extends React.Component {
                           <span>{column.title}</span>
                           <div className={styles.sortercolwrap}>
                             <div className={styles.sortericonwrap}>
-                              <Icon type="caret-up" onClick={() => { this.sortData(column.dataIndex, 'ascend', column.sorter); }} />
+                              <CaretUpOutlined
+                                onClick={() => { this.sortData(column.dataIndex, 'ascend', column.sorter); }} />
                             </div>
                             <div className={styles.sortericonwrap}>
-                              <Icon type="caret-down" onClick={() => { this.sortData(column.dataIndex, 'descend', column.sorter); }} />
+                              <CaretDownOutlined
+                                onClick={() => { this.sortData(column.dataIndex, 'descend', column.sorter); }} />
                             </div>
                           </div>
                         </div>) : column.title}
                       </td>
-                      );
+                    );
                     }))}
                 </tr>
               </thead>
@@ -234,15 +237,17 @@ class LenTable extends React.Component {
                             <span>{column.title}</span>
                             <div className={styles.sortercolwrap}>
                               <div className={styles.sortericonwrap}>
-                                <Icon type="caret-up" onClick={() => { this.sortData(column.dataIndex, 'ascend', column.sorter); }} />
+                                <CaretUpOutlined
+                                  onClick={() => { this.sortData(column.dataIndex, 'ascend', column.sorter); }} />
                               </div>
                               <div className={styles.sortericonwrap}>
-                                <Icon type="caret-down" onClick={() => { this.sortData(column.dataIndex, 'descend', column.sorter); }} />
+                                <CaretDownOutlined
+                                  onClick={() => { this.sortData(column.dataIndex, 'descend', column.sorter); }} />
                               </div>
                             </div>
                           </div>) : column.title}
                         </td>
-                        );
+                      );
                       }))}
                   </tr>
                 </thead>
@@ -275,15 +280,17 @@ class LenTable extends React.Component {
                             <span>{column.title}</span>
                             <div className={styles.sortercolwrap}>
                               <div className={styles.sortericonwrap}>
-                                <Icon type="caret-up" onClick={() => { this.sortData(column.dataIndex, 'ascend', column.sorter); }} />
+                                <CaretUpOutlined
+                                  onClick={() => { this.sortData(column.dataIndex, 'ascend', column.sorter); }} />
                               </div>
                               <div className={styles.sortericonwrap}>
-                                <Icon type="caret-down" onClick={() => { this.sortData(column.dataIndex, 'descend', column.sorter); }} />
+                                <CaretDownOutlined
+                                  onClick={() => { this.sortData(column.dataIndex, 'descend', column.sorter); }} />
                               </div>
                             </div>
                           </div>) : column.title}
                         </td>
-                        );
+                      );
                       }))}
                   </tr>
                 </thead>

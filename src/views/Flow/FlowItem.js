@@ -1,5 +1,14 @@
 import React from 'react';
-import { Upload, Input, Row, Col, Icon, Popconfirm } from 'antd';
+
+import {
+  ArrowDownOutlined,
+  ArrowUpOutlined,
+  CheckOutlined,
+  CloseOutlined,
+  EditOutlined,
+} from '@ant-design/icons';
+
+import { Upload, Input, Row, Col, Popconfirm } from 'antd';
 const { TextArea } = Input;
 
 import styles from './flow.less';
@@ -66,12 +75,12 @@ class LoanFlowItem extends React.Component {
               </div>
             </div>
             <a className={styles.centerright}>
-              {(step !== total - 1) ? <Icon type="arrow-down" onClick={() => { this.sortData('down', step, flowType); }} /> : null}
-              {step !== 0 ? <Icon type="arrow-up" onClick={() => { this.sortData('up', step, flowType); }} /> : null}
+              {(step !== total - 1) ? <ArrowDownOutlined onClick={() => { this.sortData('down', step, flowType); }} /> : null}
+              {step !== 0 ? <ArrowUpOutlined onClick={() => { this.sortData('up', step, flowType); }} /> : null}
               <Popconfirm title="确认删除吗？" onConfirm={() => { this.cancleAdd(step); }}>
-                <Icon type="close" />
+                <CloseOutlined />
               </Popconfirm>
-              <Icon type="check" onClick={() => { this.confirmAdd(step); }} />
+              <CheckOutlined onClick={() => { this.confirmAdd(step); }} />
             </a>
           </Row>
           ) : (
@@ -88,7 +97,7 @@ class LoanFlowItem extends React.Component {
                 </Row>
               </div>
               <a className={styles.centerright}>
-                <Icon type="edit" onClick={() => { this.openEdit(step); }} />
+                <EditOutlined onClick={() => { this.openEdit(step); }} />
               </a>
             </Row>)}
       </div>

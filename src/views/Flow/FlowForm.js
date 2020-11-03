@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Spin, Icon, message, Row, Col } from 'antd';
+import { FrownOutlined } from '@ant-design/icons';
+import { Button, Spin, message, Row, Col } from 'antd';
 import LoanFlowItem from './FlowItem';
 // import { getFlow, saveFlow, uploadimg, loadflowurl, getFlowTemplate } from '../../services/loan';
 import { deepClone } from '../../utils/utils';
@@ -321,7 +322,7 @@ class FlowForm extends React.Component {
                 beforeUpload={(file, step) => { this.beforeUpload(file, step, 'AUDIT'); }}
                 sortData={(type, step, flowType) => { this.sortData(type, step, flowType); }}
               />);
-          }) : <Icon type="frown" />}
+          }) : <FrownOutlined />}
               <p className={styles.btnwrap}>
                 {/* <Button type="primary" onClick={() => { this.addItem('AUDIT'); }}>新增</Button> */}
                 <Button type="primary" onClick={() => { this.saveItem('AUDIT'); }}>保存</Button>
@@ -357,7 +358,7 @@ class FlowForm extends React.Component {
                 beforeUpload={(file, step) => { this.beforeUpload(file, step, 'APPLY'); }}
                 sortData={(type, step, flowType) => { this.sortData(type, step, flowType); }}
               />);
-          }) : <Icon type="frown" />}
+          }) : <FrownOutlined />}
               <p className={styles.btnwrap}>
                 {/* <Button type="primary" onClick={() => { this.addItem('APPLY'); }}>新增</Button> */}
                 <Button type="primary" onClick={() => { this.saveItem('APPLY'); }}>保存</Button>

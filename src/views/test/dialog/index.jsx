@@ -4,15 +4,16 @@ import ByDialog from '@/components/ByDialog'
 import DialogContent from './content'
 
 const dialogView = ({})=>{
-    onst [open,setOpen] = useState(false)
+    const [open,setOpen] = useState(false)
     const [visible,setVisible] = useState(false)
+    const [modal, contextHolder] = Modal.useModal();
     const confirm = ()=>{
         ByDialog.confirm({
             children:<DialogContent />
         })
     }
     const confirm1 = ()=>{
-        Modal.confirm({
+        modal.confirm({
             content:<DialogContent />
         })
     }
@@ -22,6 +23,7 @@ const dialogView = ({})=>{
            <Button type="primary" onClick={() =>confirm()}>ByConfirm</Button>
            <Button type="primary" onClick={() =>setVisible(true)}>Modal</Button>
            <Button type="primary" onClick={() =>confirm1()}>ModalConfirm</Button>
+           {contextHolder}
            <ByDialog
             open={open}
             onOutsideClick={() =>setOpen(false)}

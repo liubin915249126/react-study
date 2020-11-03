@@ -1,5 +1,6 @@
 import React from 'react';
-import {Button,Icon} from 'antd';
+import { CloseOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 import ReactDOM from 'react-dom';
 
 
@@ -38,7 +39,7 @@ class Modal extends React.Component{
                     <div className="len-modal animated slideInDown" style={leMmodalStyle}>
                           <div className="modal-title">
                             {nextProps.title ? nextProps.title:'新增'}
-                            <Icon type='close' onClick={() => { this.closeModal() }}/>
+                            <CloseOutlined onClick={() => { this.closeModal() }} />
                           </div>
                           <div className="modal-body">
                               {nextProps.children}

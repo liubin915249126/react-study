@@ -1,5 +1,6 @@
 import React from 'react';
-import { Checkbox, Icon } from 'antd';
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
+import { Checkbox } from 'antd';
 
 import styles from './Table.less';
 
@@ -31,15 +32,17 @@ class TableHeader extends React.Component {
                     <span>{column.title}</span>
                     <div className={styles.sortercolwrap}>
                       <div className={styles.sortericonwrap}>
-                        <Icon type="caret-up" onClick={() => { this.sortData(column.dataIndex, 'ascend', column.sorter); }} />
+                        <CaretUpOutlined
+                          onClick={() => { this.sortData(column.dataIndex, 'ascend', column.sorter); }} />
                       </div>
                       <div className={styles.sortericonwrap}>
-                        <Icon type="caret-down" onClick={() => { this.sortData(column.dataIndex, 'descend', column.sorter); }} />
+                        <CaretDownOutlined
+                          onClick={() => { this.sortData(column.dataIndex, 'descend', column.sorter); }} />
                       </div>
                     </div>
                   </div>) : column.title}
                 </td>
-                );
+              );
               }))}
           </tr>
         </thead>

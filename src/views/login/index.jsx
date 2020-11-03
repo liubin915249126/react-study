@@ -1,5 +1,7 @@
 import React from 'react';
-import {Button,Form,Input,Row,Col} from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Input, Row, Col } from 'antd';
 const FormItem = Form.Item;
 require("./login.less");
 

@@ -1,5 +1,6 @@
 import React from  "react";
-import {Row,Col,Icon} from 'antd';
+import { DoubleLeftOutlined, DoubleRightOutlined } from '@ant-design/icons';
+import { Row, Col } from 'antd';
 import "./slide.less"
 import { isObjectValueEqual} from '@utils/utils'
 class LenSlider extends React.Component{
@@ -72,33 +73,29 @@ class LenSlider extends React.Component{
     render(){
         let {slideData} = this.props;
         let {disableClick} = this.state;
-        return (<Row className={`sliderWrap ${disableClick}`}>
-                <Col span={2}>
-                    <Icon
-                        type="double-left"
-                        onClick={(e) => { this.slide("left") }}
-                    />
-                </Col>
-                <Col span={20} style={{ position: "relative", left: this.state.left }}>
-                  {Array.isArray(slideData)&&slideData.length&&slideData.map((item,index,arr)=>{
-                        return <Col span={2} className="paySlip" key={index}
-                                    style={{ position: "absolute", left: index * 8.3333 + '%' }}
-                                    >
-                                <span>{item}</span>
-                                <span
-                                    className={this.state.selecteds[index] ? 'selected dateDot' : 'dateDot'}
-                                    onClick={() => {this.toggleSelect(index);}}
-                                ></span>    
-                                </Col>
-                  })}
-                </Col>
-                <Col span={2}>
-                    <Icon
-                        type="double-right"
-                        onClick={(e) => { this.slide("right") }}
-                    />
-                </Col>
-            </Row>)
+        return (
+            <Row className={`sliderWrap ${disableClick}`}>
+                    <Col span={2}>
+                        <DoubleLeftOutlined onClick={(e) => { this.slide("left") }} />
+                    </Col>
+                    <Col span={20} style={{ position: "relative", left: this.state.left }}>
+                      {Array.isArray(slideData)&&slideData.length&&slideData.map((item,index,arr)=>{
+                            return <Col span={2} className="paySlip" key={index}
+                                        style={{ position: "absolute", left: index * 8.3333 + '%' }}
+                                        >
+                                    <span>{item}</span>
+                                    <span
+                                        className={this.state.selecteds[index] ? 'selected dateDot' : 'dateDot'}
+                                        onClick={() => {this.toggleSelect(index);}}
+                                    ></span>    
+                                    </Col>
+                      })}
+                    </Col>
+                    <Col span={2}>
+                        <DoubleRightOutlined onClick={(e) => { this.slide("right") }} />
+                    </Col>
+                </Row>
+        );
     }
 }
 export {LenSlider}
