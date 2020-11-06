@@ -1,0 +1,48 @@
+.uploadTest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .ant-upload-list-text {
+    display: none;
+  }
+  .uploader {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background: #eee;
+    border: 1px dashed #666;
+    margin: 10px 0;
+  }
+  .img-wrap {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    position: relative;
+    .anticon-delete {
+      color: #fff;  
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      display: none;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    &:hover > .anticon-delete {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

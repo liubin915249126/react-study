@@ -7,9 +7,11 @@ import punsub from '@views/punsub/index.js'
 import share from '@views/share'
 import wallet from '@views/wallet'
 import hook from '@views/hook';
+import upload from '@views/upload';
 
 import test from '@views/test'
 import immer from '@views/test/immer'
+import state from '@views/test/state' 
 
 const componentLink = {
     main,
@@ -21,7 +23,9 @@ const componentLink = {
     wallet,
     test,
     hook,
-    immer
+    immer,
+    state,
+    upload
 }
 
 
@@ -68,6 +72,11 @@ const routerConfig = [
     },
     {
         icon:'upload',
+        name:'upload',
+        url:'upload',
+    },
+    {
+        icon:'upload',
         name:'测试',
         url:'test',
         hide:true,
@@ -76,7 +85,12 @@ const routerConfig = [
                 icon:'upload',
                 name:'测试',
                 url: 'immer'
-            }
+            },
+            {
+                icon:'upload',
+                name:'state测试',
+                url: 'state'
+            },
         ]
     }
 ]
