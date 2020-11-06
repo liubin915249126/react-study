@@ -63,6 +63,10 @@ export default class Test extends React.Component{
     returnPromise(){
         return Promise.resolve();
     }
+    componentWillUnmount(){
+        console.log(111)
+        debugger;
+    }
     render(){
         const {newArr} = this.state;
         return (

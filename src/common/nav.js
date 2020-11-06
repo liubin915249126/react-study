@@ -10,6 +10,7 @@ import hook from '@views/hook';
 
 import test from '@views/test'
 import immer from '@views/test/immer'
+import state from '@views/test/state' 
 
 const componentLink = {
     main,
@@ -21,7 +22,8 @@ const componentLink = {
     wallet,
     test,
     hook,
-    immer
+    immer,
+    state
 }
 
 
@@ -76,7 +78,12 @@ const routerConfig = [
                 icon:'upload',
                 name:'测试',
                 url: 'immer'
-            }
+            },
+            {
+                icon:'upload',
+                name:'state测试',
+                url: 'state'
+            },
         ]
     }
 ]
