@@ -28,6 +28,16 @@ export default class State extends React.Component {
       }
     );
   }
+  handleClick1(){
+    new Promise((resolve, reject) =>{
+      resolve()
+    }).then(()=>{
+      this.setState({done:true})
+      console.log(111, this.state.done)
+    }).then(()=>{
+      console.log(222, this.state.done)
+    })
+  }
   render() {
     console.log("render");
     return (
@@ -35,6 +45,9 @@ export default class State extends React.Component {
         {this.state.val.info.name}
         <Button type="primary" onClick={() => this.handleClick()}>
           state测试
+        </Button>
+        <Button type="primary" onClick={() => this.handleClick1()}>
+          setSync
         </Button>
       </div>
     );
