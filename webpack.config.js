@@ -67,6 +67,7 @@ const config = {
         contentBase: "./src",//本地服务器所加载的页面所在的目录
         historyApiFallback: true,
         port:9999,
+        disableHostCheck: true,
         proxy:{
             '/': { target: 'http://localhost:3000', secure: false }
         }
