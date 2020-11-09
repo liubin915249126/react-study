@@ -95,4 +95,5 @@ ByDialog.propTypes = {
 const confirmDialog = new ConfirmDialog();
 
 ByDialog.confirm = confirm;
+
 export default ByDialog;

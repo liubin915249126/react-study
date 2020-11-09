@@ -36,8 +36,8 @@ const confirm = (props)=>{
           {RenderContent(confirmProps)}
         </ByModal>
       );
-      return modal
-      return ReactDom.createPortal(modal, parent)
+      // return modal
+      return ReactDom.render(modal, parent)
 }
 
 class Confirm extends React.Component {
