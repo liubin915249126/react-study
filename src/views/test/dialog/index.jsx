@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import {Button} from 'antd';
 import ByDialog from '@/components/ByDialog'
-import useDialog from '@/components/ByDialog/useDialog'
+import useDialog from '@/components/ByDialog/confirm'
 import DialogContent from './content'
 
 const dialogView = ({})=>{

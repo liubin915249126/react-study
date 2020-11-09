@@ -5,12 +5,12 @@ import ByModal, { RenderModalClass } from '../ByModal';
 
 const useDialog = ()=>{
     const [element,setElement] = useState(null)
-    const renderFunc = (props)=>{
-        setElement(confirm(props))
-    }
+    // const renderFunc = (props)=>{
+    //     setElement(confirm(props))
+    // }
     return [
         <>{element}</>,
-        renderFunc
+        setElement,
     ]
 }
 

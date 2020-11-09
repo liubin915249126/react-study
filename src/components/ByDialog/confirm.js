@@ -5,40 +5,52 @@ import PropTypes from 'prop-types';
 import RenderContent from './renderContent';
 import ByModal, { RenderModalClass } from '../ByModal';
 import { MODAL_ROOT } from '@/utils/constants';
+import useDialog from './useDialog'
 
 
-const confirm = (props)=>{
-      const {innerClass, onOutsideClick,container, ...others} = props||{}
-      const confirmProps = { 
-        showConfirm: true,
-        showCancel: true,
-        showClose: true,
-        ...others,
-        onClose: () => this.openFun(others.onClose),
-        onConfirm: () => this.openFun(others.onConfirm),
-        onCancel: () => this.openFun(others.onCancel),
-      };
-      const containerClass = classNames('by-dialog', innerClass);
-      let parent = container;
-      if (!parent) {
-        parent = document.createElement('div');
-        parent.setAttribute('id', `${MODAL_ROOT}`);
-        document.body.appendChild(parent);
-      }
-      const modal = (
-        <ByModal
-          innerClass={containerClass}
-          wrapped
-          open={true}
-          onOutsideClick={() => { this.openFun(onOutsideClick); }}
-          {...others}
-        >
-          {RenderContent(confirmProps)}
-        </ByModal>
-      );
-      ReactDom.render(modal, parent)
-      return modal
+const confirm = () => {
+  const [elements, setElements] = useDialog();
+  function render(props) {
+    const { innerClass, onOutsideClick, container, ...others } = props || {}
+    const confirmProps = {
+      showConfirm: true,
+      showCancel: true,
+      showClose: true,
+      ...others,
+      onClose: () => this.openFun(others.onClose),
+      onConfirm: () => this.openFun(others.onConfirm),
+      onCancel: () => this.openFun(others.onCancel),
+    };
+    let parent = container;
+    if (!parent) {
+      parent = document.createElement('div');
+      parent.setAttribute('id', `${MODAL_ROOT}`);
+      document.body.appendChild(parent);
     }
+    const containerClass = classNames('by-dialog', innerClass);
+    const modal = (
+      <ByModal
+        innerClass={containerClass}
+        wrapped
+        open={true}
+        onOutsideClick={() => { this.openFun(onOutsideClick); }}
+        {...others}
+      >
+        {RenderContent(confirmProps)}
+      </ByModal>
+    );
+    return [modal,parent];
+  }
+  const confirmFun = (props) =>{
+    const [modal,parent] = render(props)
+    ReactDom.render(modal,parent)
+    setElements(modal);
+  }
+  return [
+    <>{elements}</>,
+    confirmFun
+  ]
+}
 
 class Confirm extends React.Component {
   constructor(props) {
@@ -51,7 +63,7 @@ class Confirm extends React.Component {
 
   openFun(callback) {
     if (!!callback
-    && (typeof callback === 'object' || typeof callback === 'function')) {
+      && (typeof callback === 'object' || typeof callback === 'function')) {
       const promiseResult = callback() || {};
       if (typeof promiseResult.then === 'function') {
         promiseResult.finally(() => {
@@ -75,7 +87,7 @@ class Confirm extends React.Component {
     }
     const modal = this.render();
     function render() {
-      if (open)ReactDom.createPortal(modal, parent); return null;
+      if (open) ReactDom.createPortal(modal, parent); return null;
     }
     function destroy() {
       ReactDom.unmountComponentAtNode(parent);
