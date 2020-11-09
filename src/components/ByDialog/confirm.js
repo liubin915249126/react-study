@@ -7,19 +7,41 @@ import ByModal, { RenderModalClass } from '../ByModal';
 import { MODAL_ROOT } from '@/utils/constants';
 
 
-const confirm = () => {
+const useModal = () => {
+  let parent;
   const [element,setElement] = useState(null)
+  function destroy() {
+    ReactDom.unmountComponentAtNode(parent);
+    if (parent && parent.parentNode) {
+      parent.parentNode.removeChild(parent);
+    }
+    return null;
+  }
+  const openFun = (callback)=>{
+    if (!!callback
+    && (typeof callback === 'object' || typeof callback === 'function')) {
+      const promiseResult = callback() || {};
+      if (typeof promiseResult.then === 'function') {
+        promiseResult.finally(() => {
+          destroy();
+        });
+      } else {
+        destroy();
+      }
+    } else {
+      destroy();
+    }
+  }
   const render = (props) => {
-    let parent;
     const { innerClass, onOutsideClick, container, ...others } = props || {}
     const confirmProps = {
       showConfirm: true,
       showCancel: true,
       showClose: true,
       ...others,
-      onClose: () => this.openFun(others.onClose),
-      onConfirm: () => this.openFun(others.onConfirm),
-      onCancel: () => this.openFun(others.onCancel),
+      onClose: () => openFun(others.onClose),
+      onConfirm: () => openFun(others.onConfirm),
+      onCancel: () => openFun(others.onCancel),
     };
     parent = container;
     if (!parent) {
@@ -32,7 +54,7 @@ const confirm = () => {
       innerClass={containerClass}
       wrapped
       open={true}
-      onOutsideClick={() => { this.openFun(onOutsideClick); }}
+      onOutsideClick={() => { openFun(onOutsideClick); }}
       {...others}
     >
       {RenderContent(confirmProps)}
@@ -44,4 +66,4 @@ const confirm = () => {
   }
   return [element, render]
 }
-export default confirm;
+export default useModal;

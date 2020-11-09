@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import ByModal from '../ByModal';
 import ByButton from '../ByButton';
-import confirm from './confirm';
 
 import './by-dialog.css';
 
@@ -129,6 +128,6 @@ ByDialog.propTypes = {
   showFoot: PropTypes.bool,
 };
 
-ByDialog.confirm = confirm
-
+export const useModal = require('./confirm').default;
+ByDialog.useModal = useModal;
 export default ByDialog;

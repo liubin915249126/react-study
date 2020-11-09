@@ -1,14 +1,16 @@
 import React,{useState} from 'react';
 import {Button} from 'antd';
-import ByDialog from '@/components/ByDialog'
-import confirm from '@/components/ByDialog/confirm'
+import ByDialog,{useModal} from '@/components/ByDialog'
+// import confirm from '@/components/ByDialog/confirm'
 import DialogContent from './content'
 import confirm1 from './confirm'
+
+console.log(11,useModal,ByDialog)
 
 const dialogView = ({})=>{
     const [open,setOpen] = useState(false)
     const [visible,setVisible] = useState(false)
-    const [elementHolder,confirm2] = confirm()
+    const [elementHolder,confirm2] = useModal()
     // const confirmFun = ()=>{
     //     setElement(confirm({
     //         children:<DialogContent />
