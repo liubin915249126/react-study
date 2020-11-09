@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 }
 
 .by-modal,
@@ -13,14 +14,19 @@
   width: 100vw;
 }
 
-/* .by-modal:before {
+.show-darkModal.by-modal:before {
   background-color: rgba(0, 0, 0, 0.6);
   content: '';
   display: block;
-} */
+}
 
 .by-modal__container {
-  background-color: white;
-  color: black;
   z-index: 99;
+}
+.by-modal__container.withoutMask{
+  position: fixed;
+  left: 50%;top: 50%;
+  z-index: 0;
+  /* margin:0 auto; */
+  /* transform: translate(-50%, -50%); */
 }

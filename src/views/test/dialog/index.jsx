@@ -1,14 +1,17 @@
 import React,{useState} from 'react';
 import {Button} from 'antd';
 import ByDialog from '@/components/ByDialog'
+import useDialog from '@/components/ByDialog/useDialog'
 import DialogContent from './content'
 
 const dialogView = ({})=>{
     const [open,setOpen] = useState(false)
     const [visible,setVisible] = useState(false)
+    const [elementHolder,confirmDialog] = useDialog();
     const confirm = ()=>{
-        ByDialog.confirm({
+        confirmDialog({
             children:<DialogContent />
+            // children:<div>111</div>
         })
     }
     return (
@@ -21,6 +24,7 @@ const dialogView = ({})=>{
            >
             <DialogContent />
            </ByDialog>
+           {elementHolder}
         </div>
     )
 }

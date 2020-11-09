@@ -2,67 +2,31 @@ import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import Draggable from 'react-draggable';
-
+import useDomRoot from '../../hooks/use-dom-root';
 import { MODAL_ROOT } from '@/utils/constants';
 
 import './by-modal.css';
 
-export class RenderModalClass extends React.Component {
-  constructor(props) {
-    super(props);
-    this.destroy = null;
-    this.prevOpen = false;
-    this.container = null;
-    this.state = {
-      open: false,
-    };
-  }
-
-
-  render() {
-    const { open: prevOpen } = this.state;
-    const { open, children } = this.props;
-    console.log('prevOpen', prevOpen, open);
-
-    if (!prevOpen && open) {
-      this.container = document.createElement('div');
-      this.container.setAttribute('id', `${MODAL_ROOT}`);
-      document.body.appendChild(this.container);
-      return ReactDOM.createPortal(children, this.container);
-    }
-    const { container } = this;
-    if (!open) {
-      if (container) ReactDOM.unmountComponentAtNode(container);
-      if (container && container.parentNode) {
-        container.parentNode.removeChild(container);
-      }
-    }
-    return null;
-  }
-}
 const ByModal = ({
-  open,
-  wrapped = false,
   className,
   innerClass,
   children,
+  open,
   onOutsideClick,
   // onClose,
   lockScroll,
   innerWidth,
   draggable,
-  ...others
+  hideBackdrop,
 }) => {
   const rootClass = classNames('by-modal', className);
   const containerClass = classNames('by-modal__container', innerClass);
   const containerRef = useRef(null);
-  // const domRoot = useDomRoot(MODAL_ROOT);
+  const domRoot = useDomRoot(MODAL_ROOT);
   const innerStyle = innerWidth ? {
     width: innerWidth,
   } : {};
-
 
   const handleBackdropClick = (event) => {
     if (
@@ -73,32 +37,44 @@ const ByModal = ({
       onOutsideClick(event);
     }
   };
+
   if (open) {
+    const container = domRoot;
+
     if (lockScroll) document.body.style.overflow = 'hidden';
+
+    const modal = (
+      <div className={classNames({ [rootClass]: !hideBackdrop })} onClick={handleBackdropClick}>
+        <If condition={draggable}>
+          <Draggable
+            enableUserSelectHack={false}
+            bounds="body"
+          >
+            <div
+              ref={containerRef}
+              className={
+              classNames({ [containerClass]: true, withoutMask: hideBackdrop })
+              }
+              style={innerStyle}
+            >
+              {children}
+            </div>
+          </Draggable>
+        </If>
+        <If condition={!draggable}>
+          <div ref={containerRef} className={containerClass} style={innerStyle}>
+            {children}
+          </div>
+        </If>
+      </div>
+    );
+    return modal
+    return ReactDOM.createPortal(modal, container);
   }
 
   if (lockScroll) document.body.style.overflow = '';
 
-  let modal = (
-    <div className={rootClass} onClick={handleBackdropClick}>
-      <div ref={containerRef} className={containerClass} style={innerStyle}>
-        {children}
-      </div>
-    </div>
-  );
-  if (draggable) {
-    modal = (
-      <Draggable {...others}>
-        {modal}
-      </Draggable>
-    );
-  }
-  debugger;
-  // if (wrapped) {
-  //   return modal;
-  // }
-  // return <RenderModalClass open={open}>{modal}</RenderModalClass>;
-  return modal
+  return null;
 };
 
 ByModal.defaultProps = {
@@ -110,8 +86,7 @@ ByModal.defaultProps = {
   onClose: undefined,
   innerWidth: undefined,
   lockScroll: false,
-  draggable: false,
-  wrapped: false,
+  hideBackdrop: false,
 };
 
 ByModal.propTypes = {
@@ -126,20 +101,7 @@ ByModal.propTypes = {
   onClose: PropTypes.func,
   lockScroll: PropTypes.bool,
   innerWidth: PropTypes.string,
-  draggable: PropTypes.bool,
-  wrapped: PropTypes.bool,
-};
-
-RenderModalClass.defaultProps = {
-  open: false,
-  children: undefined,
-};
-RenderModalClass.propTypes = {
-  open: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  hideBackdrop: PropTypes.bool,
 };
 
 export default ByModal;

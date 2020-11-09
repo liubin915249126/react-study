@@ -1,5 +1,5 @@
 .by-dialog {
-  background-color: var(--primary-color-03);
+  background-color: var(--modal-bg-main);
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.38);
   border-radius: var(--size-4);
   min-width: 280px;
@@ -13,10 +13,10 @@
   position: relative;
 }
 .by-dialog__body {
-  padding: var(--size-32) var(--size-20) var(--size-0);
+  padding: var(--size-20) var(--size-20) var(--size-0);
 }
 .by-dialog__foot {
-  padding: var(--size-48) var(--size-20) var(--size-28);
+  padding: var(--size-12) var(--size-20) var(--size-20);
 }
 .by-dialog__btn {
   flex: 1;

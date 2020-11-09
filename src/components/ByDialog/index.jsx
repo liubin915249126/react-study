@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import ByModal, { RenderModalClass } from '../ByModal';
-import ConfirmDialog from './Confirm';
-import confirm from './confirm'
-import RenderContent from './renderContent';
+import ByModal from '../ByModal';
+import ByButton from '../ByButton';
+import confirm from './confirm';
 
 import './by-dialog.css';
 
@@ -12,6 +11,7 @@ const ByDialog = ({
   head,
   foot,
   children,
+  innerClass,
   onClose,
   showClose,
   onConfirm,
@@ -21,32 +21,69 @@ const ByDialog = ({
   onCancel,
   showCancel,
   cancelText,
-  innerClass,
-  open,
+  showFoot,
   ...others
 }) => {
   const containerClass = classNames('by-dialog', innerClass);
-  // const renderModalObj = useRef(new RenderModalClass());
-  const modal = (
-    <ByModal innerClass={containerClass} wrapped {...others}>
-      {RenderContent({
-        head,
-        foot,
-        children,
-        onClose,
-        showClose,
-        onConfirm,
-        confirming,
-        showConfirm,
-        confirmText,
-        onCancel,
-        showCancel,
-        cancelText,
-      })}
+  const closeBtnClass = classNames([
+    'by-dialog__close',
+    'regular f-12 gc-04 brand-hover',
+    'icon iconfont icon-close',
+  ]);
+
+  const handleClose = () => {
+    if (onClose) onClose();
+  };
+
+  return (
+    <ByModal innerClass={containerClass} {...others}>
+      <If condition={head}>
+        <div className="by-dialog__head bold f-14">
+          {head}
+          <If condition={showClose}>
+            <span className={closeBtnClass} onClick={handleClose} />
+          </If>
+        </div>
+      </If>
+      <div className="by-dialog__body gc-07">
+        { children }
+      </div>
+      <If condition={showFoot}>
+        <div className="by-dialog__foot flex">
+          <Choose>
+            <When condition={foot}>
+              {foot}
+            </When>
+            <Otherwise>
+              <If condition={showConfirm}>
+                <ByButton
+                  size="large"
+                  className="by-dialog__btn"
+                  color="primary"
+                  type="contained"
+                  onClick={onConfirm}
+                  loading={confirming}
+                >
+                  {confirmText}
+                </ByButton>
+              </If>
+              <If condition={showCancel}>
+                <ByButton
+                  size="large"
+                  type="outlined"
+                  className="by-dialog__btn"
+                  color="secondary"
+                  onClick={onCancel}
+                >
+                  {cancelText}
+                </ByButton>
+              </If>
+            </Otherwise>
+          </Choose>
+        </div>
+      </If>
     </ByModal>
   );
-
-  return <RenderModalClass open={open}>{modal}</RenderModalClass>;
 };
 
 ByDialog.defaultProps = {
@@ -63,11 +100,10 @@ ByDialog.defaultProps = {
   onCancel: undefined,
   showCancel: true,
   cancelText: undefined,
-  open: undefined,
+  showFoot: true,
 };
 
 ByDialog.propTypes = {
-  open: PropTypes.bool,
   head: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -90,10 +126,9 @@ ByDialog.propTypes = {
   onCancel: PropTypes.func,
   showCancel: PropTypes.bool,
   cancelText: PropTypes.string,
+  showFoot: PropTypes.bool,
 };
 
-const confirmDialog = new ConfirmDialog();
-
-ByDialog.confirm = confirm;
+ByDialog.confirm = confirm
 
 export default ByDialog;
