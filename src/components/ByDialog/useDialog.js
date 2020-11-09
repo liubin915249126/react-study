@@ -1,17 +1,16 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 
 import confirm from './confirm';
 import ByModal, { RenderModalClass } from '../ByModal';
 
-const useDialog = (props)=>{
-    let element = null
-    if(props){
-        element = confirm(props)
+const useDialog = ()=>{
+    const [element,setElement] = useState(null)
+    const renderFunc = (props)=>{
+        setElement(confirm(props))
     }
-    debugger;
     return [
         <>{element}</>,
-        ()=>confirm(props)
+        renderFunc
     ]
 }
 
