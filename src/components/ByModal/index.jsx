@@ -68,8 +68,8 @@ const ByModal = ({
         </If>
       </div>
     );
-    ReactDOM.createPortal(modal, container);
-    // return modal
+    // ReactDOM.createPortal(modal, container);
+    return modal
   }
 
   if (lockScroll) document.body.style.overflow = '';

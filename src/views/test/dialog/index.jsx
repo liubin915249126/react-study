@@ -3,18 +3,26 @@ import {Button} from 'antd';
 import ByDialog from '@/components/ByDialog'
 import confirm from '@/components/ByDialog/confirm'
 import DialogContent from './content'
+import confirm1 from './confirm'
 
 const dialogView = ({})=>{
     const [open,setOpen] = useState(false)
     const [visible,setVisible] = useState(false)
-    const [elementHolder,setElement] = useState(null)
+    const [elementHolder,confirm2] = confirm()
+    // const confirmFun = ()=>{
+    //     setElement(confirm({
+    //         children:<DialogContent />
+    //         // children:<div>111</div>
+    //     }))
+    // }
+
+
     const confirmFun = ()=>{
-        setElement(confirm({
+        confirm2({
             children:<DialogContent />
-            // children:<div>111</div>
-        }))
+        })
     }
-    console.log(elementHolder,111)
+
     return (
         <div>
            <Button type="primary" onClick={() =>setOpen(true)}>ByDialog</Button>
