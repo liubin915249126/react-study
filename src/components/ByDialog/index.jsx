@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import ByModal from '../ByModal';
 import ByButton from '../ByButton';
+import renderContent from './renderContent';
 
 import './by-dialog.css';
 
@@ -24,63 +25,24 @@ const ByDialog = ({
   ...others
 }) => {
   const containerClass = classNames('by-dialog', innerClass);
-  const closeBtnClass = classNames([
-    'by-dialog__close',
-    'regular f-12 gc-04 brand-hover',
-    'icon iconfont icon-close',
-  ]);
-
-  const handleClose = () => {
-    if (onClose) onClose();
-  };
-
   return (
     <ByModal innerClass={containerClass} {...others}>
-      <If condition={head}>
-        <div className="by-dialog__head bold f-14">
-          {head}
-          <If condition={showClose}>
-            <span className={closeBtnClass} onClick={handleClose} />
-          </If>
-        </div>
-      </If>
-      <div className="by-dialog__body gc-07">
-        { children }
-      </div>
-      <If condition={showFoot}>
-        <div className="by-dialog__foot flex">
-          <Choose>
-            <When condition={foot}>
-              {foot}
-            </When>
-            <Otherwise>
-              <If condition={showConfirm}>
-                <ByButton
-                  size="large"
-                  className="by-dialog__btn"
-                  color="primary"
-                  type="contained"
-                  onClick={onConfirm}
-                  loading={confirming}
-                >
-                  {confirmText}
-                </ByButton>
-              </If>
-              <If condition={showCancel}>
-                <ByButton
-                  size="large"
-                  type="outlined"
-                  className="by-dialog__btn"
-                  color="secondary"
-                  onClick={onCancel}
-                >
-                  {cancelText}
-                </ByButton>
-              </If>
-            </Otherwise>
-          </Choose>
-        </div>
-      </If>
+      {renderContent({
+        head,
+        foot,
+        children,
+        onClose,
+        showClose,
+        onConfirm,
+        confirming,
+        showConfirm,
+        confirmText,
+        onCancel,
+        showCancel,
+        cancelText,
+        showFoot,
+        ...others
+      })}
     </ByModal>
   );
 };

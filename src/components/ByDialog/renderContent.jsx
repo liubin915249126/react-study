@@ -2,11 +2,13 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import ByButton from '../ByButton';
+import {openFun } from './utils'
 
 export default function RenderContent({
   head,
   foot,
   children,
+  innerClass,
   onClose,
   showClose,
   onConfirm,
@@ -16,16 +18,20 @@ export default function RenderContent({
   onCancel,
   showCancel,
   cancelText,
+  showFoot,
+  ...others
 }) {
   const closeBtnClass = classNames([
     'by-dialog__close',
     'regular f-12 gc-04 brand-hover',
     'icon iconfont icon-close',
   ]);
-
-  const handleClose = () => {
-    if (onClose) onClose();
-  };
+  // const handleClose = () => {
+  //   if (onClose) onClose();
+  // };
+  const handleClose = () => openFun(onClose)
+  const handleConfirm = () => openFun(onConfirm)
+  const handleCancel = () => openFun(onCancel)
   return (
     <>
       <If condition={head}>
@@ -36,41 +42,43 @@ export default function RenderContent({
           </If>
         </div>
       </If>
-      <div className="by-dialog__body gc-04">
+      <div className="by-dialog__body gc-07">
         { children }
       </div>
-      <div className="by-dialog__foot flex">
-        <Choose>
-          <When condition={foot}>
-            {foot}
-          </When>
-          <Otherwise>
-            <If condition={showConfirm}>
-              <ByButton
-                size="large"
-                className="by-dialog__btn"
-                color="primary"
-                type="contained"
-                onClick={onConfirm}
-                loading={confirming}
-              >
-                {confirmText}
-              </ByButton>
-            </If>
-            <If condition={showCancel}>
-              <ByButton
-                size="large"
-                type="outlined"
-                className="by-dialog__btn"
-                color="secondary"
-                onClick={onCancel}
-              >
-                {cancelText}
-              </ByButton>
-            </If>
-          </Otherwise>
-        </Choose>
-      </div>
+      <If condition={showFoot}>
+        <div className="by-dialog__foot flex">
+          <Choose>
+            <When condition={foot}>
+              {foot}
+            </When>
+            <Otherwise>
+              <If condition={showConfirm}>
+                <ByButton
+                  size="large"
+                  className="by-dialog__btn"
+                  color="primary"
+                  type="contained"
+                  onClick={handleConfirm}
+                  loading={confirming}
+                >
+                  {confirmText}
+                </ByButton>
+              </If>
+              <If condition={showCancel}>
+                <ByButton
+                  size="large"
+                  type="outlined"
+                  className="by-dialog__btn"
+                  color="secondary"
+                  onClick={handleCancel}
+                >
+                  {cancelText}
+                </ByButton>
+              </If>
+            </Otherwise>
+          </Choose>
+        </div>
+      </If>
     </>
   );
 }

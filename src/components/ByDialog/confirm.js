@@ -1,68 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import ReactDom from 'react-dom';
+import React, { useState } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+
 import RenderContent from './renderContent';
-import ByModal, { RenderModalClass } from '../ByModal';
-import { MODAL_ROOT } from '@/utils/constants';
+import ByModal from '../ByModal';
+
 
 
 const useModal = () => {
-  let parent;
   const [element,setElement] = useState(null)
-  function destroy() {
-    ReactDom.unmountComponentAtNode(parent);
-    if (parent && parent.parentNode) {
-      parent.parentNode.removeChild(parent);
-    }
-    return null;
-  }
-  const openFun = (callback)=>{
-    if (!!callback
-    && (typeof callback === 'object' || typeof callback === 'function')) {
-      const promiseResult = callback() || {};
-      if (typeof promiseResult.then === 'function') {
-        promiseResult.finally(() => {
-          destroy();
-        });
-      } else {
-        destroy();
-      }
-    } else {
-      destroy();
-    }
-  }
   const render = (props) => {
-    const { innerClass, onOutsideClick, container, ...others } = props || {}
+    const { innerClass, container, ...others } = props || {}
     const confirmProps = {
       showConfirm: true,
       showCancel: true,
       showClose: true,
-      ...others,
-      onClose: () => openFun(others.onClose),
-      onConfirm: () => openFun(others.onConfirm),
-      onCancel: () => openFun(others.onCancel),
+      showFoot: true,
+      cancelText: '取消',
+      confirmText: '确认',
+      ...others
     };
-    parent = container;
-    if (!parent) {
-      parent = document.createElement('div');
-      parent.setAttribute('id', `${MODAL_ROOT}`);
-      document.body.appendChild(parent);
-    }
     const containerClass = classNames('by-dialog', innerClass);
     const modal = <ByModal
       innerClass={containerClass}
       wrapped
       open={true}
-      onOutsideClick={() => { openFun(onOutsideClick); }}
       {...others}
     >
       {RenderContent(confirmProps)}
     </ByModal>
-    setElement(ReactDom.createPortal(
-      <>{modal}</>,
-      parent
-    ))
+    setElement(modal)
   }
   return [element, render]
 }

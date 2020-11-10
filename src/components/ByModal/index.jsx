@@ -39,7 +39,7 @@ const ByModal = ({
   };
 
   if (open) {
-    const container = domRoot;
+    container = domRoot;
 
     if (lockScroll) document.body.style.overflow = 'hidden';
 
