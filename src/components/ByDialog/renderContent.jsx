@@ -19,6 +19,7 @@ export default function RenderContent({
   showCancel,
   cancelText,
   showFoot,
+  destroy,
   ...others
 }) {
   const closeBtnClass = classNames([
@@ -29,9 +30,11 @@ export default function RenderContent({
   // const handleClose = () => {
   //   if (onClose) onClose();
   // };
-  const handleClose = () => openFun(onClose)
-  const handleConfirm = () => openFun(onConfirm)
-  const handleCancel = () => openFun(onCancel)
+  const handleClose = () => openFun({callback:onClose,destroy})
+  const handleConfirm = () => {
+    openFun({callback:onConfirm,destroy})
+  }
+  const handleCancel = () => openFun({callback:onCancel,destroy})
   return (
     <>
       <If condition={head}>

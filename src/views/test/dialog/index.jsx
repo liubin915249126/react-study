@@ -21,13 +21,18 @@ const dialogView = ({})=>{
 
     const confirmFun = ()=>{
         confirm2({
-            children:<DialogContent />
+            children:<DialogContent />,
+            onOk:()=>{
+
+            }
         })
     }
     const modalConfirmFun = ()=>{
         modal.confirm({
             content:<DialogContent />,
-            onOk:()=>{}
+            onOk:()=>{
+                ByDialog.destroyAll()
+            }
         })
     }
     return (

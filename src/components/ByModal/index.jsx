@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import useDomRoot from '../../hooks/use-dom-root';
 import { MODAL_ROOT } from '@/utils/constants';
-
 import './by-modal.css';
 
 const ByModal = ({
@@ -19,15 +18,26 @@ const ByModal = ({
   innerWidth,
   draggable,
   hideBackdrop,
+  wrapped,
 }) => {
   const rootClass = classNames('by-modal', className);
   const containerClass = classNames('by-modal__container', innerClass);
   const containerRef = useRef(null);
-  const domRoot = useDomRoot(MODAL_ROOT);
+  let container;
+  const root = useDomRoot(MODAL_ROOT)
   const innerStyle = innerWidth ? {
     width: innerWidth,
   } : {};
-
+  const destroy = () => {
+    if(!container){
+      return;
+    }
+    const res = ReactDOM.unmountComponentAtNode(container);
+    if (container && container.parentNode) {
+      container.parentNode.removeChild(container);
+    }
+    return null;
+  }
   const handleBackdropClick = (event) => {
     if (
       onOutsideClick
@@ -37,12 +47,9 @@ const ByModal = ({
       onOutsideClick(event);
     }
   };
-
   if (open) {
-    container = domRoot;
-
+    container = root
     if (lockScroll) document.body.style.overflow = 'hidden';
-
     const modal = (
       <div className={classNames({ [rootClass]: !hideBackdrop })} onClick={handleBackdropClick}>
         <If condition={draggable}>
@@ -68,8 +75,12 @@ const ByModal = ({
         </If>
       </div>
     );
+    if(wrapped){
+      return modal
+    }
     return ReactDOM.createPortal(modal, container);
-    // return modal
+  }else{
+    destroy();
   }
 
   if (lockScroll) document.body.style.overflow = '';

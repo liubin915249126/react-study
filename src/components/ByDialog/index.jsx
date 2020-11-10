@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ByModal from '../ByModal';
 import ByButton from '../ByButton';
 import renderContent from './renderContent';
+export const destroyFns = [];
 
 import './by-dialog.css';
 
@@ -46,6 +47,20 @@ const ByDialog = ({
     </ByModal>
   );
 };
+
+const destroyAll = () => {
+  debugger;
+  console.log(11,destroyFns)
+  while (destroyFns.length){
+    
+  }
+}
+
+export const useModal = require('./confirm').default;
+ByDialog.useModal = useModal;
+ByDialog.destroyAll = destroyAll;
+
+export default ByDialog;
 
 ByDialog.defaultProps = {
   head: undefined,
@@ -90,6 +105,3 @@ ByDialog.propTypes = {
   showFoot: PropTypes.bool,
 };
 
-export const useModal = require('./confirm').default;
-ByDialog.useModal = useModal;
-export default ByDialog;
