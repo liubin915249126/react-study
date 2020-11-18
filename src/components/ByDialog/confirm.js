@@ -3,24 +3,27 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 
 import RenderContent from './renderContent';
+import RenderModal from '../ByModal/RenderModal'
 import ByModal from '../ByModal';
-import {destroyFns} from './index';
+import { destroyFns } from './index';
 
-
+const modalContainers = [];
 
 const useModal = () => {
-  const [element,setElement] = useState(null)
-  const [open,setOpen] = useState(true)
-  
-  let div;
+  const [elements, setElement] = useState([])
+  const [open, setOpen] = useState(true)
   const destroy = () => {
-    const res = ReactDOM.unmountComponentAtNode(div);
-    if (div && div.parentNode) {
-      div.parentNode.removeChild(div);
+    const currentDiv = modalContainers.filter(container => container == div)[0]
+    console.log('currentDiv',currentDiv)
+    if (!currentDiv) {
+      return;
+    }
+    const res = ReactDOM.unmountComponentAtNode(currentDiv);
+    if (currentDiv && currentDiv.parentNode) {
+      currentDiv.parentNode.removeChild(currentDiv);
     }
     return null;
   }
-  
   const render = (props) => {
     const { innerClass, container, ...others } = props || {}
     const confirmProps = {
@@ -32,26 +35,25 @@ const useModal = () => {
       confirmText: '确认',
       ...others
     };
-    div = document.createElement('div');
+    const div = document.createElement('div');
     document.body.appendChild(div);
+    modalContainers.push(div)
     const containerClass = classNames('by-dialog', innerClass);
-    const modal = <ByModal
-      innerClass={containerClass}
-      wrapped
+    const modal = <RenderModal
+      innerClass = {containerClass}
       open={open}
-      {...others}
-    >
-      <RenderContent
+      children = {<RenderContent
         {...confirmProps}
-        destroy={()=>{
+        destroy={() => {
           destroy()
         }}
-      />
-    </ByModal>
-    destroyFns.push(destroy)
-    setElement(ReactDOM.createPortal(modal, div));
+      />}
+      {...others}
+    />
+    setElement([...elements,ReactDOM.createPortal(modal, div)]);
   }
-  return [element, render]
+  console.log('elements',elements)
+  return [elements, render]
 }
 
 export default useModal;

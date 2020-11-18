@@ -9,8 +9,11 @@ import confirm1 from './confirm'
 const dialogView = ({})=>{
     const [open,setOpen] = useState(false)
     const [visible,setVisible] = useState(false)
-    const [elementHolder,confirm2] = useModal()
+    const [elementsHolder,confirm2] = useModal()
     const [modal,elementHolder1] = Modal.useModal()
+
+    console.log('elementsHolder',elementsHolder)
+
     // const confirmFun = ()=>{
     //     setElement(confirm({
     //         children:<DialogContent />
@@ -18,10 +21,23 @@ const dialogView = ({})=>{
     //     }))
     // }
 
+    const confirmFun1 = ()=>{
+        confirm2({
+            children: <div>
+              <DialogContent />
+              <Button type="primary" onClick={() =>confirmFun1()}>ByConfirm</Button>
+            </div>,
+            onOk:()=>{
 
+            }
+        })
+    }
     const confirmFun = ()=>{
         confirm2({
-            children:<DialogContent />,
+            children: <div>
+              <DialogContent />
+              <Button type="primary" onClick={() =>confirmFun1()}>ByConfirm1</Button>
+            </div>,
             onOk:()=>{
 
             }
@@ -56,7 +72,7 @@ const dialogView = ({})=>{
            >
              <DialogContent />
            </Modal>
-           {elementHolder}
+           {elementsHolder}
            {elementHolder1}
         </div>
     )

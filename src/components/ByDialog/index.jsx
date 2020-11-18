@@ -49,7 +49,6 @@ const ByDialog = ({
 };
 
 const destroyAll = () => {
-  debugger;
   console.log(11,destroyFns)
   while (destroyFns.length){
     
