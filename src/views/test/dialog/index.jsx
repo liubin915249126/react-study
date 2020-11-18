@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import {Button,Modal} from 'antd';
-import ByDialog,{useModal} from '@/components/ByDialog'
+import ByDialog,{useModal,destroyAll} from '@/components/ByDialog'
 // import confirm from '@/components/ByDialog/confirm'
 import DialogContent from './content'
 import confirm1 from './confirm'
@@ -25,7 +25,7 @@ const dialogView = ({})=>{
         confirm2({
             children: <div>
               <DialogContent />
-              <Button type="primary" onClick={() =>confirmFun1()}>ByConfirm</Button>
+              <Button type="primary" onClick={() =>destroyAll()}>ByConfirm</Button>
             </div>,
             onOk:()=>{
 

@@ -5,55 +5,68 @@ import classNames from 'classnames';
 import RenderContent from './renderContent';
 import RenderModal from '../ByModal/RenderModal'
 import ByModal from '../ByModal';
-import { destroyFns } from './index';
 import usePatchElement from './patchElements'
 
 const modalContainers = [];
+const destroyFns = [];
+let uuid = 0
 
 const useModal = () => {
   const [elements, patchElement] = usePatchElement([])
   const [open, setOpen] = useState(true)
-  const destroy = () => {
-    const currentDiv = modalContainers.filter(container => container == div)[0]
-    console.log('currentDiv',currentDiv)
-    if (!currentDiv) {
-      return;
-    }
-    const res = ReactDOM.unmountComponentAtNode(currentDiv);
-    if (currentDiv && currentDiv.parentNode) {
-      currentDiv.parentNode.removeChild(currentDiv);
-    }
-    return null;
-  }
   const render = (props) => {
     const { innerClass, container, ...others } = props || {}
+    uuid+=1
     const confirmProps = {
+      ...others,
       showConfirm: true,
       showCancel: true,
       showClose: true,
       showFoot: true,
       cancelText: '取消',
       confirmText: '确认',
-      ...others
     };
     const div = document.createElement('div');
     document.body.appendChild(div);
     modalContainers.push(div)
+    const destroy = () => {
+      const currentIndex =  modalContainers.filter(container => container == div)
+      const currentDiv = modalContainers.splice(currentIndex,1)[0]
+      if (!currentDiv) {
+        return;
+      }
+      const res = ReactDOM.unmountComponentAtNode(currentDiv);
+      if (currentDiv && currentDiv.parentNode) {
+        currentDiv.parentNode.removeChild(currentDiv);
+      }
+      return null;
+    }
+    destroyFns.push(destroy)
     const containerClass = classNames('by-dialog', innerClass);
     const modal = <RenderModal
+      key={`modal-${uuid}`}
       innerClass = {containerClass}
       open={open}
-      children = {<RenderContent
-        {...confirmProps}
-        destroy={() => {
-          destroy()
-        }}
-      />}
       {...others}
+      children = {<RenderContent
+        // destroy={() => {
+        //   destroy()
+        // }}
+        {...confirmProps}
+      />}
     />
     patchElement(ReactDOM.createPortal(modal, div));
   }
   return [elements, render]
+}
+
+export const destroyAll = () => {
+  while (destroyFns.length) {
+    const close = destroyFns.pop();
+    if (close) {
+      close();
+    }
+  }
 }
 
 export default useModal;

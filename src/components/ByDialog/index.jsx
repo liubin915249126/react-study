@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import ByModal from '../ByModal';
 import ByButton from '../ByButton';
 import renderContent from './renderContent';
-export const destroyFns = [];
 
 import './by-dialog.css';
 
@@ -48,16 +47,14 @@ const ByDialog = ({
   );
 };
 
-const destroyAll = () => {
-  console.log(11,destroyFns)
-  while (destroyFns.length){
-    
-  }
-}
 
 export const useModal = require('./confirm').default;
+import {destroyAll as destroyAllFun} from'./confirm'
+
 ByDialog.useModal = useModal;
-ByDialog.destroyAll = destroyAll;
+ByDialog.destroyAll = destroyAllFun;
+
+export const destroyAll = destroyAllFun;
 
 export default ByDialog;
 
