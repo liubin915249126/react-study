@@ -6,11 +6,12 @@ import RenderContent from './renderContent';
 import RenderModal from '../ByModal/RenderModal'
 import ByModal from '../ByModal';
 import { destroyFns } from './index';
+import usePatchElement from './patchElements'
 
 const modalContainers = [];
 
 const useModal = () => {
-  const [elements, setElement] = useState([])
+  const [elements, patchElement] = usePatchElement([])
   const [open, setOpen] = useState(true)
   const destroy = () => {
     const currentDiv = modalContainers.filter(container => container == div)[0]
@@ -50,9 +51,8 @@ const useModal = () => {
       />}
       {...others}
     />
-    setElement([...elements,ReactDOM.createPortal(modal, div)]);
+    patchElement(ReactDOM.createPortal(modal, div));
   }
-  console.log('elements',elements)
   return [elements, render]
 }
 
