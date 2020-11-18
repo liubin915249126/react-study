@@ -49,9 +49,9 @@ const useModal = () => {
       open={open}
       {...others}
       children = {<RenderContent
-        // destroy={() => {
-        //   destroy()
-        // }}
+        destroy={() => {
+          destroy()
+        }}
         {...confirmProps}
       />}
     />
