@@ -48,6 +48,7 @@
     "dva": "^2.4.1",
     "html2canvas": "^1.0.0-rc.1",
     "mini-css-extract-plugin": "^0.5.0",
+    "popper.js": "1.16.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^6.0.0",

@@ -9,6 +9,7 @@ import wallet from '@views/wallet'
 import hook from '@views/hook';
 
 import test from '@views/test'
+import popover from '@views/test/popover'
 
 const componentLink = {
     main,
@@ -19,56 +20,65 @@ const componentLink = {
     share,
     wallet,
     test,
-    hook
+    hook,
+    popover
 }
 
 
 const routerConfig = [
     {
-        icon:'user',
-        name:'首页',
-        url:'main',
+        icon: 'user',
+        name: '首页',
+        url: 'main',
     },
     {
-        icon:'video-camera',
-        name:'关于',
-        url:'about',
+        icon: 'video-camera',
+        name: '关于',
+        url: 'about',
     },
     {
-        icon:'upload',
-        name:'时间轴',
-        url:'timeline',
+        icon: 'upload',
+        name: '时间轴',
+        url: 'timeline',
     },
     {
-        icon:'upload',
-        name:'灭霸特效',
-        url:'thanos',
+        icon: 'upload',
+        name: '灭霸特效',
+        url: 'thanos',
     },
     {
-        icon:'upload',
-        name:'事件订阅',
-        url:'punsub',
+        icon: 'upload',
+        name: '事件订阅',
+        url: 'punsub',
     },
     {
-        icon:'upload',
-        name:'分享社媒',
-        url:'share',
+        icon: 'upload',
+        name: '分享社媒',
+        url: 'share',
     },
     {
-        icon:'upload',
-        name:'ws推送',
-        url:'wallet',
+        icon: 'upload',
+        name: 'ws推送',
+        url: 'wallet',
     },
     {
-        icon:'upload',
-        name:'hook',
-        url:'hook',
+        icon: 'upload',
+        name: 'hook',
+        url: 'hook',
     },
     {
-        icon:'upload',
-        name:'测试',
-        url:'test',
-        hide:true,
+        icon: 'upload',
+        name: '测试',
+        url: 'test',
+        hide: true,
+        children: [
+            {
+                icon: 'upload',
+                name: '测试',
+                url: 'popover',
+                hide: true,
+            }
+        ]
     }
 ]
 
