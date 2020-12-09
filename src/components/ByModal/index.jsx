@@ -16,24 +16,23 @@ const ByModal = ({
 }) => {
   let container;
   const root = useDomRoot(MODAL_ROOT)
-  const destroy = () => {
-    console.log('container',container)
-    if(!container){
-      return;
-    }
-    const res = ReactDOM.unmountComponentAtNode(container);
-    if (container && container.parentNode) {
-      container.parentNode.removeChild(container);
-    }
-    return null;
-  }
+  // const destroy = () => {
+  //   if(!container){
+  //     return;
+  //   }
+  //   const res = ReactDOM.unmountComponentAtNode(container);
+  //   if (container && container.parentNode) {
+  //     container.parentNode.removeChild(container);
+  //   }
+  //   return null;
+  // }
   if (open) {
     container = root
     if (lockScroll) document.body.style.overflow = 'hidden';
     const modal = <RenderModal {...others} />
     return ReactDOM.createPortal(modal, container);
   }else{
-    destroy();
+    // destroy();
   }
 
   if (lockScroll) document.body.style.overflow = '';

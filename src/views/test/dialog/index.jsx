@@ -8,6 +8,7 @@ import confirm1 from './confirm'
 
 const dialogView = ({})=>{
     const [open,setOpen] = useState(false)
+    const [open1,setOpen1] = useState(false)
     const [visible,setVisible] = useState(false)
     const [elementsHolder,confirm2] = useModal()
     const [modal,elementHolder1] = Modal.useModal()
@@ -20,12 +21,22 @@ const dialogView = ({})=>{
     //         // children:<div>111</div>
     //     }))
     // }
+    const confirmFun2 = ()=>{
+        confirm2({
+            children: <div>
+              <DialogContent />
+              <Button type="primary" onClick={() =>destroyAll()}>ByConfirm2</Button>
+            </div>,
+            onOk:()=>{
 
+            }
+        })
+    }
     const confirmFun1 = ()=>{
         confirm2({
             children: <div>
               <DialogContent />
-              <Button type="primary" onClick={() =>destroyAll()}>ByConfirm</Button>
+              <Button type="primary" onClick={() =>confirmFun2()}>ByConfirm1</Button>
             </div>,
             onOk:()=>{
 
@@ -36,7 +47,7 @@ const dialogView = ({})=>{
         confirm2({
             children: <div>
               <DialogContent />
-              <Button type="primary" onClick={() =>confirmFun1()}>ByConfirm1</Button>
+              <Button type="primary" onClick={() =>confirmFun1()}>ByConfirm</Button>
             </div>,
             onOk:()=>{
 
@@ -64,6 +75,13 @@ const dialogView = ({})=>{
            <ByDialog
             open={open}
             onOutsideClick={() =>setOpen(false)}
+           >
+            <DialogContent />
+            <Button type="primary" onClick={() =>setOpen1(true)}>ByDialog</Button>
+           </ByDialog>
+           <ByDialog
+            open={open1}
+            onOutsideClick={() =>setOpen1(false)}
            >
             <DialogContent />
            </ByDialog>

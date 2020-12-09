@@ -30,7 +30,7 @@ const useModal = () => {
     document.body.appendChild(div);
     modalContainers.push(div)
     const destroy = () => {
-      const currentIndex =  modalContainers.filter(container => container == div)
+      const currentIndex =  modalContainers.findIndex(container => container == div)
       const currentDiv = modalContainers.splice(currentIndex,1)[0]
       if (!currentDiv) {
         return;
