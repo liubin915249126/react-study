@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import useDomRoot from '../../hooks/use-dom-root';
 import { MODAL_ROOT } from '@/utils/constants';
-import RenderModal from './RenderModal'
+import RenderModal from './renderModal'
 import './by-modal.css';
 
 const ByModal = ({

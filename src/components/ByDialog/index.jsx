@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import ByModal from '../ByModal';
-import ByButton from '../ByButton';
 import renderContent from './renderContent';
 
 import './by-dialog.css';

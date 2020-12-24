@@ -17,18 +17,6 @@ const useModal = () => {
   const render = (props) => {
     const { innerClass, container, ...others } = props || {}
     uuid+=1
-    const confirmProps = {
-      ...others,
-      showConfirm: true,
-      showCancel: true,
-      showClose: true,
-      showFoot: true,
-      cancelText: '取消',
-      confirmText: '确认',
-    };
-    const div = document.createElement('div');
-    document.body.appendChild(div);
-    modalContainers.push(div)
     const destroy = () => {
       const currentIndex =  modalContainers.findIndex(container => container == div)
       const currentDiv = modalContainers.splice(currentIndex,1)[0]
@@ -41,6 +29,18 @@ const useModal = () => {
       }
       return null;
     }
+    const confirmProps = {
+      ...others,
+      showConfirm: true,
+      showCancel: true,
+      showClose: true,
+      showFoot: true,
+      cancelText: '取消',
+      confirmText: '确认',
+    };
+    const div = document.createElement('div');
+    document.body.appendChild(div);
+    modalContainers.push(div)
     destroyFns.push(destroy)
     const containerClass = classNames('by-dialog', innerClass);
     const modal = <RenderModal
