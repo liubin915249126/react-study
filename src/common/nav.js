@@ -9,6 +9,7 @@ import wallet from '@views/wallet'
 import hook from '@views/hook';
 
 import test from '@views/test'
+import immer from '@views/test/immer'
 
 const componentLink = {
     main,
@@ -19,7 +20,8 @@ const componentLink = {
     share,
     wallet,
     test,
-    hook
+    hook,
+    immer
 }
 
 
@@ -69,6 +71,13 @@ const routerConfig = [
         name:'测试',
         url:'test',
         hide:true,
+        children:[
+            {
+                icon:'upload',
+                name:'测试',
+                url: 'immer'
+            }
+        ]
     }
 ]
 
