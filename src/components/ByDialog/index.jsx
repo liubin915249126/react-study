@@ -47,11 +47,12 @@ const ByDialog = ({
 };
 
 
-export const useModal = require('./confirm').default;
-import {destroyAll as destroyAllFun} from'./confirm'
+export const useModal = require('./useModal').default;
+import Confirm, {destroyAll as destroyAllFun} from'./confirm'
 
 ByDialog.useModal = useModal;
 ByDialog.destroyAll = destroyAllFun;
+ByDialog.confirm = Confirm;
 
 export const destroyAll = destroyAllFun;
 
