@@ -9,7 +9,7 @@ const modalContainers = [];
 const destroyFns = [];
 let uuid = 0;
 
-const Confirm = ({props}) => {
+const Confirm = (props) => {
   const { innerClass, isPortal, ...others } = props || {};
   uuid += 1;
   const confirmProps = {

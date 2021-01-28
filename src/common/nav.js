@@ -10,6 +10,7 @@ import hook from '@views/hook';
 
 import test from '@views/test'
 import dialog from '@views/test/dialog/index.jsx'
+import emitter from '@views/test/emitter/index.jsx'
 
 const componentLink = {
     main,
@@ -21,7 +22,8 @@ const componentLink = {
     wallet,
     test,
     hook,
-    dialog
+    dialog,
+    emitter
 }
 
 
@@ -75,7 +77,11 @@ const routerConfig = [
            {
             name:'dialog',
             url:'dialog',
-           }
+           },
+           {
+            name:'emitter',
+            url:'emitter',
+           },
         ]
     }
 ]
