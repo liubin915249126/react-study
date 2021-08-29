@@ -1,5 +1,5 @@
 import React from "react";
-import { Upload,Icon } from "antd";
+import { Upload,Icon,Modal } from "antd";
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -26,13 +26,25 @@ export default class UploadCom extends React.Component {
       imageUrl: "",
     });
   }
+  prview(){
+    const { imageUrl } = this.state;
+    Modal.info({
+        title: "图片预览",
+        content: <img src={imageUrl} width={300} height={300}/>
+    })
+  }
   render() {
     const { imageUrl } = this.state;
     return (
       <>
         {imageUrl ? (
           <div className="img-wrap">
-            <Icon type="delete" onClick={() => this.onRemove()} />
+            <div className="icon-wrap">
+              <div>
+              <Icon type="eye" onClick={() => this.prview()}/>
+              <Icon type="delete" onClick={() => this.onRemove()} />
+              </div>
+            </div>
             <img src={imageUrl} />
           </div>  
         ) : (
