@@ -12,6 +12,7 @@ import upload from '@views/upload';
 import test from '@views/test'
 import immer from '@views/test/immer'
 import state from '@views/test/state' 
+import Nft from '@/views/nft/index'
 
 const componentLink = {
     main,
@@ -25,7 +26,8 @@ const componentLink = {
     hook,
     immer,
     state,
-    upload
+    upload,
+    nft: Nft
 }
 
 
@@ -92,7 +94,12 @@ const routerConfig = [
                 url: 'state'
             },
         ]
-    }
+    },
+    {
+        icon:'nft',
+        name:'nft',
+        url:'nft',
+    },
 ]
 
 
