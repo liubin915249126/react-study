@@ -22,6 +22,13 @@ const MyResume = () => {
               &nbsp;<a href="javascript:;">{item.title}</a>
             </span>
           ))}
+          <span>
+            <Icon type="github" />
+            &nbsp;
+            <a href="https://github.com/liubin915249126" target="_blank">
+              github
+            </a>
+          </span>
         </div>
       </section>
       {/* 个人优势 */}
