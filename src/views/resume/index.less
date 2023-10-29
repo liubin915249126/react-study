@@ -1,11 +1,14 @@
 @primary-color: #3498db;
 @primary-op-color: rgba(52,152,219, 0.5);
 .myResume{
-   width: 1200px;
-   margin: 24px auto; 
+   box-sizing: border-box; 
+   width: 210mm;
+   margin: 0 auto; 
+   padding: 12px 24px 48px 24px;
    font-size: 16px;
    font-family: BV-Harmony;
    color: #000;
+   background: #fff;
    &>section:not(:first-child){
       margin-top: 12px;
    }
@@ -76,9 +79,22 @@
       .mainJobs{
         margin-left: 12px;
       }
+      .projectTitle{
+        color: @primary-color;
+        font-size: 18px;
+      }
     }
     .projectItem + .projectItem{
         margin-top: 8px;
+    }
+  }
+  .tagWrap{
+    .tag{
+      border: 1px solid @primary-color;
+      border-radius: 4px;
+      color: @primary-color;
+      display: inline-block;
+      padding: 2px 6px;
     }
   }
 }

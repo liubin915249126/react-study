@@ -55,32 +55,46 @@ const MyResume = () => {
       {/* 主要项目经历 */}
       <section className="project">
         <h3 className="sectionTitle">主要项目经历</h3>
-        {projectData.map((item, index) => (
-          <div className="projectItem">
-            <div key={index}>{item.title}</div>
-            <div>
-              <span className="subTitle">技术栈: </span>
-              <span>{item.techStack.join(' | ')}</span>
+        {projectData.map((item, index) => {
+          const { mainJobs, mainAchivements, techStack = [] } = item
+          return (
+            <div className="projectItem" key={index}>
+              <div className="projectTitle">{item.title}</div>
+              <div>
+                <span className="subTitle">技术栈: </span>
+                <span>{techStack.join(' | ')}</span>
+              </div>
+              <div>-- 项目背景和主要工作:</div>
+              <div className="mainJobs">
+                <div className="projectInfo">{item.projectInfo}</div>
+                {Array.isArray(mainJobs) &&
+                  mainJobs.map((item, index) => (
+                    <div className="" key={index}>
+                      {item}
+                    </div>
+                  ))}
+              </div>
+              <div>-- 主要成就:</div>
+              <div className="mainJobs">
+                {Array.isArray(mainAchivements) &&
+                  mainAchivements.map((item, index) => (
+                    <div className="" key={index}>
+                      {item}
+                    </div>
+                  ))}
+              </div>
             </div>
-            <div>-- 项目背景和主要工作:</div>
-            <div className="mainJobs">
-              <div className="projectInfo">{item.projectInfo}</div>
-              {item.mainJobs.map((item, index) => (
-                <div className="" key={index}>
-                  {item}
-                </div>
-              ))}
-            </div>
-            <div>-- 主要成就:</div>
-            <div className="mainJobs">
-              {item.mainAchivements.map((item, index) => (
-                <div className="" key={index}>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+          )
+        })}
+      </section>
+      {/* 语言水平 */}
+      <section className="tagWrap">
+        <h3 className="sectionTitle">毕业院校/语言水平</h3>
+        <div>
+          <span className="tag">太原理工大学: 211</span> &nbsp;
+          <span className="tag">热能与动力工程</span> &nbsp;
+          <span className="tag">英语 CET-4 </span>
+        </div>
       </section>
     </div>
   )
