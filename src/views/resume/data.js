@@ -1,5 +1,5 @@
 import React from 'react'
-
+// 基本信息
 export const basicData = [
   {
     title: 'len.liu0614@gmail.com',
@@ -14,7 +14,7 @@ export const basicData = [
     icon: 'phone',
   },
 ]
-
+// 优势
 export const excellentData = [
   {
     title:
@@ -45,8 +45,28 @@ export const excellentData = [
     content: '',
   },
 ]
-
+// 工作经历
 export const workData = [
+  {
+    name: '参与 SocialFi 项目',
+    title: '项目制-前端开发',
+    time: '2022.09 - 2023.09',
+    jobs: [
+      {
+        title: (
+          <span>
+            <a href="https://web3edu.xyz/profile">web3 的 dapp</a> &nbsp;
+            <a href="https://alpha.talentre.com/home/referral">
+              web3 的 talentre
+            </a>
+          </span>
+        ),
+      },
+      {
+        title: <span>若干自由职业接的前端开发</span>,
+      },
+    ],
+  },
   {
     name: '上海亿锦 (bybit)',
     title: '前端开发',
@@ -111,6 +131,16 @@ export const workData = [
       },
     ],
   },
+  {
+    name: '毕业签的国企',
+    title: '国企实习生',
+    time: '2014.07 - 2016.03',
+    jobs: [
+      {
+        title: <span>实习期间自学了前端</span>,
+      },
+    ],
+  },
 ]
 // project 项目
 export const projectData = [
@@ -125,7 +155,7 @@ export const projectData = [
       </span>
     ),
     techStack: [
-      'TypeScript',  
+      'TypeScript',
       'React/Hook/Redux',
       'WebPack+Node',
       'less+css-modules',
@@ -148,55 +178,47 @@ export const projectData = [
     ],
   },
   {
-    title: (
-        <span>
-          公司组件库: 
-        </span>
-      ),
-      techStack: [
-        'TypeScript',  
-        'React/Hook/Redux',
-        'Rollup+Node',
-        'less+css-modules',
-        'father/storyBook/dumi',
-      ],
-      projectInfo:
+    title: <span>公司组件库:</span>,
+    techStack: [
+      'TypeScript',
+      'React/Hook/Redux',
+      'Rollup+Node',
+      'less+css-modules',
+      'father/storyBook/dumi',
+    ],
+    projectInfo:
       '和UI/产品确定了色彩交互体系, 写出了一套基础组件库，并基于基础组件封装业务组件',
-      mainJobs:[
-        '1. 制定组件封装原则和规范，开发与私有包部署',
-        '2. 常用组件的开发与维护，组件库文档书写，单元测试与发布的 PipLine',
-        '3. 结合业务基于组件库封装业务组件，方便业务快速迭代与后续的维护'
-      ],
-      mainAchivements: [
-        '1. 根据业务扩展从 Monorepo 项⽬结构 迁移到 私有化 Npm 部署(Verdaccio)',
-        '2. 结合业务，接入数据和业务配置，扩展成业务组件.',
-        '3. 引入组件单元测试覆盖与后续流水线发布, 维护组件库文档',
-      ],
+    mainJobs: [
+      '1. 制定组件封装原则和规范，开发与私有包部署',
+      '2. 常用组件的开发与维护，组件库文档书写，单元测试与发布的 PipLine',
+      '3. 结合业务基于组件库封装业务组件，方便业务快速迭代与后续的维护',
+    ],
+    mainAchivements: [
+      '1. 根据业务扩展从 Monorepo 项⽬结构 迁移到 私有化 Npm 部署(Verdaccio)',
+      '2. 结合业务，接入数据和业务配置，扩展成业务组件.',
+      '3. 引入组件单元测试覆盖与后续流水线发布, 维护组件库文档',
+    ],
   },
   {
-    title: (
-        <span>
-          前端 CLI 工具: 
-        </span>
-      ),
-      techStack: [
-        'TypeScript',  
-        'node',
-        'commander',  
-        'Inquirer',
-        'dotenv',
-        'eslint',
-        'prettier',
-      ],
-      projectInfo:
+    title: <span>前端 CLI 工具:</span>,
+    techStack: [
+      'TypeScript',
+      'node',
+      'commander',
+      'Inquirer',
+      'dotenv',
+      'eslint',
+      'prettier',
+    ],
+    projectInfo:
       '维护了 React/Vue 的项目模版, 增加代码规范团队协作规范，并发展成CLI, 可以快速开始项目。',
-      mainJobs:[
-        '1. 结合社区已有方案，输出服务于自己业务的模版，预设公共方法，layout，快速开始一个项目',
-        '2. 模版可适用于 PC/H5, 预设后台管理Layout, utils 和 请求的封装等',
-      ],
-      mainAchivements: [
-        '1. 增加命令行交互，从gitlab 直接 clone 模版，后续和运维扩展了 CI/CD 相关',
-        '2. 配置eslint 规则和 prettier 规则，以及代码提交方案，组内代码风格统一'
-      ],
+    mainJobs: [
+      '1. 结合社区已有方案，输出服务于自己业务的模版，预设公共方法，layout，快速开始一个项目',
+      '2. 模版可适用于 PC/H5, 预设后台管理Layout, utils 和 请求的封装等',
+    ],
+    mainAchivements: [
+      '1. 增加命令行交互，从gitlab 直接 clone 模版，后续和运维扩展了 CI/CD 相关',
+      '2. 配置eslint 规则和 prettier 规则，以及代码提交方案，组内代码风格统一',
+    ],
   },
 ]
