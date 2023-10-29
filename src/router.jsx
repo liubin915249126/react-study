@@ -114,23 +114,26 @@
 //   }
 // export default RouterConfig;
 
+import React from 'react'
+import { Router, Route, Switch, Redirect } from 'dva/router'
 
-import React from "react";
-import { Router, Route, Switch, Redirect } from "dva/router";
-
-import LoginComponent from "@views/login/index";
-import MainComponent from "@views/index/index";
+import LoginComponent from '@views/login/index'
+import MainComponent from '@views/index/index'
+import Resume from '@views/resume/index.jsx'
 
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Switch>
         <Route path="/login" component={LoginComponent} />
-        <Route path="/" component={MainComponent} />
+        <Route path="/resume" component={Resume} />
+        <Route path="/" component={MainComponent} />
+        {/* resume */}
+        {/* <Route path="/my/resume" component={Resume} /> */}
         {/* <Redirect to="/" /> */}
       </Switch>
     </Router>
     // </Provider>
-  );
+  )
 }
-export default RouterConfig;
+export default RouterConfig

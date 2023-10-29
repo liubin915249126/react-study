@@ -13,6 +13,10 @@ import test from '@views/test'
 import immer from '@views/test/immer'
 import state from '@views/test/state' 
 
+// 简历
+import resume from '@views/resume/index.jsx'
+
+
 const componentLink = {
     main,
     about,
@@ -25,7 +29,8 @@ const componentLink = {
     hook,
     immer,
     state,
-    upload
+    upload,
+    resume
 }
 
 
@@ -74,6 +79,11 @@ const routerConfig = [
         icon:'upload',
         name:'upload',
         url:'upload',
+    },
+    {
+        icon:'contacts',
+        name:'resume',
+        url:'resume',
     },
     {
         icon:'upload',

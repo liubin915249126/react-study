@@ -1,0 +1,84 @@
+@primary-color: #3498db;
+@primary-op-color: rgba(52,152,219, 0.5);
+.myResume{
+   width: 1200px;
+   margin: 24px auto; 
+   font-size: 16px;
+   font-family: BV-Harmony;
+   color: #000;
+   &>section:not(:first-child){
+      margin-top: 12px;
+   }
+   .sectionTitle{
+      padding: 4px 0;
+      border-left: 4px solid @primary-color;
+      background: @primary-op-color;
+      color: #333;
+      padding-left: 8px;
+   }
+   .subTitle{
+      color: #333;
+      font-size: 16px;
+      margin: 0;
+   }
+  .basicInfo{
+    h3{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span{
+         font-size: 24px;
+         font-weight: bold;
+         color: @primary-color;
+      }
+    }
+    .socialInfo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        span{
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+  }
+  .excellent{
+    &>div{
+       margin-bottom: 8px;
+       margin-left: 12px;
+    }
+  }
+  // 工作经历
+  .work{
+    .workItem{
+        .bold{
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .workTitle{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+    }
+    .workItem + .workItem{
+      margin-top: 8px;
+    }
+    .jobItem{
+      margin-left: 12px;
+      color: #333;
+    }
+  }
+  // 主要项目经验
+  .project{
+    .projectItem{
+      .mainJobs{
+        margin-left: 12px;
+      }
+    }
+    .projectItem + .projectItem{
+        margin-top: 8px;
+    }
+  }
+}
