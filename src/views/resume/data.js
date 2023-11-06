@@ -197,7 +197,7 @@ export const workData = [
       {
         title: <span>实习期间自学了前端</span>,
         role: '张鑫旭的深入理解系列, 原生 JS 系列',
-        techStack: ['html(5)', 'Css(3)', 'javascript'],
+        techStack: ['html(5)', 'Css(3)', 'Javascript'],
       },
     ],
   },
@@ -281,47 +281,37 @@ export const projectData = [
       '2. 配置eslint 规则和 prettier 规则, 以及代码提交方案, 组内代码风格统一',
     ],
   },
-  // 项目补充
-  //   {
-  //     title: <span>物流信息管理平台:</span>,
-  //     techStack: [
-  //       'React',
-  //       'React-Router',
-  //       'antd',
-  //       'Redux',
-  //       'Webpack',
-  //     ],
-  //     projectInfo:
-  //       '物流信息的管理',
-  //       mainAchivements: [
-  //       '1.升级了项目脚手架 roadhog->webpack4',
-  //       '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
-  //       '3. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
-  //     ],
-  //   },
-  //   {
-  //     title: <span>
-  //         公司官网:&nbsp;
-  //         <a href="http://www.lan360.com/">缆360</a>
-  //         &nbsp;
-  //         <a href="http://www.51youse.com/">51有色</a>
-  //         &nbsp; 重构和业务迭代。
-  //       </span>,
-  //     techStack: [
-  //       'React',
-  //       'React-Router',
-  //       'antd',
-  //       'Redux',
-  //       'Webpack',
-  //     ],
-  //     projectInfo:
-  //       '参与公司官网从0-1的开发, 从脚手架的搭建到业务的开发, 项目为了SEO, 使用了Nextjs+React+Redux+Saga+Css-Modules+antd, 制作了通用的地址选择, 用户中心, 销售订单表格等组件用于项目中, 加快了开发效率, 项目使用Helmet增加搜索权重, 用户中心可实现用户订单的查看, 下单等业务。',
-  //       mainAchivements: [
-  //       '1.手写了 site.map 的生成',
-  //       '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
-  //       '3. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
-  //     ],
-  //   },
+  //   项目补充
+
+//   {
+//     title: <span>物流信息管理平台:</span>,
+//     techStack: ['React', 'React-Router', 'antd', 'Redux', 'Webpack'],
+//     projectInfo: '物流信息的管理',
+//     mainAchivements: [
+//       '1.升级了项目脚手架 roadhog->webpack4',
+//       '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
+//       '3. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
+//     ],
+//   },
+//   {
+//     title: (
+//       <span>
+//         公司官网:&nbsp;
+//         <a href="http://www.lan360.com/">缆360</a>
+//         &nbsp;
+//         <a href="http://www.51youse.com/">51有色</a>
+//         &nbsp; 重构和业务迭代。
+//       </span>
+//     ),
+//     techStack: ['React', 'React-Router', 'antd', 'Redux', 'Webpack'],
+//     projectInfo:
+//       '参与公司官网从0-1的开发, 从脚手架的搭建到业务的开发, 项目为了SEO, 使用了Nextjs+React+Redux+Saga+Css-Modules+antd, 制作了通用的地址选择, 用户中心, 销售订单表格等组件用于项目中, 加快了开发效率, 项目使用Helmet增加搜索权重, 用户中心可实现用户订单的查看, 下单等业务。',
+//     mainAchivements: [
+//       '1.手写了 site.map 的生成',
+//       '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
+//       '3. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
+//     ],
+//   },
   {
     title: <span>一个电商小程序和 RN 的 客户端:</span>,
     techStack: ['React-Native', 'React-Navigation', 'Redux'],
