@@ -43,21 +43,34 @@ const MyResume = () => {
       {/* 工作经历 */}
       <section className="work">
         <h3 className="sectionTitle">工作经历</h3>
-        {workData.map((item, index) => (
-          <div className="workItem" key={index}>
-            <div className="workTitle">
-              <span className="bold">
-                {item.name} - {item.title}
-              </span>
-              <span className="time">{item.time}</span>
-            </div>
-            {item.jobs.map((item, index) => (
-              <div className="jobItem" key={index}>
-                {index + 1}: {item.title}
+        {workData.map((item, index) => {
+          return (
+            <div className="workItem" key={index}>
+              <div className="workTitle">
+                <span className="bold">
+                  {item.name} - {item.title}
+                </span>
+                <span className="time">{item.time}</span>
               </div>
-            ))}
-          </div>
-        ))}
+              {item.jobs.map((item1, index1) => {
+                const { techStack = [] } = item1
+                return (
+                  <div className="jobItem" key={index1}>
+                    {index1 + 1}: {item1.title}
+                    {item1.role && (
+                      <div className="jobRole">- 主要职责: {item1.role}</div>
+                    )}
+                    {techStack.length > 0 && (
+                      <div className="techStack">
+                        - 技术栈: {techStack.join(' | ')}
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          )
+        })}
       </section>
       {/* 主要项目经历 */}
       <section className="project">
