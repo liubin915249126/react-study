@@ -127,6 +127,24 @@ export const workData = [
           'Less+Css-Modules',
         ],
       },
+      // SEO 相关
+      {
+        title: (
+          <span>
+            <a href="https://www.bybit.com">官网</a>和交易站 配合 SEO 引流和 google 投放
+          </span>
+        ),
+        role: '服务端渲染 NextJs, Helmet 配合SEO部门修改关键字利于搜索引擎爬取',
+        techStack: [
+          'React/Redux/NextJs',
+          'Webpack/Node',
+          'React-Router',
+          //  SEO
+          'Helmet',
+          'Robot.txt',
+          'SiteMap.xml',
+        ],
+      },
     ],
   },
   {
@@ -228,6 +246,8 @@ export const projectData = [
       '2. 参与了 下单区, 持仓区, orderBook, Kline, deepChart, 业务的迭代',
       '3. 负责持仓区聚合持仓的技术owner, 参与C端快速上币的改造, 担任运营管理端的项目owner, 快速上币功能使得上一个币对的时间和bug大大减少',
       '4. 运用社区各种技术手段优化首页加载性能和运行时性能',
+      // SEO  
+      '5. 官网使用 NextJs 和 Helmet 添加关键字，脚本自动生成 Robot.txt 和 SiteMap.xml 利于搜索引擎爬取'
     ],
     mainAchivements: [
       '1. http/ws 数据统一通过数据处理按照NameSpace存储到全局状态, 后续通过自定义Hook处理好逻辑, 输出给组件使用, 数据的统一处理和统一输出',
