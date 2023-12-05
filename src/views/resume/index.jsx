@@ -52,6 +52,7 @@ const MyResume = () => {
                 </span>
                 <span className="time">{item.time}</span>
               </div>
+              {/* {item.tip && <div className="tip">{item.tip}</div>} */}
               {item.jobs.map((item1, index1) => {
                 const { techStack = [] } = item1
                 return (

@@ -27,7 +27,7 @@ export const excellentData = [
     content: '',
   },
   {
-    title: '带过团队, 做过项目和技术 owner, 平时工作中比较有项目 owner 意识。',
+    title: '伴随着一家公司从200人成长为业内 TOP3 的经历，带过团队, 做过项目和技术 owner,解决项目中的卡点，推进项目解决业务问题, 平时工作中比较有项目 owner 意识。',
     content: '',
   },
   {
@@ -80,6 +80,7 @@ export const workData = [
   {
     name: '上海亿锦 (bybit)',
     title: '前端开发',
+    tip: '伴随一家所从200人成长为业内top3的经历',
     time: '2020.03 - 2022.09',
     jobs: [
       {
