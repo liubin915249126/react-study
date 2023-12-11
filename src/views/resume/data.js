@@ -6,13 +6,13 @@ export const basicData = [
     icon: 'mail',
   },
   {
-    title: 'liubin-53',
+    title: 'len-0614',
     icon: 'wechat',
   },
-  {
-    title: '13030602110',
-    icon: 'phone',
-  },
+//   {
+//     title: '13030602110',
+//     icon: 'phone',
+//   },
 ]
 // 优势
 export const excellentData = [

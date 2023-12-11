@@ -12,7 +12,7 @@ const MyResume = () => {
       {/* 基本信息 */}
       <section className="basicInfo">
         <h3>
-          <span>刘宾</span>
+          <span>len</span>
           &nbsp; 前端工程师
         </h3>
         <div className="socialInfo">
