@@ -13,7 +13,7 @@ const MyResume = () => {
       <section className="basicInfo">
         <h3>
           <span>len</span>
-          &nbsp; 前端工程师
+          &nbsp; Front-End Engineer
         </h3>
         <div className="socialInfo">
           {basicData.map((item, index) => (
@@ -33,7 +33,7 @@ const MyResume = () => {
       </section>
       {/* 个人优势 */}
       <section className="excellent">
-        <h3 className="sectionTitle">个人优势</h3>
+        <h3 className="sectionTitle">Personal Advantage</h3>
         {excellentData.map((item, index) => (
           <div>
             {index + 1}:{item.title}
@@ -42,7 +42,7 @@ const MyResume = () => {
       </section>
       {/* 工作经历 */}
       <section className="work">
-        <h3 className="sectionTitle">工作经历</h3>
+        <h3 className="sectionTitle">Work Experience</h3>
         {workData.map((item, index) => {
           return (
             <div className="workItem" key={index}>
@@ -59,11 +59,11 @@ const MyResume = () => {
                   <div className="jobItem" key={index1}>
                     {index1 + 1}: {item1.title}
                     {item1.role && (
-                      <div className="jobRole">- 主要职责: {item1.role}</div>
+                      <div className="jobRole">- Main Duty: {item1.role}</div>
                     )}
                     {techStack.length > 0 && (
                       <div className="techStack">
-                        - 技术栈: {techStack.join(' | ')}
+                        - Technology Stack: {techStack.join(' | ')}
                       </div>
                     )}
                   </div>
@@ -75,17 +75,17 @@ const MyResume = () => {
       </section>
       {/* 主要项目经历 */}
       <section className="project">
-        <h3 className="sectionTitle">主要项目经历</h3>
+        <h3 className="sectionTitle">Main Project Experience</h3>
         {projectData.map((item, index) => {
           const { mainJobs, mainAchivements, techStack = [] } = item
           return (
             <div className="projectItem" key={index}>
               <div className="projectTitle">{item.title}</div>
               <div>
-                <span className="subTitle">技术栈: </span>
+                <span className="subTitle">Technology Stack: </span>
                 <span>{techStack.join(' | ')}</span>
               </div>
-              <div>-- 项目背景和主要工作:</div>
+              <div>-- Project Background And Main Work:</div>
               <div className="mainJobs">
                 <div className="projectInfo">{item.projectInfo}</div>
                 {Array.isArray(mainJobs) &&
@@ -95,7 +95,7 @@ const MyResume = () => {
                     </div>
                   ))}
               </div>
-              <div>-- 主要成就:</div>
+              <div>-- Major Achievements:</div>
               <div className="mainJobs">
                 {Array.isArray(mainAchivements) &&
                   mainAchivements.map((item, index) => (
@@ -110,11 +110,12 @@ const MyResume = () => {
       </section>
       {/* 语言水平 */}
       <section className="tagWrap">
-        <h3 className="sectionTitle">毕业院校/语言水平</h3>
+        <h3 className="sectionTitle">Graduation School/Language Level</h3>
         <div>
-          <span className="tag">太原理工大学: 211</span> &nbsp;
-          <span className="tag">热能与动力工程</span> &nbsp;
-          <span className="tag">英语 CET-4 </span>
+          <span className="tag">Taiyuan University of Technology: 211</span>
+          &nbsp;
+          <span className="tag">Thermal and Power Engineering</span> &nbsp;
+          <span className="tag">English CET-4 </span>
         </div>
       </section>
     </div>
