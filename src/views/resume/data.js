@@ -2,7 +2,7 @@ import React from 'react'
 // 基本信息
 export const basicData = [
     {
-        title: 'len.liu0614@gmail.com',
+        title: '13030602110@163.com',
         icon: 'mail',
     },
     {
