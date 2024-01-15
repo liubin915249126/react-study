@@ -18,11 +18,6 @@ export const basicData = [
 export const excellentData = [
     {
         title:
-            '平时工作中有注意补齐原生js相关概念与知识点, 计算机基础, 数据结构与算法, 网络相关还在持续学习当中.',
-        content: '',
-    },
-    {
-        title:
             '熟悉 React/Vue 全家桶, 维护过一整套的 UI 组件库, 承担了项⽬技术选型, 项⽬架构, 跨团队协同, 推⾏前端⼯程化, 会封装适⽤于团队项⽬的脚⼿架⼯具',
         content: '',
     },
@@ -42,6 +37,11 @@ export const excellentData = [
     },
     {
         title: '平时喜欢钻研技术, 逐步在了解和掌握后端技术栈和运维相关技术.',
+        content: '',
+    },
+    {
+        title:
+            '平时工作中有注意补齐原生js相关概念与知识点, 计算机基础, 数据结构与算法, 网络相关还在持续学习当中.',
         content: '',
     },
 ]
@@ -158,7 +158,8 @@ export const workData = [
     {
         name: '江苏五一互联电子商务有限公司',
         title: '前端开发',
-        time: '2018.08 - 2020.03',
+        // todo 2018.08
+        time: '2018.01 - 2020.03',
         jobs: [
             {
                 title: '运营管理后台架构改造和业务迭代',
@@ -184,49 +185,49 @@ export const workData = [
             },
         ],
     },
-    {
-        name: '上海星合金融科技',
-        title: '前端开发',
-        time: '2017.12 - 2018.08',
-        jobs: [
-            {
-                title: 'APP管理后台架构和业务迭代',
-            },
-            {
-                title: 'APP 架构搭建与开发(React-Native)',
-                role: 'React-Native 框架的搭建, 组件库, 数据管理的引入',
-                techStack: [
-                    'React-Native',
-                    'React-Navigation',
-                    'Webpack/Node',
-                    'React-Router',
-                    'Less+Css-Modules',
-                ],
-            },
-        ],
-    },
-    {
-        name: '上海磐哲科技公司',
-        title: '前端开发',
-        time: '2016.02 - 2017.12',
-        jobs: [
-            {
-                title: '参与唯品会人才管理项目开发',
-            },
-        ],
-    },
-    {
-        name: '毕业签的国企',
-        title: '国企实习生',
-        time: '2014.07 - 2016.03',
-        jobs: [
-            {
-                title: <span>实习期间自学了前端</span>,
-                role: '张鑫旭的深入理解系列, 原生 JS 系列',
-                techStack: ['html(5)', 'Css(3)', 'Javascript'],
-            },
-        ],
-    },
+    // {
+    //     name: '上海星合金融科技',
+    //     title: '前端开发',
+    //     time: '2017.12 - 2018.08',
+    //     jobs: [
+    //         {
+    //             title: 'APP管理后台架构和业务迭代',
+    //         },
+    //         {
+    //             title: 'APP 架构搭建与开发(React-Native)',
+    //             role: 'React-Native 框架的搭建, 组件库, 数据管理的引入',
+    //             techStack: [
+    //                 'React-Native',
+    //                 'React-Navigation',
+    //                 'Webpack/Node',
+    //                 'React-Router',
+    //                 'Less+Css-Modules',
+    //             ],
+    //         },
+    //     ],
+    // },
+    // {
+    //     name: '上海磐哲科技公司',
+    //     title: '前端开发',
+    //     time: '2016.02 - 2017.12',
+    //     jobs: [
+    //         {
+    //             title: '参与唯品会人才管理项目开发',
+    //         },
+    //     ],
+    // },
+    // {
+    //     name: '毕业签的国企',
+    //     title: '国企实习生',
+    //     time: '2014.07 - 2016.03',
+    //     jobs: [
+    //         {
+    //             title: <span>实习期间自学了前端</span>,
+    //             role: '张鑫旭的深入理解系列, 原生 JS 系列',
+    //             techStack: ['html(5)', 'Css(3)', 'Javascript'],
+    //         },
+    //     ],
+    // },
 ]
 // project 项目
 export const projectData = [
@@ -340,13 +341,13 @@ export const projectData = [
     //       '3. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
     //     ],
     //   },
-    {
-        title: <span>一个电商小程序和 RN 的 客户端:</span>,
-        techStack: ['React-Native', 'React-Navigation', 'Redux'],
-        projectInfo: '线上电商平台',
-        mainAchivements: [
-            '1.完成业务的迭代与开发',
-            '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
-        ],
-    },
+    // {
+    //     title: <span>一个电商小程序和 RN 的 客户端:</span>,
+    //     techStack: ['React-Native', 'React-Navigation', 'Redux'],
+    //     projectInfo: '线上电商平台',
+    //     mainAchivements: [
+    //         '1.完成业务的迭代与开发',
+    //         '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
+    //     ],
+    // },
 ]

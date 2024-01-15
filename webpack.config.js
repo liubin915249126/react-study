@@ -66,11 +66,12 @@ const config = {
     devServer: {
         contentBase: "./src",//本地服务器所加载的页面所在的目录
         historyApiFallback: true,
-        port:9999,
+        port: 8089,
+        host: '127.0.0.1',
         disableHostCheck: true,
-        proxy:{
-            '/': { target: 'http://localhost:3000', secure: false }
-        }
+        // proxy:{
+        //     '/': { target: 'http://localhost:3000', secure: false }
+        // }
     },
     optimization: {
         minimizer: [
