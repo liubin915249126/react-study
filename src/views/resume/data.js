@@ -50,7 +50,7 @@ export const workData = [
     {
         name: 'Bitget',
         title: '前端开发',
-        time: '2023.03 - 2023.12',
+        time: '2022.11 - current',
         jobs: [
             {
                 title: <span>合约交易站业务迭代</span>,
@@ -155,36 +155,36 @@ export const workData = [
             },
         ],
     },
-    {
-        name: '江苏五一互联电子商务有限公司',
-        title: '前端开发',
-        // todo 2018.08
-        time: '2018.01 - 2020.03',
-        jobs: [
-            {
-                title: '运营管理后台架构改造和业务迭代',
-                role: '整个项目技术owner, 架构的改造, 数据流管理, 提升打包开发效率',
-                techStack: [
-                    'React/Redux/Dva',
-                    'Webpack/Node/Roadhog',
-                    'React-Router',
-                    'ImmerJs',
-                    'Less+Css-Modules',
-                ],
-            },
-            {
-                title: '官网项目架构和开发',
-                role: '整个项目技术owner, 动效的开发, 数据流管理。',
-                techStack: [
-                    'React/Redux/NextJs',
-                    'Webpack/Node',
-                    'React-Router',
-                    'ImmerJs',
-                    'Less+Css-Modules',
-                ],
-            },
-        ],
-    },
+    // {
+    //     name: '江苏五一互联电子商务有限公司',
+    //     title: '前端开发',
+    //     // todo 2018.08
+    //     time: '2018.01 - 2020.03',
+    //     jobs: [
+    //         {
+    //             title: '运营管理后台架构改造和业务迭代',
+    //             role: '整个项目技术owner, 架构的改造, 数据流管理, 提升打包开发效率',
+    //             techStack: [
+    //                 'React/Redux/Dva',
+    //                 'Webpack/Node/Roadhog',
+    //                 'React-Router',
+    //                 'ImmerJs',
+    //                 'Less+Css-Modules',
+    //             ],
+    //         },
+    //         {
+    //             title: '官网项目架构和开发',
+    //             role: '整个项目技术owner, 动效的开发, 数据流管理。',
+    //             techStack: [
+    //                 'React/Redux/NextJs',
+    //                 'Webpack/Node',
+    //                 'React-Router',
+    //                 'ImmerJs',
+    //                 'Less+Css-Modules',
+    //             ],
+    //         },
+    //     ],
+    // },
     // {
     //     name: '上海星合金融科技',
     //     title: '前端开发',
@@ -206,28 +206,28 @@ export const workData = [
     //         },
     //     ],
     // },
-    // {
-    //     name: '上海磐哲科技公司',
-    //     title: '前端开发',
-    //     time: '2016.02 - 2017.12',
-    //     jobs: [
-    //         {
-    //             title: '参与唯品会人才管理项目开发',
-    //         },
-    //     ],
-    // },
-    // {
-    //     name: '毕业签的国企',
-    //     title: '国企实习生',
-    //     time: '2014.07 - 2016.03',
-    //     jobs: [
-    //         {
-    //             title: <span>实习期间自学了前端</span>,
-    //             role: '张鑫旭的深入理解系列, 原生 JS 系列',
-    //             techStack: ['html(5)', 'Css(3)', 'Javascript'],
-    //         },
-    //     ],
-    // },
+    {
+        name: '上海磐哲科技公司',
+        title: '前端开发',
+        time: '2016.03 - 2020.03',
+        jobs: [
+            {
+                title: '参与唯品会人才管理项目开发',
+            },
+        ],
+    },
+    {
+        name: '毕业签的国企',
+        title: '国企实习生',
+        time: '2014.07 - 2016.03',
+        jobs: [
+            {
+                title: <span>实习期间自学了前端</span>,
+                role: '张鑫旭的深入理解系列, 原生 JS 系列',
+                techStack: ['html(5)', 'Css(3)', 'Javascript'],
+            },
+        ],
+    },
 ]
 // project 项目
 export const projectData = [
@@ -312,16 +312,15 @@ export const projectData = [
     },
     //   项目补充
 
-    //   {
-    //     title: <span>物流信息管理平台:</span>,
-    //     techStack: ['React', 'React-Router', 'antd', 'Redux', 'Webpack'],
-    //     projectInfo: '物流信息的管理',
-    //     mainAchivements: [
-    //       '1.升级了项目脚手架 roadhog->webpack4',
-    //       '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
-    //       '3. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
-    //     ],
-    //   },
+      {
+        title: <span>物流信息管理平台:</span>,
+        techStack: ['vue', 'vue-router', 'element-ui', 'vuex', 'Webpack', 'axios'],
+        projectInfo: '物流信息的管理',
+        mainAchivements: [
+          '1.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
+          '2. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
+        ],
+      },
     //   {
     //     title: (
     //       <span>
