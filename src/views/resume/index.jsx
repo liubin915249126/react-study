@@ -112,7 +112,7 @@ const MyResume = () => {
       <section className="tagWrap">
         <h3 className="sectionTitle">毕业院校/语言水平</h3>
         <div>
-          <span className="tag">太原理工大学: 211</span> &nbsp;
+          <span className="tag">太原理工大学: 211 (2010-2014)</span> &nbsp;
           <span className="tag">热能与动力工程</span> &nbsp;
           <span className="tag">英语 CET-4 </span>
         </div>

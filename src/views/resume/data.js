@@ -155,36 +155,36 @@ export const workData = [
             },
         ],
     },
-    // {
-    //     name: '江苏五一互联电子商务有限公司',
-    //     title: '前端开发',
-    //     // todo 2018.08
-    //     time: '2018.01 - 2020.03',
-    //     jobs: [
-    //         {
-    //             title: '运营管理后台架构改造和业务迭代',
-    //             role: '整个项目技术owner, 架构的改造, 数据流管理, 提升打包开发效率',
-    //             techStack: [
-    //                 'React/Redux/Dva',
-    //                 'Webpack/Node/Roadhog',
-    //                 'React-Router',
-    //                 'ImmerJs',
-    //                 'Less+Css-Modules',
-    //             ],
-    //         },
-    //         {
-    //             title: '官网项目架构和开发',
-    //             role: '整个项目技术owner, 动效的开发, 数据流管理。',
-    //             techStack: [
-    //                 'React/Redux/NextJs',
-    //                 'Webpack/Node',
-    //                 'React-Router',
-    //                 'ImmerJs',
-    //                 'Less+Css-Modules',
-    //             ],
-    //         },
-    //     ],
-    // },
+    {
+        name: '江苏五一互联电子商务有限公司',
+        title: '前端开发',
+        // todo 2018.08
+        time: '2018.01 - 2020.03',
+        jobs: [
+            {
+                title: '运营管理后台架构改造和业务迭代',
+                role: '整个项目技术owner, 架构的改造, 数据流管理, 提升打包开发效率',
+                techStack: [
+                    'React/Redux/Dva',
+                    'Webpack/Node/Roadhog',
+                    'React-Router',
+                    'ImmerJs',
+                    'Less+Css-Modules',
+                ],
+            },
+            {
+                title: '官网项目架构和开发',
+                role: '整个项目技术owner, 动效的开发, 数据流管理。',
+                techStack: [
+                    'React/Redux/NextJs',
+                    'Webpack/Node',
+                    'React-Router',
+                    'ImmerJs',
+                    'Less+Css-Modules',
+                ],
+            },
+        ],
+    },
     // {
     //     name: '上海星合金融科技',
     //     title: '前端开发',
@@ -209,7 +209,7 @@ export const workData = [
     {
         name: '上海磐哲科技公司',
         title: '前端开发',
-        time: '2016.03 - 2020.03',
+        time: '2016.03 - 2018.01',
         jobs: [
             {
                 title: '参与唯品会人才管理项目开发',
@@ -218,7 +218,7 @@ export const workData = [
     },
     {
         name: '毕业签的国企',
-        title: '国企实习生',
+        title: '中级技术员',
         time: '2014.07 - 2016.03',
         jobs: [
             {
