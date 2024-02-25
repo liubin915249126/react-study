@@ -1,0 +1,33 @@
+.container{
+    position: relative;
+    .left{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+    }
+    .right{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+    }
+    .slider{
+        width: 500px;
+        overflow: hidden;
+    }
+  .sliderWrap{
+   display: flex;
+   &>div{
+    height: 100%;
+    width: 500px;
+    border: 1px solid #333;
+   }
+  }
+  .dots{
+   display: flex;
+   &>div{
+    padding: 30px;
+}
+  }
+}

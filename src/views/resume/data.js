@@ -50,7 +50,7 @@ export const workData = [
     {
         name: 'Bitget',
         title: '前端开发',
-        time: '2022.11 - current',
+        time: '2022.11 - 2023.12',
         jobs: [
             {
                 title: <span>合约交易站业务迭代</span>,
@@ -136,23 +136,23 @@ export const workData = [
                 ],
             },
             // SEO 相关
-            {
-                title: (
-                    <span>
-                        <a href="https://www.bybit.com">官网</a>和交易站 配合 SEO 引流和 google 投放
-                    </span>
-                ),
-                role: '服务端渲染 NextJs, Helmet 配合SEO部门修改关键字利于搜索引擎爬取',
-                techStack: [
-                    'React/Redux/NextJs',
-                    'Webpack/Node',
-                    'React-Router',
-                    //  SEO
-                    'Helmet',
-                    'Robot.txt',
-                    'SiteMap.xml',
-                ],
-            },
+            // {
+            //     title: (
+            //         <span>
+            //             <a href="https://www.bybit.com">官网</a>和交易站 配合 SEO 引流和 google 投放
+            //         </span>
+            //     ),
+            //     role: '服务端渲染 NextJs, Helmet 配合SEO部门修改关键字利于搜索引擎爬取',
+            //     techStack: [
+            //         'React/Redux/NextJs',
+            //         'Webpack/Node',
+            //         'React-Router',
+            //         //  SEO
+            //         'Helmet',
+            //         'Robot.txt',
+            //         'SiteMap.xml',
+            //     ],
+            // },
         ],
     },
     {
@@ -173,14 +173,12 @@ export const workData = [
                 ],
             },
             {
-                title: '官网项目架构和开发',
-                role: '整个项目技术owner, 动效的开发, 数据流管理。',
+                title: 'React-Native App',
+                role: '整个项目技术owner, 框架搭建, 组件库引入, 数据流管理。公共组件封装',
                 techStack: [
-                    'React/Redux/NextJs',
-                    'Webpack/Node',
-                    'React-Router',
+                    'React-Native/Redux/',
+                    'React-Navigation',
                     'ImmerJs',
-                    'Less+Css-Modules',
                 ],
             },
         ],
@@ -289,6 +287,16 @@ export const projectData = [
         ],
     },
     {
+        title: <span>51电商 App</span>,
+        techStack: ['React-Native', 'React-Navigation', 'Redux'],
+        projectInfo: '线上电商平台',
+        mainAchivements: [
+            '1.React-Native 脚手架搭建，组件库，状态管理库的引入，升级Hooks。',
+            '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
+            '3.Fetch 请求的封装，数据流管理和公共 Hook 的抽离',
+        ],
+    },
+    {
         title: <span>前端 CLI 工具:</span>,
         techStack: [
             'TypeScript',
@@ -340,13 +348,4 @@ export const projectData = [
     //       '3. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
     //     ],
     //   },
-    // {
-    //     title: <span>一个电商小程序和 RN 的 客户端:</span>,
-    //     techStack: ['React-Native', 'React-Navigation', 'Redux'],
-    //     projectInfo: '线上电商平台',
-    //     mainAchivements: [
-    //         '1.完成业务的迭代与开发',
-    //         '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
-    //     ],
-    // },
 ]
