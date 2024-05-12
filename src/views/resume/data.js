@@ -5,10 +5,10 @@ export const basicData = [
         title: 'jay.chou11211@qq.com',
         icon: 'mail',
     },
-    {
-        title: 'len-0614',
-        icon: 'wechat',
-    },
+    // {
+    //     title: 'len-0614',
+    //     icon: 'wechat',
+    // },
     //   {
     //     title: '13030602110',
     //     icon: 'phone',
