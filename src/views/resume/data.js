@@ -49,7 +49,7 @@ export const excellentData = [
 export const workData = [
     {
         name: 'Bitget',
-        title: '前端开发',
+        title: '前端开发-(公司需要base海外: 离职)',
         time: '2022.11 - 2023.12',
         jobs: [
             {
@@ -94,9 +94,9 @@ export const workData = [
                 title: (
                     <span>
                         核心交易站:&nbsp;
-                        <a href="https://www.bybit.com/trade/inverse/BTCUSD">反向交易站</a>
+                        <a href="https://www.bybit.com/trade/inverse/BTCUSD">反向合约交易站</a>
                         &nbsp;
-                        <a href="https://www.bybit.com/trade/usdt/BTCUSDT">正向交易站</a>
+                        <a href="https://www.bybit.com/trade/usdt/BTCUSDT">正向合约交易站</a>
                         &nbsp;重构, 性能优化, 业务迭代.
                     </span>
                 ),
@@ -233,9 +233,9 @@ export const projectData = [
         title: (
             <span>
                 核心交易站:&nbsp;
-                <a href="https://www.bybit.com/trade/inverse/BTCUSD">反向交易站</a>
+                <a href="https://www.bybit.com/trade/inverse/BTCUSD">反向合约交易站</a>
                 &nbsp;
-                <a href="https://www.bybit.com/trade/usdt/BTCUSDT">正向交易站</a>
+                <a href="https://www.bybit.com/trade/usdt/BTCUSDT">正向合约交易站</a>
                 &nbsp; 重构和业务迭代。
             </span>
         ),
@@ -249,7 +249,7 @@ export const projectData = [
         projectInfo:
             '作为公司主要业务, 面向C端用户, 很注重用户视觉交互体验, 以及解决大行情下性能问题',
         mainJobs: [
-            '1. 反向业务的重构, 参与了项目脚手架的搭建, 数据流的管理, 公共方法, 网络请求的封装, 组件库的维护.',
+            '1. 反向合约业务的重构, 参与了项目脚手架的搭建, 数据流的管理, 公共方法, 网络请求的封装, 组件库的维护.',
             '2. 参与了 下单区, 持仓区, orderBook, Kline, deepChart, 业务的迭代',
             '3. 负责持仓区聚合持仓的技术owner, 参与C端快速上币的改造, 担任运营管理端的项目owner, 快速上币功能使得上一个币对的时间和bug大大减少',
             '4. 运用社区各种技术手段优化首页加载性能和运行时性能',

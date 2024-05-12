@@ -1,36 +1,37 @@
-import React from "react";
-import { Layout, Menu, Icon, Breadcrumb } from "antd";
+import React from 'react'
+import { Layout, Menu, Icon, Breadcrumb } from 'antd'
 import { connect } from 'dva'
-const { Header, Sider, Content } = Layout;
-import "./index.less";
-import { Link, Route, Redirect } from "react-router-dom";
-import routerConfig, { componentLink } from "@/common/nav";
+const { Header, Sider, Content } = Layout
+import './index.less'
+import { Link, Route, Redirect } from 'react-router-dom'
+import routerConfig, { componentLink } from '@/common/nav'
 
 const menuList = routerConfig.flatten(Infinity)
+
 @connect()
 class MainView extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       collapsed: false,
       openKeys: [],
-    };
+    }
   }
   componentDidMount() {
     this.initWs()
   }
   componentWillReceiveProps(nextProps) {
-    console.log(this.props);
+    console.log(this.props)
   }
   initWs() {
-    const ws = new WebSocket('ws://localhost:8087/realtime_private');
+    const ws = new WebSocket('ws://localhost:8087/realtime_private')
     console.log('ws', ws)
     ws.onopen = function () {
-      ws.send(JSON.stringify({ "op": "query", "args": ["BTCUSDT"] }))
+      ws.send(JSON.stringify({ op: 'query', args: ['BTCUSDT'] }))
       console.log('open')
     }
     ws.onmessage = ({ data }) => {
-      const res = JSON.parse(data);
+      const res = JSON.parse(data)
       if (res.topic == 'private.wallet') {
         this.props.dispatch({ type: 'wallet/changeWallet', data: res })
       }
@@ -47,44 +48,46 @@ class MainView extends React.Component {
   }
   toggle() {
     this.setState({
-      collapsed: !this.state.collapsed
-    });
+      collapsed: !this.state.collapsed,
+    })
   }
   renderMenu(menusData, parentPath) {
-    const { collapsed } = this.state;
-    return menusData.filter(item => !item.hide).map((item, index) => {
-      const { icon = "user", url, name } = item;
-      const itemPath = `${parentPath}/${url || ""}`.replace(/\/+/g, "/");
-      if (Array.isArray(item.children) && item.children.length > 0) {
-        return (
-          <SubMenu
-            title={
-              <span>
-                <Icon type={icon} />
-                {name}
-              </span>
-            }
-          >
-            {this.renderMenu(item.children, itemPath)}
-          </SubMenu>
-        );
-      } else {
-        return (
-          <Menu.Item key={url || index}>
-            <Icon type={icon} />
-            {collapsed ? null : <Link to={`${itemPath}`}>{name}</Link>}
-          </Menu.Item>
-        );
-      }
-    });
+    const { collapsed } = this.state
+    return menusData
+      .filter((item) => !item.hide)
+      .map((item, index) => {
+        const { icon = 'user', url, name } = item
+        const itemPath = `${parentPath}/${url || ''}`.replace(/\/+/g, '/')
+        if (Array.isArray(item.children) && item.children.length > 0) {
+          return (
+            <SubMenu
+              title={
+                <span>
+                  <Icon type={icon} />
+                  {name}
+                </span>
+              }
+            >
+              {this.renderMenu(item.children, itemPath)}
+            </SubMenu>
+          )
+        } else {
+          return (
+            <Menu.Item key={url || index}>
+              <Icon type={icon} />
+              {collapsed ? null : <Link to={`${itemPath}`}>{name}</Link>}
+            </Menu.Item>
+          )
+        }
+      })
   }
   renderComponents(menusData, parentPath) {
     const components = menusData.map((item, index) => {
-      const { url } = item;
-      const itemPath = `${parentPath}/${url || ""}`.replace(/\/+/g, "/");
-      const component = componentLink[url];
+      const { url } = item
+      const itemPath = `${parentPath}/${url || ''}`.replace(/\/+/g, '/')
+      const component = componentLink[url]
       if (Array.isArray(item.children) && item.children.length > 0) {
-        return <div>{this.renderComponents(item.children, itemPath)}</div>;
+        return <div>{this.renderComponents(item.children, itemPath)}</div>
       } else {
         return component ? (
           <Route
@@ -93,71 +96,79 @@ class MainView extends React.Component {
             path={itemPath}
             component={component}
           />
-        ) : null;
+        ) : null
       }
-    });
-    return components;
+    })
+    return components
   }
   getSelectedKeys() {
     const {
-      location: { pathname }
-    } = this.props;
-    const keys = pathname.split("/").slice(1);
-    return keys;
+      location: { pathname },
+    } = this.props
+    const keys = pathname.split('/').slice(1)
+    return keys
   }
   getTitle() {
-    const asset = "react";
-    let title = "";
-    const { location } = this.props;
-    const { pathname } = location;
-    const keys = pathname.split("/").slice(1);
+    const asset = 'react'
+    let title = ''
+    const { location } = this.props
+    const { pathname } = location
+    const keys = pathname.split('/').slice(1)
     if (!keys.length) {
-      title = asset;
+      title = asset
     }
-    routerConfig.forEach(item => {
+    routerConfig.forEach((item) => {
       if (item.url == keys[0]) {
-        title = `${item.meta || item.name}-${asset}`;
+        title = `${item.meta || item.name}-${asset}`
       }
-    });
-    return title;
+    })
+    return title
   }
   getOpenKeys(routerConfig, loop, openKeys) {
-    const { location } = this.props;
-    const { pathname } = location;
-    const keys = pathname.split("/").filter(item => item).slice(0, -1);
-    const { url, children } = routerConfig.filter(item => item.url == keys[loop - 1])[0] || {}
+    const { location } = this.props
+    const { pathname } = location
+    const keys = pathname
+      .split('/')
+      .filter((item) => item)
+      .slice(0, -1)
+    const { url, children } =
+      routerConfig.filter((item) => item.url == keys[loop - 1])[0] || {}
     if (url) {
-      openKeys.push(url);
+      openKeys.push(url)
     }
     if (Array.isArray(children) && children.length > 0) {
       this.getOpenKeys(children, loop + 1, openKeys)
     }
-    return openKeys;
+    return openKeys
   }
   renderBread(routerConfig, parentPath) {
-    const { location: { pathname } } = this.props;
-    const pathArr = pathname.split("/").filter(item => item)
+    const {
+      location: { pathname },
+    } = this.props
+    const pathArr = pathname.split('/').filter((item) => item)
     if (Array.isArray(routerConfig) && routerConfig.length > 0) {
       return pathArr.map((item, index) => {
         const currentIndex = routerConfig.findIndex(({ url }) => item == url)
         if (currentIndex > -1) {
           const { url, resourceNameCn } = routerConfig[currentIndex]
-          let itemPath = '#';
+          let itemPath = '#'
           for (let i = 0; i < index + 1; i++) {
             itemPath += `/${pathArr[i]}`
           }
           // itemPath = itemPath.slice(0,-1)
-          return <Breadcrumb.Item href={itemPath}>{resourceNameCn}</Breadcrumb.Item>
+          return (
+            <Breadcrumb.Item href={itemPath}>{resourceNameCn}</Breadcrumb.Item>
+          )
         }
       })
     }
   }
   render() {
-    const { openKeys, collapsed } = this.state;
-    const { location } = this.props;
-    const { pathname } = location;
-    const title = this.getTitle();
-    document.title = title;
+    const { openKeys, collapsed } = this.state
+    const { location } = this.props
+    const { pathname } = location
+    const title = this.getTitle()
+    document.title = title
     return (
       <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -169,40 +180,40 @@ class MainView extends React.Component {
             openKeys={collapsed ? [] : openKeys}
             onOpenChange={(openKeys) => this.setState({ openKeys })}
           >
-            {this.renderMenu(routerConfig, "")}
+            {this.renderMenu(routerConfig, '')}
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: "#fff", padding: 0 }}>
+          <Header style={{ background: '#fff', padding: 0 }}>
             <Icon
               className="trigger"
-              type={this.state.collapsed ? "menu-unfold" : "menu-fold"}
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
               onClick={() => {
-                this.toggle();
+                this.toggle()
               }}
             />
-            <Breadcrumb className='breadcrumb'>
-              <Breadcrumb.Item href='/'>首页</Breadcrumb.Item>
+            <Breadcrumb className="breadcrumb">
+              <Breadcrumb.Item href="/">首页</Breadcrumb.Item>
               {this.renderBread(menuList, '')}
             </Breadcrumb>
           </Header>
           <Content
             style={{
-              margin: "24px 16px",
+              margin: '24px 16px',
               padding: 24,
-              background: "#fff",
-              minHeight: 280
+              background: '#fff',
+              minHeight: 280,
             }}
           >
-            {this.renderComponents(routerConfig, "")}
-            {pathname == "/" ? (
+            {this.renderComponents(routerConfig, '')}
+            {pathname == '/' ? (
               <Redirect exact strict from="/" to="/appMananger" />
             ) : null}
           </Content>
         </Layout>
       </Layout>
-    );
+    )
   }
 }
 
-export default MainView;
+export default MainView

@@ -12,6 +12,9 @@ import { slideData1, slideData2 } from './slideData'
 import Carousel from '@/components/Carousel'
 
 import Wordle from '@/components/wordle'
+
+import Debounce from '@/components/debounce'
+
 // 引入less
 require('./home.less')
 class Home extends React.Component {
@@ -92,7 +95,8 @@ class Home extends React.Component {
           <FlowForm />
         </div>
         <Carousel />
-        <Wordle testValue="MAGIC" />
+        {/* <Wordle testValue="MAGIC" /> */}
+        <Debounce />
       </div>
     )
   }
