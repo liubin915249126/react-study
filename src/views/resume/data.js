@@ -2,7 +2,7 @@ import React from 'react'
 // 基本信息
 export const basicData = [
     {
-        title: '13030602110@163.com',
+        title: 'jay.chou11211@qq.com',
         icon: 'mail',
     },
     {
@@ -49,8 +49,8 @@ export const excellentData = [
 export const workData = [
     {
         name: 'Bitget',
-        title: '前端开发-(公司需要base海外: 离职)',
-        time: '2022.11 - 2023.12',
+        title: '前端开发',
+        time: '2022.11 - 2024.03',
         jobs: [
             {
                 title: <span>合约交易站业务迭代</span>,
