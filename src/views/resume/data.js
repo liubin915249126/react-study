@@ -136,23 +136,23 @@ export const workData = [
                 ],
             },
             // SEO 相关
-            // {
-            //     title: (
-            //         <span>
-            //             <a href="https://www.bybit.com">官网</a>和交易站 配合 SEO 引流和 google 投放
-            //         </span>
-            //     ),
-            //     role: '服务端渲染 NextJs, Helmet 配合SEO部门修改关键字利于搜索引擎爬取',
-            //     techStack: [
-            //         'React/Redux/NextJs',
-            //         'Webpack/Node',
-            //         'React-Router',
-            //         //  SEO
-            //         'Helmet',
-            //         'Robot.txt',
-            //         'SiteMap.xml',
-            //     ],
-            // },
+            {
+                title: (
+                    <span>
+                        <a href="https://www.bybit.com">官网</a>和交易站 配合 SEO 引流和 google 投放
+                    </span>
+                ),
+                role: '服务端渲染 NextJs, Helmet 配合SEO部门修改关键字利于搜索引擎爬取',
+                techStack: [
+                    'React/Redux/NextJs',
+                    'Webpack/Node',
+                    'React-Router',
+                    //  SEO
+                    'Helmet',
+                    'Robot.txt',
+                    'SiteMap.xml',
+                ],
+            },
         ],
     },
     {
@@ -204,28 +204,28 @@ export const workData = [
     //         },
     //     ],
     // },
-    {
-        name: '上海磐哲科技公司',
-        title: '前端开发',
-        time: '2016.03 - 2018.01',
-        jobs: [
-            {
-                title: '参与唯品会人才管理项目开发',
-            },
-        ],
-    },
-    {
-        name: '毕业签的国企',
-        title: '中级技术员',
-        time: '2014.07 - 2016.03',
-        jobs: [
-            {
-                title: <span>实习期间自学了前端</span>,
-                role: '张鑫旭的深入理解系列, 原生 JS 系列',
-                techStack: ['html(5)', 'Css(3)', 'Javascript'],
-            },
-        ],
-    },
+    // {
+    //     name: '上海磐哲科技公司',
+    //     title: '前端开发',
+    //     time: '2016.03 - 2018.01',
+    //     jobs: [
+    //         {
+    //             title: '参与唯品会人才管理项目开发',
+    //         },
+    //     ],
+    // },
+    // {
+    //     name: '毕业签的国企',
+    //     title: '中级技术员',
+    //     time: '2014.07 - 2016.03',
+    //     jobs: [
+    //         {
+    //             title: <span>实习期间自学了前端</span>,
+    //             role: '张鑫旭的深入理解系列, 原生 JS 系列',
+    //             techStack: ['html(5)', 'Css(3)', 'Javascript'],
+    //         },
+    //     ],
+    // },
 ]
 // project 项目
 export const projectData = [
