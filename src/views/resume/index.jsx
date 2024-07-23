@@ -12,7 +12,7 @@ const MyResume = () => {
       {/* 基本信息 */}
       <section className="basicInfo">
         <h3>
-          <span>Dva</span>
+          <span>jay</span>
           &nbsp; 前端工程师
         </h3>
         <div className="socialInfo">
@@ -22,13 +22,13 @@ const MyResume = () => {
               &nbsp;<a href="javascript:;">{item.title}</a>
             </span>
           ))}
-          {/* <span>
+          <span>
             <Icon type="github" />
             &nbsp;
             <a href="https://github.com/liubin915249126" target="_blank">
               github
             </a>
-          </span> */}
+          </span>
         </div>
       </section>
       {/* 个人优势 */}
@@ -112,10 +112,10 @@ const MyResume = () => {
       <section className="tagWrap">
         <h3 className="sectionTitle">毕业院校/语言水平</h3>
         <div>
-          <span className="tag">太原理工大学: 211 (2010-2014)</span> &nbsp;
-          <span className="tag">专业: 热能与动力工程</span> &nbsp;
-          {/* <span className="tag">英语 CET-4 </span> */}
-          <span className="tag">生日: 1991.06 </span> &nbsp;
+          {/* <span className="tag">太原理工大学: 211 (2020-2014)</span> &nbsp; */}
+          {/* <span className="tag">专业: 热能与动力工程</span> &nbsp; */}
+          {/* <span className="tag">英语 CET-4 </span> &nbsp; */}
+          {/* <span className="tag">生日: 1991.06 </span> &nbsp; */}
           <span className="tag">性别: 男 </span>
         </div>
       </section>

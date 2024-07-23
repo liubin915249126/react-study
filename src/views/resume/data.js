@@ -2,17 +2,17 @@ import React from 'react'
 // 基本信息
 export const basicData = [
     {
-        title: 'jay.chou11211@qq.com',
+        title: 'jay.chou11211@gmail.com',
         icon: 'mail',
     },
     // {
     //     title: 'len-0614',
     //     icon: 'wechat',
     // },
-    //   {
-    //     title: '13030602110',
-    //     icon: 'phone',
-    //   },
+      // {
+      //   title: '13030602110',
+      //   icon: 'phone',
+      // },
 ]
 // 优势
 export const excellentData = [
@@ -47,13 +47,52 @@ export const excellentData = [
 ]
 // 工作经历
 export const workData = [
+  {
+    name: 'Talentre (团队创业)',
+    title: '前端开发',
+    time: '2023.08 - current',
+    jobs: [
+        {
+            title: (
+                <span>
+                    <a href="https://web3edu.xyz/profile">web3 的 dapp</a> &nbsp;
+                    <a href="https://alpha.talentre.com/home/referral">
+                        web3 的 talentre
+                    </a>
+                </span>
+            ),
+            role: '项目的搭建, 框架的引入, ui组件库的主题改造, 合约的调用',
+            techStack: [
+                'Web3js',
+                'Material-Ui',
+                'Wagmi',
+                'React',
+                'Redux',
+                'React-Router',
+            ],
+        },
+        {
+          title: (
+              <span>
+                  <a href="">tg 小程序</a> &nbsp;
+              </span>
+          ),
+          role: 'tg 授权对接',
+          techStack: [
+              'React',
+              'Redux',
+              'NextJs',
+          ],
+      }
+    ],
+},
     {
         name: 'Bitget',
         title: '前端开发',
-        time: '2022.11 - 2024.03',
+        time: '2022.11 - 2023.06',
         jobs: [
             {
-                title: <span>合约交易站业务迭代</span>,
+                title: <span>永续合约交易站业务迭代</span>,
                 role: '基础组件，公共方法的书写，orderBook 的拖拽布局优化',
                 techStack: [
                     'Antd Design',
@@ -63,24 +102,14 @@ export const workData = [
                 ],
             },
             {
-                title: (
-                    <span>
-                        <a href="https://web3edu.xyz/profile">web3 的 dapp</a> &nbsp;
-                        <a href="https://alpha.talentre.com/home/referral">
-                            web3 的 talentre
-                        </a>
-                    </span>
-                ),
-                role: '项目的搭建, 框架的引入, ui组件库的主题改造, 合约的调用',
-                techStack: [
-                    'Web3js',
-                    'Material-Ui',
-                    'Wagmi',
-                    'React',
-                    'Redux',
-                    'React-Router',
-                ],
-            }
+              title: <span>组件库的维护</span>,
+              role: '组件库的维护与拓展',
+              techStack: [
+                  'Antd Design',
+                  'React',
+                  'Webpack'
+              ],
+          },
         ],
     },
     // bybit
@@ -94,9 +123,9 @@ export const workData = [
                 title: (
                     <span>
                         核心交易站:&nbsp;
-                        <a href="https://www.bybit.com/trade/inverse/BTCUSD">反向合约交易站</a>
+                        <a href="https://www.bybit.com/trade/inverse/BTCUSD">反向 永续合约交易站</a>
                         &nbsp;
-                        <a href="https://www.bybit.com/trade/usdt/BTCUSDT">正向合约交易站</a>
+                        <a href="https://www.bybit.com/trade/usdt/BTCUSDT">正向 永续合约交易站</a>
                         &nbsp;重构, 性能优化, 业务迭代.
                     </span>
                 ),
@@ -136,74 +165,74 @@ export const workData = [
                 ],
             },
             // SEO 相关
-            {
-                title: (
-                    <span>
-                        <a href="https://www.bybit.com">官网</a>和交易站 配合 SEO 引流和 google 投放
-                    </span>
-                ),
-                role: '服务端渲染 NextJs, Helmet 配合SEO部门修改关键字利于搜索引擎爬取',
-                techStack: [
-                    'React/Redux/NextJs',
-                    'Webpack/Node',
-                    'React-Router',
-                    //  SEO
-                    'Helmet',
-                    'Robot.txt',
-                    'SiteMap.xml',
-                ],
-            },
-        ],
-    },
-    {
-        name: '江苏五一互联电子商务有限公司',
-        title: '前端开发',
-        // todo 2018.08
-        time: '2018.01 - 2020.03',
-        jobs: [
-            {
-                title: '运营管理后台架构改造和业务迭代',
-                role: '整个项目技术owner, 架构的改造, 数据流管理, 提升打包开发效率',
-                techStack: [
-                    'React/Redux/Dva',
-                    'Webpack/Node/Roadhog',
-                    'React-Router',
-                    'ImmerJs',
-                    'Less+Css-Modules',
-                ],
-            },
-            {
-                title: 'React-Native App',
-                role: '整个项目技术owner, 框架搭建, 组件库引入, 数据流管理。公共组件封装',
-                techStack: [
-                    'React-Native/Redux/',
-                    'React-Navigation',
-                    'ImmerJs',
-                ],
-            },
+            // {
+            //     title: (
+            //         <span>
+            //             <a href="https://www.bybit.com">官网</a>和交易站 配合 SEO 引流和 google 投放
+            //         </span>
+            //     ),
+            //     role: '服务端渲染 NextJs, Helmet 配合SEO部门修改关键字利于搜索引擎爬取',
+            //     techStack: [
+            //         'React/Redux/NextJs',
+            //         'Webpack/Node',
+            //         'React-Router',
+            //         //  SEO
+            //         'Helmet',
+            //         'Robot.txt',
+            //         'SiteMap.xml',
+            //     ],
+            // },
         ],
     },
     // {
-    //     name: '上海星合金融科技',
+    //     name: '江苏五一互联电子商务有限公司',
     //     title: '前端开发',
-    //     time: '2017.12 - 2018.08',
+    //     // todo 2018.08
+    //     time: '2018.01 - 2020.03',
     //     jobs: [
     //         {
-    //             title: 'APP管理后台架构和业务迭代',
+    //             title: '运营管理后台架构改造和业务迭代',
+    //             role: '整个项目技术owner, 架构的改造, 数据流管理, 提升打包开发效率',
+    //             techStack: [
+    //                 'React/Redux/Dva',
+    //                 'Webpack/Node/Roadhog',
+    //                 'React-Router',
+    //                 'ImmerJs',
+    //                 'Less+Css-Modules',
+    //             ],
     //         },
     //         {
-    //             title: 'APP 架构搭建与开发(React-Native)',
-    //             role: 'React-Native 框架的搭建, 组件库, 数据管理的引入',
+    //             title: 'React-Native App',
+    //             role: '整个项目技术owner, 框架搭建, 组件库引入, 数据流管理。公共组件封装',
     //             techStack: [
-    //                 'React-Native',
+    //                 'React-Native/Redux/',
     //                 'React-Navigation',
-    //                 'Webpack/Node',
-    //                 'React-Router',
-    //                 'Less+Css-Modules',
+    //                 'ImmerJs',
     //             ],
     //         },
     //     ],
     // },
+    {
+        name: '上海星合金融科技',
+        title: '前端开发',
+        time: '2016.03 - 2018.08',
+        jobs: [
+            {
+                title: 'APP管理后台架构和业务迭代',
+            },
+            {
+                title: 'APP 架构搭建与开发(React-Native)',
+                role: 'React-Native 框架的搭建, 组件库, 数据管理的引入',
+                techStack: [
+                    'React-Native',
+                    'React-Navigation',
+                    'Webpack/Node',
+                    'React-Router',
+                    'Less+Css-Modules',
+                ],
+            },
+        ],
+    },
     // {
     //     name: '上海磐哲科技公司',
     //     title: '前端开发',
@@ -233,9 +262,9 @@ export const projectData = [
         title: (
             <span>
                 核心交易站:&nbsp;
-                <a href="https://www.bybit.com/trade/inverse/BTCUSD">反向合约交易站</a>
+                <a href="https://www.bybit.com/trade/inverse/BTCUSD">反向 永续合约交易站</a>
                 &nbsp;
-                <a href="https://www.bybit.com/trade/usdt/BTCUSDT">正向合约交易站</a>
+                <a href="https://www.bybit.com/trade/usdt/BTCUSDT">正向 永续合约交易站</a>
                 &nbsp; 重构和业务迭代。
             </span>
         ),
@@ -264,6 +293,16 @@ export const projectData = [
             '5. C端 mock 方案, 前端可以脱离后端环境开发, 大大加快前端开发效率和体验',
         ],
     },
+    //   项目补充
+    {
+      title: <span>物流信息管理平台:</span>,
+      techStack: ['vue', 'vue-router', 'element-ui', 'vuex', 'Webpack', 'axios'],
+      projectInfo: '物流信息的管理',
+      mainAchivements: [
+        '1.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
+        '2. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
+      ],
+    },
     {
         title: <span>公司组件库:</span>,
         techStack: [
@@ -287,7 +326,7 @@ export const projectData = [
         ],
     },
     {
-        title: <span>51电商 App</span>,
+        title: <span>星合金融 App</span>,
         techStack: ['React-Native', 'React-Navigation', 'Redux'],
         projectInfo: '线上电商平台',
         mainAchivements: [
@@ -318,17 +357,6 @@ export const projectData = [
             '2. 配置eslint 规则和 prettier 规则, 以及代码提交方案, 组内代码风格统一',
         ],
     },
-    //   项目补充
-
-      {
-        title: <span>物流信息管理平台:</span>,
-        techStack: ['vue', 'vue-router', 'element-ui', 'vuex', 'Webpack', 'axios'],
-        projectInfo: '物流信息的管理',
-        mainAchivements: [
-          '1.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
-          '2. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
-        ],
-      },
     //   {
     //     title: (
     //       <span>
