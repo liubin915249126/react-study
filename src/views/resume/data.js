@@ -50,7 +50,7 @@ export const workData = [
     {
         name: 'Bitget',
         title: '前端开发',
-        time: '2022.11 - current',
+        time: '2022.11 - 2023.08',
         jobs: [
             {
                 title: <span>永续合约交易站业务迭代</span>,
@@ -186,7 +186,7 @@ export const workData = [
     {
         name: '上海星合金融科技',
         title: '前端开发',
-        time: '2016.03 - 2018.08',
+        time: '2018.04 - 2020.03',
         jobs: [
             {
                 title: 'APP管理后台架构和业务迭代',
@@ -204,16 +204,16 @@ export const workData = [
             },
         ],
     },
-    // {
-    //     name: '上海磐哲科技公司',
-    //     title: '前端开发',
-    //     time: '2016.03 - 2018.01',
-    //     jobs: [
-    //         {
-    //             title: '参与唯品会人才管理项目开发',
-    //         },
-    //     ],
-    // },
+    {
+        name: '上海磐哲科技公司',
+        title: '前端开发',
+        time: '2016.03 - 2018.01',
+        jobs: [
+            {
+                title: '参与唯品会人才管理项目开发',
+            },
+        ],
+    },
     // {
     //     name: '毕业签的国企',
     //     title: '中级技术员',
