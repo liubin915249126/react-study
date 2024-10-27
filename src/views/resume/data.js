@@ -2,17 +2,17 @@ import React from 'react'
 // 基本信息
 export const basicData = [
     {
-        title: 'jay.chou11211@gmail.com',
+        title: 'davvy.zhang@gmail.com',
         icon: 'mail',
     },
     // {
     //     title: 'len-0614',
     //     icon: 'wechat',
     // },
-      // {
-      //   title: '13030602110',
-      //   icon: 'phone',
-      // },
+      {
+        title: '13030602110',
+        icon: 'phone',
+      },
 ]
 // 优势
 export const excellentData = [
@@ -50,7 +50,7 @@ export const workData = [
   {
     name: 'Talentre (团队创业)',
     title: '前端开发',
-    time: '2023.08 - current',
+    time: '2023.12 - current',
     jobs: [
         {
             title: (
@@ -89,7 +89,7 @@ export const workData = [
     {
         name: 'Bitget',
         title: '前端开发',
-        time: '2022.11 - 2023.06',
+        time: '2022.11 - 2023.10',
         jobs: [
             {
                 title: <span>永续合约交易站业务迭代</span>,
@@ -114,7 +114,7 @@ export const workData = [
     },
     // bybit
     {
-        name: '上海亿锦 (bybit)',
+        name: 'Bybit',
         title: '前端开发',
         tip: '伴随一家所从200人成长为业内top3的经历',
         time: '2020.03 - 2022.09',
@@ -187,7 +187,6 @@ export const workData = [
     // {
     //     name: '江苏五一互联电子商务有限公司',
     //     title: '前端开发',
-    //     // todo 2018.08
     //     time: '2018.01 - 2020.03',
     //     jobs: [
     //         {
@@ -328,7 +327,7 @@ export const projectData = [
     {
         title: <span>星合金融 App</span>,
         techStack: ['React-Native', 'React-Navigation', 'Redux'],
-        projectInfo: '线上电商平台',
+        projectInfo: '线上金融App',
         mainAchivements: [
             '1.React-Native 脚手架搭建，组件库，状态管理库的引入，升级Hooks。',
             '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
@@ -357,23 +356,23 @@ export const projectData = [
             '2. 配置eslint 规则和 prettier 规则, 以及代码提交方案, 组内代码风格统一',
         ],
     },
-    //   {
-    //     title: (
-    //       <span>
-    //         公司官网:&nbsp;
-    //         <a href="http://www.lan360.com/">缆360</a>
-    //         &nbsp;
-    //         <a href="http://www.51youse.com/">51有色</a>
-    //         &nbsp; 重构和业务迭代。
-    //       </span>
-    //     ),
-    //     techStack: ['React', 'React-Router', 'antd', 'Redux', 'Webpack'],
-    //     projectInfo:
-    //       '参与公司官网从0-1的开发, 从脚手架的搭建到业务的开发, 项目为了SEO, 使用了Nextjs+React+Redux+Saga+Css-Modules+antd, 制作了通用的地址选择, 用户中心, 销售订单表格等组件用于项目中, 加快了开发效率, 项目使用Helmet增加搜索权重, 用户中心可实现用户订单的查看, 下单等业务。',
-    //     mainAchivements: [
-    //       '1.手写了 site.map 的生成',
-    //       '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
-    //       '3. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
-    //     ],
-    //   },
+      // {
+      //   title: (
+      //     <span>
+      //       公司官网:&nbsp;
+      //       <a href="http://www.lan360.com/">缆360</a>
+      //       &nbsp;
+      //       <a href="http://www.51youse.com/">51有色</a>
+      //       &nbsp; 重构和业务迭代。
+      //     </span>
+      //   ),
+      //   techStack: ['React', 'React-Router', 'antd', 'Redux', 'Webpack'],
+      //   projectInfo:
+      //     '参与公司官网从0-1的开发, 从脚手架的搭建到业务的开发, 项目为了SEO, 使用了Nextjs+React+Redux+Saga+Css-Modules+antd, 制作了通用的地址选择, 用户中心, 销售订单表格等组件用于项目中, 加快了开发效率, 项目使用Helmet增加搜索权重, 用户中心可实现用户订单的查看, 下单等业务。',
+      //   mainAchivements: [
+      //     '1.手写了 site.map 的生成',
+      //     '2.抽离项目公共方法与组件, 方便快速迭代, 代码复用',
+      //     '3. 封装了 fetch 的全局拦截, 统一添加请求的 token, 返回错误的统一处理。',
+      //   ],
+      // },
 ]
