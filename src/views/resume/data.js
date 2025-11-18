@@ -26,11 +26,11 @@ export const excellentData = [
       '伴随着一家公司从200人成长为业内 TOP3 的经历，带过团队, 做过项目和技术 owner,解决项目中的卡点，推进项目解决业务问题, 平时工作中比较有项目 owner 意识。',
     content: '',
   },
-  //   {
-  //   title:
-  //     '熟悉常见的性能优化手段，手破ing优化运行时的',
-  //   content: '',
-  // },
+    {
+    title:
+      '从0到1做过完整的合约现货交易站项目，熟悉合约现货交易业务，和技术，有过搭建项目架构经验',
+    content: '',
+  },
   {
     title:
       '具有较强的自学能力, 技术栈基本属于自己看文档学习到的, 有较强的问题解决能力, 能够快速定位问题, 通过搜索引擎找到解决方案.',
@@ -51,6 +51,7 @@ export const excellentData = [
     content: '',
   },
 ]
+
 // 工作经历
 export const workData = [
   {
@@ -61,12 +62,12 @@ export const workData = [
       {
         title: <span>合约现货页面开发</span>,
         role: 'OrderBook,下单，仓位，深度图，组件业务迭代，性能优化',
-        techStack: ['React', 'zustand', 'Nextjs', 'Tailwindcss'],
+        techStack: ['React', 'Zustand', 'Nextjs', 'Tailwindcss'],
       },
       {
         title: <span>平台增长页面开发</span>,
         role: '资产总览，资金流水，用户问卷调查的业务迭代',
-        techStack: ['React', 'zustand', 'Nextjs', 'Tailwindcss'],
+        techStack: ['React', 'Zustand', 'Nextjs', 'Tailwindcss'],
       },
     ],
   },
@@ -264,13 +265,14 @@ export const workData = [
     ],
   },
 ]
+
 // project 项目
 export const projectData = [
   {
     title: <span>合约现货交易站，重构，业务迭代和性能优化。</span>,
     techStack: [
       'TypeScript',
-      'React/Hook/zustand',
+      'React/Hook/Zustand',
       'WebPack+Node',
       'Tailwindcss',
       '自研UI组件库',
@@ -283,7 +285,7 @@ export const projectData = [
     ],
     mainAchivements: [
       '1. 利用 webworker 处理 OrderBook 数据，同时将100ms 的频率降低到300ms,减少主线程渲染压力',
-      '2. 利用 zustand 替换 Redux, 实现局部的全局状态，减少数据变化时候的重复渲染',
+      '2. 利用 Zustand 替换 Redux, 实现局部的全局状态，减少数据变化时候的重复渲染',
     ],
   },
   // web3
