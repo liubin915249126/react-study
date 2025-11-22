@@ -61,7 +61,7 @@ export const workData = [
     jobs: [
       {
         title: <span>合约现货页面开发</span>,
-        role: 'OrderBook,下单，仓位，深度图，组件业务迭代，性能优化',
+        role: 'OrderBook,下单，仓位，止盈止损，组件业务迭代，性能优化。',
         techStack: ['React', 'Zustand', 'Nextjs', 'Tailwindcss'],
       },
       {
@@ -90,37 +90,37 @@ export const workData = [
     ],
   },
   // Bitget
-  {
-    name: 'Bitget',
-    title: '前端开发',
-    time: '2022.11 - 2023.12',
-    jobs: [
-      {
-        title: <span>合约交易站业务迭代</span>,
-        role: '基础组件，公共方法的书写，orderBook 的拖拽布局优化，业务迭代',
-        techStack: ['Antd Design', 'React', 'Redux', 'React-Router'],
-      },
-      // {
-      //   title: (
-      //     <span>
-      //       <a href="https://web3edu.xyz/profile">web3 的 dapp</a> &nbsp;
-      //       <a href="https://alpha.talentre.com/home/referral">
-      //         web3 的 talentre
-      //       </a>
-      //     </span>
-      //   ),
-      //   role: '项目的搭建, 框架的引入, ui组件库的主题改造, 合约的调用',
-      //   techStack: [
-      //     'Web3js',
-      //     'Material-Ui',
-      //     'Wagmi',
-      //     'React',
-      //     'Redux',
-      //     'React-Router',
-      //   ],
-      // },
-    ],
-  },
+  // {
+  //   name: 'Bitget',
+  //   title: '前端开发',
+  //   time: '2022.11 - 2023.12',
+  //   jobs: [
+  //     {
+  //       title: <span>合约交易站业务迭代</span>,
+  //       role: '基础组件，公共方法的书写，orderBook 的拖拽布局优化，业务迭代',
+  //       techStack: ['Antd Design', 'React', 'Redux', 'React-Router'],
+  //     },
+  //     // {
+  //     //   title: (
+  //     //     <span>
+  //     //       <a href="https://web3edu.xyz/profile">web3 的 dapp</a> &nbsp;
+  //     //       <a href="https://alpha.talentre.com/home/referral">
+  //     //         web3 的 talentre
+  //     //       </a>
+  //     //     </span>
+  //     //   ),
+  //     //   role: '项目的搭建, 框架的引入, ui组件库的主题改造, 合约的调用',
+  //     //   techStack: [
+  //     //     'Web3js',
+  //     //     'Material-Ui',
+  //     //     'Wagmi',
+  //     //     'React',
+  //     //     'Redux',
+  //     //     'React-Router',
+  //     //   ],
+  //     // },
+  //   ],
+  // },
   // bybit
   {
     name: '上海亿锦 (bybit)',
