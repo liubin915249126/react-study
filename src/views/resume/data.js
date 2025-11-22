@@ -125,7 +125,7 @@ export const workData = [
 
   // bybit
   {
-    name: '上海亿锦 (bybit)',
+    name: '上海亿锦 (Bybit)',
     title: '前端开发',
     tip: '伴随一家所从200人成长为业内top3的经历',
     time: '2020.03 - 2022.09',
