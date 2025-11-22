@@ -75,7 +75,7 @@ export const workData = [
   {
     name: 'BitMart',
     title: '资深前端开发',
-    time: '2024.03 - 2024.10',
+    time: '2022.11 - 2024.12',
     jobs: [
       {
         title: <span>合约交易站业务迭代</span>,
