@@ -84,7 +84,7 @@ export const workData = [
       },
       {
         title: <span>平台项目业务迭代</span>,
-        role: '平台项目资产总览的重构，多域名改造， sentry 接入',
+        role: '平台项目订单资金流水的重构，多域名改造， sentry 接入',
         techStack: ['React', 'Redux', 'Nextjs', 'Tailwindcss'],
       },
     ],
