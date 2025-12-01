@@ -79,7 +79,7 @@ export const workData = [
     jobs: [
       {
         title: <span>合约交易站业务迭代</span>,
-        role: '下单仓位止盈止损业务迭代，E2E 测试补齐',
+        role: '下单区仓位区业务迭代，交易数据图表展示，E2E 测试补齐',
         techStack: ['React', 'Redux', 'Nextjs', 'Tailwindcss'],
       },
       {
