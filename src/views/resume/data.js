@@ -33,7 +33,7 @@ export const excellentData = [
   },
   {
     title:
-      '具有较强的自学能力, 技术栈基本属于自己看文档学习到的, 有较强的问题解决能力, 能够快速定位问题, 通过搜索引擎找到解决方案.',
+      '具有较强的自学能力, 技术栈基本属于自己看文档学习到的, 有较强的问题解决能力, 能够快速定位问题, 通过搜索引擎和AI工具找到解决方案.',
     content: '',
   },
   {
@@ -55,7 +55,7 @@ export const excellentData = [
 // 工作经历
 export const workData = [
   {
-    name: 'Avenir Group(未来资本)',
+    name: '未来资本',
     title: '资深前端开发',
     time: '2024.11 - 2025.11',
     jobs: [
@@ -75,7 +75,7 @@ export const workData = [
   {
     name: 'BitMart',
     title: '资深前端开发',
-    time: '2023.04 - 2024.11',
+    time: '2022.09 - 2024.11',
     jobs: [
       {
         title: <span>合约交易站业务迭代</span>,
@@ -103,7 +103,7 @@ export const workData = [
   //     // {
   //     //   title: (
   //     //     <span>
-  //     //       <a href="https://web3edu.xyz/profile">web3 的 dapp</a> &nbsp;
+  //     //       <a href="https://web3edu.xyz/profile">web3 的 defi</a> &nbsp;
   //     //       <a href="https://alpha.talentre.com/home/referral">
   //     //         web3 的 talentre
   //     //       </a>
@@ -123,8 +123,8 @@ export const workData = [
   // },
   // bybit
   {
-    name: '上海亿锦 (bybit)',
-    title: '前端开发',
+    name: 'Bybit',
+    title: '高级前端开发',
     tip: '伴随一家所从200人成长为业内top3的经历',
     time: '2020.03 - 2022.09',
     jobs: [
@@ -201,7 +201,7 @@ export const workData = [
     name: '江苏五一互联电子商务有限公司',
     title: '前端开发',
     // todo 2018.08
-    time: '2018.08 - 2020.03',
+    time: '2018.04 - 2020.03',
     jobs: [
       {
         title: '运营管理后台架构改造和业务迭代',
@@ -282,6 +282,7 @@ export const projectData = [
     mainJobs: [
       '1. OrderBook组件数据层的接入，渲染和交互,性能优化，实现拖拽布局，ws数据补偿机制的开发',
       '2. 用户资金流水和订单模块造，适应法币业务，用户资金总览页面，数据和用户权限接入，资金趋势图的开发',
+      '3. 优化打包策略，结合浏览器缓存加快首屏渲染，利用浏览器火焰图，内存工具，查找内存和性能瓶颈，优化运行时性能。',
     ],
     mainAchivements: [
       '1. 利用 webworker 处理 OrderBook 数据，同时将100ms 的频率降低到300ms,减少主线程渲染压力',
@@ -289,11 +290,15 @@ export const projectData = [
     ],
   },
   // web3
+            //   <a href="https://web3edu.xyz/profile">web3 的 defi</a> &nbsp;
+            // <a href="https://alpha.talentre.com/home/referral">
+            //   web3 的 talentre
+            // </a>
     {
     title: <span>
-            <a href="https://web3edu.xyz/profile">web3 的 dapp</a> &nbsp;
-            <a href="https://alpha.talentre.com/home/referral">
-              web3 的 talentre
+            <a href="javascript:void(0);">web3 的 defi</a> 和 &nbsp;
+            <a href="javascript:void(0);">
+              web3 的 socialFi
             </a>
           </span>,
     techStack: [
