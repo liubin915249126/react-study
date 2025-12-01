@@ -32,8 +32,8 @@ const MyResume = () => {
         </div>
       </section>
       {/* 个人优势 */}
+      <h3 className="sectionTitle">个人优势</h3>
       <section className="excellent">
-        <h3 className="sectionTitle">个人优势</h3>
         {excellentData.map((item, index) => (
           <div>
             {index + 1}:{item.title}
@@ -41,16 +41,19 @@ const MyResume = () => {
         ))}
       </section>
       {/* 工作经历 */}
+      
       <section className="work">
         <h3 className="sectionTitle">工作经历</h3>
-        {workData.map((item, index) => {
+        <div className="workList">
+           {workData.map((item, index) => {
           return (
             <div className="workItem" key={index}>
               <div className="workTitle">
                 <span className="bold">
-                  {item.name} - {item.title}
+                  {item.name}
                 </span>
-                <span className="time">{item.time}</span>
+                &nbsp;
+                <span className="time">({item.title}&nbsp;{item.time})</span>
               </div>
               {/* {item.tip && <div className="tip">{item.tip}</div>} */}
               {item.jobs.map((item1, index1) => {
@@ -72,11 +75,13 @@ const MyResume = () => {
             </div>
           )
         })}
+        </div>
       </section>
       {/* 主要项目经历 */}
       <section className="project">
         <h3 className="sectionTitle">主要项目经历</h3>
-        {projectData.map((item, index) => {
+        <div className="projectList">
+          {projectData.map((item, index) => {
           const { mainJobs, mainAchivements, techStack = [] } = item
           return (
             <div className="projectItem" key={index}>
@@ -107,11 +112,13 @@ const MyResume = () => {
             </div>
           )
         })}
+        </div>
       </section>
       {/* 语言水平 */}
       <section className="tagWrap">
         <h3 className="sectionTitle">毕业院校/语言水平</h3>
         <div>
+          {/* <span className="tag">太原理工大学: (2010-2014)</span> &nbsp; */}
           <span className="tag">国内工科211: (2010-2014)</span> &nbsp;
           {/* <span className="tag">热能与动力工程</span> &nbsp; */}
           <span className="tag">英语 CET-4 </span>

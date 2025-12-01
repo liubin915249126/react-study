@@ -1,16 +1,22 @@
 import React from 'react'
 // 基本信息
 export const basicData = [
-  {
-    title: '0x2w6d@gmail.com',
-    icon: 'mail',
-  },
-  // {
-  //     title: 'len-0614',
-  //     icon: 'wechat',
-  // },
     {
-      title: '13378028014',
+      title: 'male',
+      icon: 'user',
+    },
+    // {
+    //   title: 'remote',
+    //   icon: 'heart',
+    // }, 
+    {
+      // title: 'm18205556911_1@163.com',
+      title: '13316793472@163.com',
+      icon: 'mail',
+    },
+    {
+      // title: '18205556911',
+      title: '13316793472',
       icon: 'phone',
     },
 ]
@@ -18,36 +24,22 @@ export const basicData = [
 export const excellentData = [
   {
     title:
-      '熟悉 React/Vue 全家桶, 维护过一整套的 UI 组件库, 承担了项⽬技术选型, 项⽬架构, 跨团队协同, 推⾏前端⼯程化, 会封装适⽤于团队项⽬的脚⼿架⼯具',
+      '熟悉使用 ReactJs / NextJs, 及相关技术栈: React Hooks, React Router, Redux, Zustand, ImmerJs. vue技术栈亦可完成业务需求',
     content: '',
   },
   {
     title:
-      '伴随着一家公司从200人成长为业内 TOP3 的经历，带过团队, 做过项目和技术 owner,解决项目中的卡点，推进项目解决业务问题, 平时工作中比较有项目 owner 意识。',
+      '有过性能优化经验，实际项目中会综合 js react 框架和社区方案，对整体加载和运行时性能进行优化。做过性能和报错线上监控方案落地',
     content: '',
   },
     {
     title:
-      '从0到1做过完整的合约现货交易站项目，熟悉合约现货交易业务，和技术，有过搭建项目架构经验',
+      '熟悉 cex 合约 现货业务，从0到1做过 合约交易站，包括 orderBook, Kline, 下单仓位，熟悉cex整体数据流和架构',
     content: '',
   },
   {
     title:
-      '具有较强的自学能力, 技术栈基本属于自己看文档学习到的, 有较强的问题解决能力, 能够快速定位问题, 通过搜索引擎找到解决方案.',
-    content: '',
-  },
-  {
-    title:
-      '有过 PC/H5/混合开发 项目经验, 搭建过项目脚手架, 项目开发中善于利用技术提高开发效率.',
-    content: '',
-  },
-  {
-    title: '平时喜欢钻研技术, 逐步在了解和掌握后端技术栈和运维相关技术.',
-    content: '',
-  },
-  {
-    title:
-      '平时工作中有注意补齐原生js相关概念与知识点, 计算机基础, 数据结构与算法, 网络相关还在持续学习当中.',
+      '新的技术栈通过文档学习和实际项目实践习得, 有较强的问题解决能力, 能够快速定位问题, 通过搜索引擎和AI工具找到解决方案.',
     content: '',
   },
 ]
@@ -55,13 +47,13 @@ export const excellentData = [
 // 工作经历
 export const workData = [
   {
-    name: 'Avenir Group(未来资本)',
+    name: 'XCoin',
     title: '资深前端开发',
     time: '2024.11 - 2025.11',
     jobs: [
       {
         title: <span>合约现货页面开发</span>,
-        role: 'OrderBook,下单，仓位，止盈止损，组件业务迭代，性能优化。',
+        role: 'OrderBook,下单，止盈止损，组件业务迭代，性能优化,公共 utils 的迭代。',
         techStack: ['React', 'Zustand', 'Nextjs', 'Tailwindcss'],
       },
       {
@@ -84,7 +76,7 @@ export const workData = [
       },
       {
         title: <span>平台项目业务迭代</span>,
-        role: '平台项目订单资金流水的重构，多域名改造， sentry 接入',
+        role: '平台项目订单资金流水的重构，多域名改造，sentry 接入',
         techStack: ['React', 'Redux', 'Nextjs', 'Tailwindcss'],
       },
     ],
@@ -103,7 +95,7 @@ export const workData = [
   //     // {
   //     //   title: (
   //     //     <span>
-  //     //       <a href="https://web3edu.xyz/profile">web3 的 dapp</a> &nbsp;
+  //     //       <a href="https://web3edu.xyz/profile">web3 的 defi</a> &nbsp;
   //     //       <a href="https://alpha.talentre.com/home/referral">
   //     //         web3 的 talentre
   //     //       </a>
@@ -123,8 +115,8 @@ export const workData = [
   // },
   // bybit
   {
-    name: '上海亿锦 (bybit)',
-    title: '前端开发',
+    name: 'Bybit',
+    title: '高级前端开发',
     tip: '伴随一家所从200人成长为业内top3的经历',
     time: '2020.03 - 2022.09',
     jobs: [
@@ -198,10 +190,10 @@ export const workData = [
     ],
   },
   {
-    name: '江苏五一互联电子商务有限公司',
+    name: '五一电商电子商务有限公司',
     title: '前端开发',
     // todo 2018.08
-    time: '2018.08 - 2020.03',
+    time: '2018.01 - 2020.03',
     jobs: [
       {
         title: '运营管理后台架构改造和业务迭代',
@@ -250,50 +242,58 @@ export const workData = [
       {
         title: '参与唯品会人才管理项目开发',
       },
-    ],
-  },
-  {
-    name: '毕业签的国企',
-    title: '中级技术员',
-    time: '2014.07 - 2016.03',
-    jobs: [
       {
-        title: <span>实习期间自学了前端</span>,
-        role: '张鑫旭的深入理解系列, 原生 JS 系列',
-        techStack: ['html(5)', 'Css(3)', 'Javascript'],
+        title: '通过 webpack 搭建了 react 和 vue 的 全家桶模版并发展成脚手架',
       },
     ],
   },
+  // {
+  //   name: '毕业签的国企',
+  //   title: '中级技术员',
+  //   time: '2014.07 - 2016.03',
+  //   jobs: [
+  //     {
+  //       title: <span>实习期间自学了前端</span>,
+  //       role: '张鑫旭的深入理解系列, 原生 JS 系列',
+  //       techStack: ['html(5)', 'Css(3)', 'Javascript'],
+  //     },
+  //   ],
+  // },
 ]
 
 // project 项目
 export const projectData = [
-  {
-    title: <span>合约现货交易站，重构，业务迭代和性能优化。</span>,
+    {
+    title: <span>交易组件业务迭代和性能优化</span>,
     techStack: [
       'TypeScript',
+      'WebPack+node',
       'React/Hook/Zustand',
-      'WebPack+Node',
       'Tailwindcss',
-      '自研UI组件库',
     ],
     projectInfo:
-      '主要负责合约现货交易页面 OrderBook,下单，最近成交，仓位业务模块的迭代，以及用户增长页面，资金流水页面的开发维护',
+      '主要负责合约现货交易页面 OrderBook,Kline，业务迭代和性能优化',
     mainJobs: [
       '1. OrderBook组件数据层的接入，渲染和交互,性能优化，实现拖拽布局，ws数据补偿机制的开发',
-      '2. 用户资金流水和订单模块造，适应法币业务，用户资金总览页面，数据和用户权限接入，资金趋势图的开发',
+      '2. KLine 结合 websocket 数据断线重连和断联数据补偿， Kline 快捷下单和仓位线委托线的开发',
+      '3. 优化打包策略，结合浏览器缓存加快首屏渲染，利用浏览器火焰图，内存工具，查找内存和性能瓶颈，优化运行时性能。',
     ],
     mainAchivements: [
       '1. 利用 webworker 处理 OrderBook 数据，同时将100ms 的频率降低到300ms,减少主线程渲染压力',
       '2. 利用 Zustand 替换 Redux, 实现局部的全局状态，减少数据变化时候的重复渲染',
+      '3. 处理 OrderBook 跳号数据补偿机制和 拖拽布局的优化',
     ],
   },
   // web3
+            //   <a href="https://web3edu.xyz/profile">web3 的 defi</a> &nbsp;
+            // <a href="https://alpha.talentre.com/home/referral">
+            //   web3 的 talentre
+            // </a>
     {
     title: <span>
-            <a href="https://web3edu.xyz/profile">web3 的 dapp</a> &nbsp;
-            <a href="https://alpha.talentre.com/home/referral">
-              web3 的 talentre
+            <a href="javascript:void(0);">web3 的 defi</a> 和 &nbsp;
+            <a href="javascript:void(0);">
+              web3 的 socialFi
             </a>
           </span>,
     techStack: [
@@ -336,9 +336,9 @@ export const projectData = [
       '1. 反向合约业务的重构, 参与了项目脚手架的搭建, 数据流的管理, 公共方法, 网络请求的封装, 组件库的维护.',
       '2. 参与了 下单区, 持仓区, orderBook, Kline, deepChart, 业务的迭代',
       '3. 负责持仓区聚合持仓的技术owner, 参与C端快速上币的改造, 担任运营管理端的项目owner, 快速上币功能使得上一个币对的时间和bug大大减少',
-      '4. 运用社区各种技术手段优化首页加载性能和运行时性能',
+      // '4. 运用社区各种技术手段优化首页加载性能和运行时性能',
       // SEO
-      '5. 官网使用 NextJs 和 Helmet 添加关键字，脚本自动生成 Robot.txt 和 SiteMap.xml 利于搜索引擎爬取',
+      // '5. 官网使用 NextJs 和 Helmet 添加关键字，脚本自动生成 Robot.txt 和 SiteMap.xml 利于搜索引擎爬取',
     ],
     mainAchivements: [
       '1. http/ws 数据统一通过数据处理按照NameSpace存储到全局状态, 后续通过自定义Hook处理好逻辑, 输出给组件使用, 数据的统一处理和统一输出',

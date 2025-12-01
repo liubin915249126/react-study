@@ -1,6 +1,9 @@
 @primary-color: #3498db;
 @primary-secondary-color: rgba(52,152,219, 0.9);
-@primary-op-color: rgba(52,152,219, 0.5);
+// @primary-op-color: rgba(52,152,219, 0.5);
+@primary-op-color: #fff;
+@primary-border-color: #719479;
+
 .myResume{
    box-sizing: border-box; 
    width: 210mm;
@@ -14,11 +17,10 @@
       margin-top: 12px;
    }
    .sectionTitle{
-      padding: 4px 0;
-      border-left: 4px solid @primary-color;
-      background: @primary-op-color;
-      color: #333;
-      padding-left: 8px;
+      padding: 4px 0 4px 8px;
+      background: @primary-color;
+      color: #fff;
+      border-radius: 4px;
    }
    .subTitle{
       color: #333;
@@ -26,10 +28,16 @@
       margin: 0;
    }
   .basicInfo{
+    margin-bottom: 12px;
+    border: 1px solid @primary-border-color;
+    padding: 4px 0px;
+    border-radius: 4px;
+
     h3{
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0;
       span{
          font-size: 24px;
          font-weight: bold;
@@ -48,6 +56,9 @@
     }
   }
   .excellent{
+     border: 1px solid @primary-border-color;
+     border-radius: 4px;
+     padding: 8px;
     &>div{
        margin-bottom: 8px;
        margin-left: 12px;
@@ -55,16 +66,33 @@
   }
   // 工作经历
   .work{
+    .workList{
+      padding: 0px 0 8px 0px;
+      border: 1px solid @primary-border-color;
+      border-radius: 4px;
+    }
+    .workList{
+      &>div{
+        .workTitle{
+          border-bottom: 1px solid @primary-border-color;
+          border-top: 1px solid @primary-border-color;
+          padding-left: 8px;
+          margin-bottom: 4px;
+        }
+      }
+      &>div:first-child{
+        .workTitle{
+          border-top: none;
+          padding-left: 8px;
+        }
+      }
+    }
     .workItem{
         .bold{
           font-size: 20px;
           font-weight: bold;
         }
-        .workTitle{
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
+   
     }
     .tip{
         font-size: 14px;
@@ -91,13 +119,28 @@
   }
   // 主要项目经验
   .project{
+    .projectList{
+      border:1px solid @primary-border-color;
+      border-radius: 4px;
+      padding: 4px 8px 8px 8px;
+      &>div:first-child{
+.projectTitle{
+  padding-top: 0;
+border-top: none;}
+      }
+    }
     .projectItem{
       .mainJobs{
         margin-left: 12px;
       }
       .projectTitle{
+         border-bottom: 1px solid @primary-border-color;
+          border-top: 1px solid @primary-border-color;
+          padding: 4px 8px;
+          margin: 0 -8px;
         color: @primary-color;
         font-size: 18px;
+        margin-bottom: 4px;
       }
     }
     .projectItem + .projectItem{
