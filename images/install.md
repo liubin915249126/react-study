@@ -11,7 +11,7 @@ touch  ~/.claude/settings.json
     "env":{
         "ANTHROPIC_BASE_URL": "https://yostoken.top/v1",
         # 你具体的 token
-        "ANTHROPIC_AUTH_TOKEN": "sk-xxxx",
+        "ANTHROPIC_AUTH_TOKEN": "sk-a19ab8ca9c1448f02aad89ddecadb34ddd77cc9b239137a46b0ae295e6859",
         "ANTHROPIC_MODEL":"claude-opus-5",
         "ANTHROPIC_SMALL_FAST_MODEL": "claude-opus-4-6"
     }
