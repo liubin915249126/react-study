@@ -7,7 +7,11 @@
 
 # https://v2.pincc.ai
 #  sk-fb69595f95fc3de0fdd1398a7ca667df758aefa081fe749150a883467cb9d
- ~/.claude/settings.json
+#  ~/.claude/settings.json
+
+#  claude --settings ~/.claude/settings.json
+#  claude auth logout
+
 # 没有的话新建一个 
 touch  ~/.claude/settings.json
 # 加入一下内容
