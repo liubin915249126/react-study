@@ -5,8 +5,9 @@
 # 编辑这个文件 
 # sk-f316b91c173349ceb5dfbef2621b6
 
-# https://v2.pincc.ai
+#  https://v2.pincc.ai
 #  sk-fb69595f95fc3de0fdd1398a7ca667df758aefa081fe749150a883467cb9d
+# pro sk-6af936edcab4d7d8017716105c4680241486c12c40c6aabf0451e6abb847a
 #  ~/.claude/settings.json
 
 #  claude --settings ~/.claude/settings.json
