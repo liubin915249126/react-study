@@ -3,6 +3,7 @@
 ```sh
 # 
 # 编辑这个文件 
+# sk-f316b91c173349ceb5dfbef2621b6
  ~/.claude/settings.json
 # 没有的话新建一个 
 touch  ~/.claude/settings.json
