@@ -7,6 +7,12 @@ const app = new koa()
 
 
 router.get('/index', async (ctx, next) => {
+  var token = ctx.headers.authorization
+  if (!token || token !== `Bearer ${process.env.API_TOKEN}`) {
+    ctx.response.status = 401
+    ctx.response.body = { error: 'Unauthorized' }
+    return
+  }
   var data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   // let data = {
   //   films:'films'
